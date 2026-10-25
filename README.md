@@ -40,8 +40,9 @@ artifacts are excluded from Git.
 ## Evaluation
 
 See [the frozen protocol](docs/evaluation.md), [data provenance](docs/data.md)
-and [measured results](results/baseline-v1/README.md). September 8 onward is
-reserved and has not been scored. The committed evidence is a development
+and [measured results and tie audit](results/capacity-tie-audit-v1/README.md). September 8 onward is
+reserved and has not been scored. The tie audit supersedes source-row ordering for capacity metrics in the original
+protocol; original results are retained for comparison. The committed evidence is a development
 validation result, not a final held-out benchmark. CI tests the pipeline with
 small authored examples and verifies the recorded evidence hashes; it does not
 download or retrain on the full dataset.

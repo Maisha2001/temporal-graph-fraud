@@ -118,7 +118,22 @@ def test_alert_budget_ties_are_independent_of_input_order():
     result = evaluate([0, 1, 1, 0], [0.5] * 4, [4, 1, 2, 3], fraction=0.5)
     permuted = evaluate([1, 0, 0, 1], [0.5] * 4, [2, 3, 4, 1], fraction=0.5)
     assert result == permuted
-    assert result['alerts'] == 2 and result['recall_at_capacity'] == 1
+    assert result['alerts'] == 2 and result['recall_at_capacity'] == 0.5
+    assert result['expected_true_alerts'] == 1
+    assert result['true_alerts_min'] == 0 and result['true_alerts_max'] == 2
+
+
+def test_tie_expectation_is_independent_of_row_identifiers():
+    expected = evaluate([0, 1, 1, 0], [0.5] * 4, [0, 1, 2, 3], fraction=0.5)
+    changed = evaluate([0, 1, 1, 0], [0.5] * 4, [4, 3, 2, 1], fraction=0.5)
+    assert expected == changed
+
+
+def test_partially_selected_boundary_tie_has_expected_yield_and_bounds():
+    result = evaluate([1, 1, 0, 0], [0.9, 0.5, 0.5, 0.5], [0, 1, 2, 3], fraction=0.5)
+    assert result['expected_true_alerts'] == pytest.approx(1 + 1 / 3)
+    assert result['true_alerts_min'] == 1 and result['true_alerts_max'] == 2
+    assert result['boundary_tied_events'] == 3 and result['boundary_slots'] == 1
 
 
 def test_no_positives_and_zero_budget_report_nulls():
