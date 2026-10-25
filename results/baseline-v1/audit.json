@@ -1,0 +1,21 @@
+{
+  "checked_at_utc": "2026-10-25T09:14:21.801669+00:00",
+  "tests_passed": 19,
+  "checks": [
+    "all recorded artifact hashes matched",
+    "unique ordered replay event IDs",
+    "strict 24-hour training-label availability",
+    "zero held-out accounts in pre-fit replay",
+    "no reserved timestamps in development artifacts",
+    "saved prediction IDs match validation membership",
+    "independent sorted-score alert counts match both reports"
+  ],
+  "source_sha256": {
+    "src/temporal_fraud/__init__.py": "1879b84b12d9438a810a040d959027c05b7d9de8e1acb1a16f8312ab842be8da",
+    "src/temporal_fraud/data.py": "6d9244c2adad7153a314f89cfbb9f1913be2eff356e4505f4640eb3fb076fdef",
+    "src/temporal_fraud/experiment.py": "11d969ea42b43d1e38671f45babd01c267785a30bcb8610528e6011040d17a41",
+    "src/temporal_fraud/features.py": "9eb304da50a0841417bcb470a410f1e4079f0a551af7487a29f0668e7fc638c2",
+    "src/temporal_fraud/metrics.py": "44e8bf79d695d3ad5bd099f734a74d7a4e68f5bfa6a5bd8326eaed8e4b1db6e1",
+    "src/temporal_fraud/runtime.py": "8b8869f63444eb2fb1426b94bf76bf4941d17ca4e3a6c5c0942c48beeaa7481c"
+  }
+}

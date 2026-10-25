@@ -1,0 +1,19 @@
+{
+  "source": "https://www.kaggle.com/api/v1/datasets/download/ealtman2019/ibm-transactions-for-anti-money-laundering-aml/HI-Small_Trans.csv",
+  "filename": "HI-Small_Trans.csv",
+  "sha256": "b19d39f515523373f991b689c07e11e7b0b95c17a2c27a87d91584ae16c5b040",
+  "bytes": 475664283,
+  "license": "CDLA-Sharing-1.0",
+  "fit_at": "2022-09-06T00:00:00",
+  "test_start": "2022-09-08T00:00:00",
+  "label_delay_hours": 24,
+  "entity_holdout_modulus": 10,
+  "entity_holdout_bucket": 0,
+  "seed": 42,
+  "alert_fraction": 0.01,
+  "trees": 150,
+  "max_depth": 4,
+  "learning_rate": 0.08,
+  "threads": 4,
+  "evaluation": "development validation only; September8 onward remains unscored"
+}
