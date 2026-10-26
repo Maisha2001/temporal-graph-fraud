@@ -21,3 +21,4 @@ jobs:
       - run: python -m pip install --no-deps -e .
       - run: python -m pytest -q
       - run: python scripts/verify_evidence.py
+      - run: python scripts/verify_evidence.py --revision HEAD

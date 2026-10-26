@@ -3,7 +3,7 @@
   "test_scored": false,
   "validation_events": 964840,
   "baseline_report_sha256": "16a5aca79641d4d5cc2299f6d6d9e79d891dd022c2a649e1ed4859f51085300e",
-  "graph_report_sha256": "f8ccbb5b0c00d7b8f9e708db9aa99c50fb199f780fd1e46d867b35b0f89d34fe",
+  "graph_report_sha256": "e860d3e94565c1a027d8e2e87354b7d9f99f506dcbc1eb80c90310a7e0c8e5be",
   "models": {
     "train_prior": {
       "validation": {
@@ -289,5 +289,6 @@
         "precision_at_capacity": 0.0683410442828817
       }
     }
-  }
+  },
+  "raw_run_report_sha256": "f8ccbb5b0c00d7b8f9e708db9aa99c50fb199f780fd1e46d867b35b0f89d34fe"
 }

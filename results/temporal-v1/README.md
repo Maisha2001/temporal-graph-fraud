@@ -58,3 +58,10 @@ The repository contains aggregate evidence; generated transaction tables and
 checkpoints remain local. CI uses small authored fixtures on Windows and Ubuntu,
 checks interruption recovery, and verifies evidence hashes. It does not retrain
 the full IBM dataset.
+
+Published JSON uses LF line endings. The private raw run report keeps its original
+bytes. `comparison.json` records both raw and published report hashes; model,
+prediction and input artifact hashes refer to the unchanged private artifacts.
+The initial graph commit hashed two Windows CRLF files before Git normalized
+them. The subsequent evidence correction fixes those text hashes and adds
+verification of staged and committed Git blobs. Metrics and models are unchanged.
