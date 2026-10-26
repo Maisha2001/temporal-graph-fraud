@@ -57,6 +57,15 @@ inputs and restores model/optimizer state from the last completed epoch.
 See [the model and reproduction notes](docs/temporal-model.md) and
 [graph comparison results](results/temporal-v1/README.md).
 
+## Delayed feedback and alert policy
+
+The [risk study](docs/risk-policy.md) compares label delays, fits calibration only
+from matured out-of-training feedback, and evaluates a frozen threshold with a
+hard hourly capacity cap on later development events. It also measures graph
+interventions and daily feature/score shift. Reproduce it with `fraud-risk-study`
+after the baseline and graph runs. [Measured results](results/robustness-v1/README.md)
+include limitations and both uncapped threshold volume and actual capped decisions.
+
 ## Evaluation
 
 See [the frozen protocol](docs/evaluation.md), [data provenance](docs/data.md)

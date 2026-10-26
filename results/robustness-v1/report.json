@@ -1,0 +1,1676 @@
+{
+  "stage": "development_validation",
+  "test_scored": false,
+  "protocol": {
+    "seed": 42,
+    "delay_hours": [
+      0,
+      24,
+      48
+    ],
+    "calibration_at": "2022-09-07T12:00:00",
+    "calibration_delay_hours": 24,
+    "evaluation_end": "2022-09-08T00:00:00",
+    "alert_fraction": 0.01,
+    "alert_period": "closed UTC-unspecified simulator hour; decisions at period end",
+    "calibration_models": [
+      "history_xgboost",
+      "temporal_attention_32"
+    ],
+    "calibrator": "monotone sigmoid fitted to matured out-of-training predictions; unweighted log loss",
+    "calibration_min_positives": 20,
+    "graph_interventions": [
+      "no_neighbors",
+      "no_edge_time"
+    ],
+    "reference_drift_day": "2022-09-06",
+    "drift_day": "2022-09-07",
+    "status": "development analysis; final holdout unscored",
+    "selection": "fixed scenario list and budgets; no hyperparameter search or change to frozen earlier models"
+  },
+  "data_config": {
+    "source": "https://www.kaggle.com/api/v1/datasets/download/ealtman2019/ibm-transactions-for-anti-money-laundering-aml/HI-Small_Trans.csv",
+    "filename": "HI-Small_Trans.csv",
+    "sha256": "b19d39f515523373f991b689c07e11e7b0b95c17a2c27a87d91584ae16c5b040",
+    "bytes": 475664283,
+    "license": "CDLA-Sharing-1.0",
+    "fit_at": "2022-09-06T00:00:00",
+    "test_start": "2022-09-08T00:00:00",
+    "label_delay_hours": 24,
+    "entity_holdout_modulus": 10,
+    "entity_holdout_bucket": 0,
+    "seed": 42,
+    "alert_fraction": 0.01,
+    "trees": 150,
+    "max_depth": 4,
+    "learning_rate": 0.08,
+    "threads": 4,
+    "evaluation": "development validation only; September8 onward remains unscored"
+  },
+  "graph_config": {
+    "seed": 42,
+    "epochs": 3,
+    "batch_size": 4096,
+    "hidden": 32,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "neighbors": [
+      0,
+      8,
+      32
+    ],
+    "threads": 4,
+    "checkpoint_selection": "fixed final epoch; development labels do not select epochs or hyperparameters",
+    "sampling": "latest incident interactions strictly before query minute; observable-content hash orders minute ties; self-loop stored once",
+    "positive_weight": "sqrt(training negatives / positives)",
+    "architecture": "one-hop temporal attention over both endpoints; no account ID embeddings; no recurrent memory"
+  },
+  "frozen_artifact_sha256": {
+    "baseline/history_xgboost-validation.parquet": "0c1c444ab8b03073e72d3e2ae8ebbf8a75fec64e8c3f6f885bffc14c7e0beb82",
+    "baseline/history_xgboost.joblib": "d6cb4419b5a51700a132e4a5f715866799fb906ddfa7ff27ba44f5d79d55a241",
+    "baseline/history_xgboost.ubj": "bec7c1a29da127a48e37ab7b63214e826886eff2e15b3c6695391862de3749a5",
+    "baseline/membership.parquet": "56b14049861d864d40e2b5d70bc17261726b367daf0fafeafe1a72901f55a414",
+    "baseline/transaction_xgboost-validation.parquet": "ff19c2ed42ea8ce28db4eae404e2aba91d15571a3eb27938afd4bd996c477a2c",
+    "baseline/transaction_xgboost.joblib": "f8f859a2dddd9bea537a5140c592902c17cc6d0cfe54c927f03cb0df8ac19903",
+    "baseline/transaction_xgboost.ubj": "0ac353600dc43dcc664136db88bf783cc629bf028a3d58a6a583d317cd7eda3c",
+    "graph/features.npy": "0810bb8732b19626720676dfec7e381360613dd26a0e5fcb7b85feef58a5adc5",
+    "graph/history_mlp-validation.parquet": "b4c153441b3f3ee2722fc1678cdb2d1edac59ca9228e1ee010e394134d9a1753",
+    "graph/inputs.json": "f1685dd859fc2b856466eb682c247b8a237b78e20d6dedfcf30bb73763697334",
+    "graph/membership.parquet": "9f0091640f532dc33997aba17097cbc218bcc60571714ac54f1e71cb3335cc3f",
+    "graph/neighborhood.joblib": "5753c6e0d4f6d11f7c71fce5b8758f8f923c0ff80e1030ff5950f11cb0203456",
+    "graph/neighbors-0-epoch-1.pt": "303473aecff63d57c396ad4138787cf0ad5be3b949513da8ebb47b19a9779b12",
+    "graph/neighbors-0-epoch-2.pt": "bf684f2e281f896db51f39ce8ac8bd90bc4562ada268b408158b7eca3a11b2e1",
+    "graph/neighbors-0-epoch-3.pt": "1a3247d300b24fd47b9befedd2775e8020886d0810282e79a191bc1ebab6a6fb",
+    "graph/neighbors-0-latest.pt": "1a3247d300b24fd47b9befedd2775e8020886d0810282e79a191bc1ebab6a6fb",
+    "graph/neighbors-32-epoch-1.pt": "13ba11b0179280fecd75f4f055579f30605a355499469b7981f1c969ba8b2012",
+    "graph/neighbors-32-epoch-2.pt": "bf278f8859effc1be336a0c9be31533a9544cc5639ad363049622db75713ea7a",
+    "graph/neighbors-32-epoch-3.pt": "5e07484999c548ceedceb4d9bfe1d2a523f2fdf0ce00763b9024663e936da2a2",
+    "graph/neighbors-32-latest.pt": "5e07484999c548ceedceb4d9bfe1d2a523f2fdf0ce00763b9024663e936da2a2",
+    "graph/neighbors-8-epoch-1.pt": "06ee259b6b27141bbfc3f7f79f2aba3b67e05dbc78d5833b4e25d7c654969d6d",
+    "graph/neighbors-8-epoch-2.pt": "89abe5c322a80bdee5e05914d341a425ebe07eaf2fe5c8271958989be371cef7",
+    "graph/neighbors-8-epoch-3.pt": "b69121e6dc89b813217e5615d8d3d4b6c813dbb7d6a7dab4ca689466df402a7a",
+    "graph/neighbors-8-latest.pt": "b69121e6dc89b813217e5615d8d3d4b6c813dbb7d6a7dab4ca689466df402a7a",
+    "graph/preprocessing.joblib": "2f376afc033c1419d6eb8c0be33824c381cac048954add523a1d070246202596",
+    "graph/temporal_attention_32-validation.parquet": "a6f321b34166f2e4f621d723d905fe0c4ef586c89c753aaa44ba135dc67eb8f8",
+    "graph/temporal_attention_8-validation.parquet": "8c4a5b7d0f234f279aaddfe7b62958c53d61aefed5df0a76e04c0f5299c9eca1"
+  },
+  "delays": {
+    "0": {
+      "source": "new fixed-budget label-delay sensitivity arm",
+      "training_events": 2230428,
+      "training_positives": 1559,
+      "history_xgboost": {
+        "validation": {
+          "events": 964840,
+          "positives": 1028,
+          "prevalence": 0.0010654616309439908,
+          "average_precision": 0.19236188144552513,
+          "brier": 0.0049030571733771795,
+          "alert_fraction": 0.01,
+          "alerts": 9648,
+          "expected_true_alerts": 676.0,
+          "true_alerts_min": 676,
+          "true_alerts_max": 676,
+          "boundary_tied_events": 1,
+          "boundary_slots": 1,
+          "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+          "recall_at_capacity": 0.6575875486381323,
+          "precision_at_capacity": 0.07006633499170813
+        },
+        "cold": {
+          "events": 208312,
+          "positives": 207,
+          "prevalence": 0.0009937017550597181,
+          "average_precision": 0.05095891702782756,
+          "brier": 0.005249896309871468,
+          "alert_fraction": 0.01,
+          "alerts": 2083,
+          "expected_true_alerts": 85.0,
+          "true_alerts_min": 85,
+          "true_alerts_max": 85,
+          "boundary_tied_events": 1,
+          "boundary_slots": 1,
+          "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+          "recall_at_capacity": 0.4106280193236715,
+          "precision_at_capacity": 0.04080652904464714
+        },
+        "warm": {
+          "events": 756528,
+          "positives": 821,
+          "prevalence": 0.001085220903918956,
+          "average_precision": 0.2315745379836945,
+          "brier": 0.004807554093251397,
+          "alert_fraction": 0.01,
+          "alerts": 7565,
+          "expected_true_alerts": 587.0,
+          "true_alerts_min": 587,
+          "true_alerts_max": 587,
+          "boundary_tied_events": 1,
+          "boundary_slots": 1,
+          "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+          "recall_at_capacity": 0.7149817295980512,
+          "precision_at_capacity": 0.07759418374091209
+        }
+      },
+      "temporal_attention_32": {
+        "validation": {
+          "events": 964840,
+          "positives": 1028,
+          "prevalence": 0.0010654616309439908,
+          "average_precision": 0.14467532061900396,
+          "brier": 0.002565143703881979,
+          "alert_fraction": 0.01,
+          "alerts": 9648,
+          "expected_true_alerts": 616.0,
+          "true_alerts_min": 616,
+          "true_alerts_max": 616,
+          "boundary_tied_events": 1,
+          "boundary_slots": 1,
+          "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+          "recall_at_capacity": 0.5992217898832685,
+          "precision_at_capacity": 0.06384742951907131
+        },
+        "cold": {
+          "events": 208312,
+          "positives": 207,
+          "prevalence": 0.0009937017550597181,
+          "average_precision": 0.05387171428629213,
+          "brier": 0.0021973251392062073,
+          "alert_fraction": 0.01,
+          "alerts": 2083,
+          "expected_true_alerts": 80.0,
+          "true_alerts_min": 80,
+          "true_alerts_max": 80,
+          "boundary_tied_events": 1,
+          "boundary_slots": 1,
+          "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+          "recall_at_capacity": 0.3864734299516908,
+          "precision_at_capacity": 0.03840614498319731
+        },
+        "warm": {
+          "events": 756528,
+          "positives": 821,
+          "prevalence": 0.001085220903918956,
+          "average_precision": 0.16682104915195686,
+          "brier": 0.002666423525441444,
+          "alert_fraction": 0.01,
+          "alerts": 7565,
+          "expected_true_alerts": 536.0,
+          "true_alerts_min": 536,
+          "true_alerts_max": 536,
+          "boundary_tied_events": 1,
+          "boundary_slots": 1,
+          "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+          "recall_at_capacity": 0.6528623629719854,
+          "precision_at_capacity": 0.07085261070720424
+        }
+      }
+    },
+    "24": {
+      "source": "unchanged frozen 24-hour runs; not retrained",
+      "training_events": 1851794,
+      "training_positives": 1187,
+      "history_xgboost": {
+        "validation": {
+          "events": 964840,
+          "positives": 1028,
+          "prevalence": 0.0010654616309439908,
+          "average_precision": 0.1722777701653409,
+          "brier": 0.005857923735397283,
+          "alert_fraction": 0.01,
+          "alerts": 9648,
+          "expected_true_alerts": 654.0,
+          "true_alerts_min": 654,
+          "true_alerts_max": 654,
+          "boundary_tied_events": 1,
+          "boundary_slots": 1,
+          "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+          "recall_at_capacity": 0.6361867704280155,
+          "precision_at_capacity": 0.06778606965174129
+        },
+        "cold": {
+          "events": 208312,
+          "positives": 207,
+          "prevalence": 0.0009937017550597181,
+          "average_precision": 0.04565011174651833,
+          "brier": 0.006067717401475066,
+          "alert_fraction": 0.01,
+          "alerts": 2083,
+          "expected_true_alerts": 87.0,
+          "true_alerts_min": 87,
+          "true_alerts_max": 87,
+          "boundary_tied_events": 3,
+          "boundary_slots": 1,
+          "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+          "recall_at_capacity": 0.42028985507246375,
+          "precision_at_capacity": 0.041766682669227076
+        },
+        "warm": {
+          "events": 756528,
+          "positives": 821,
+          "prevalence": 0.001085220903918956,
+          "average_precision": 0.21114221104640893,
+          "brier": 0.005800156490605291,
+          "alert_fraction": 0.01,
+          "alerts": 7565,
+          "expected_true_alerts": 566.0,
+          "true_alerts_min": 566,
+          "true_alerts_max": 566,
+          "boundary_tied_events": 1,
+          "boundary_slots": 1,
+          "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+          "recall_at_capacity": 0.6894031668696712,
+          "precision_at_capacity": 0.07481824190350297
+        }
+      },
+      "temporal_attention_32": {
+        "validation": {
+          "events": 964840,
+          "positives": 1028,
+          "prevalence": 0.0010654616309439908,
+          "average_precision": 0.10365402583589334,
+          "brier": 0.004174765472133893,
+          "alert_fraction": 0.01,
+          "alerts": 9648,
+          "expected_true_alerts": 585.0,
+          "true_alerts_min": 585,
+          "true_alerts_max": 585,
+          "boundary_tied_events": 1,
+          "boundary_slots": 1,
+          "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+          "recall_at_capacity": 0.5690661478599222,
+          "precision_at_capacity": 0.06063432835820896
+        },
+        "cold": {
+          "events": 208312,
+          "positives": 207,
+          "prevalence": 0.0009937017550597181,
+          "average_precision": 0.02972951203320789,
+          "brier": 0.0032879220983595115,
+          "alert_fraction": 0.01,
+          "alerts": 2083,
+          "expected_true_alerts": 67.0,
+          "true_alerts_min": 67,
+          "true_alerts_max": 67,
+          "boundary_tied_events": 1,
+          "boundary_slots": 1,
+          "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+          "recall_at_capacity": 0.32367149758454106,
+          "precision_at_capacity": 0.03216514642342775
+        },
+        "warm": {
+          "events": 756528,
+          "positives": 821,
+          "prevalence": 0.001085220903918956,
+          "average_precision": 0.1228553635614228,
+          "brier": 0.004418960157429995,
+          "alert_fraction": 0.01,
+          "alerts": 7565,
+          "expected_true_alerts": 517.0,
+          "true_alerts_min": 517,
+          "true_alerts_max": 517,
+          "boundary_tied_events": 1,
+          "boundary_slots": 1,
+          "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+          "recall_at_capacity": 0.6297198538367844,
+          "precision_at_capacity": 0.0683410442828817
+        }
+      }
+    },
+    "48": {
+      "source": "new fixed-budget label-delay sensitivity arm",
+      "training_events": 1688786,
+      "training_positives": 862,
+      "history_xgboost": {
+        "validation": {
+          "events": 964840,
+          "positives": 1028,
+          "prevalence": 0.0010654616309439908,
+          "average_precision": 0.13602818162898722,
+          "brier": 0.00596302765529833,
+          "alert_fraction": 0.01,
+          "alerts": 9648,
+          "expected_true_alerts": 603.0,
+          "true_alerts_min": 603,
+          "true_alerts_max": 603,
+          "boundary_tied_events": 1,
+          "boundary_slots": 1,
+          "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+          "recall_at_capacity": 0.5865758754863813,
+          "precision_at_capacity": 0.0625
+        },
+        "cold": {
+          "events": 208312,
+          "positives": 207,
+          "prevalence": 0.0009937017550597181,
+          "average_precision": 0.05208691749919942,
+          "brier": 0.005185401807721857,
+          "alert_fraction": 0.01,
+          "alerts": 2083,
+          "expected_true_alerts": 78.0,
+          "true_alerts_min": 78,
+          "true_alerts_max": 78,
+          "boundary_tied_events": 1,
+          "boundary_slots": 1,
+          "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+          "recall_at_capacity": 0.37681159420289856,
+          "precision_at_capacity": 0.03744599135861738
+        },
+        "warm": {
+          "events": 756528,
+          "positives": 821,
+          "prevalence": 0.001085220903918956,
+          "average_precision": 0.15745039567666042,
+          "brier": 0.006177149003827863,
+          "alert_fraction": 0.01,
+          "alerts": 7565,
+          "expected_true_alerts": 525.0,
+          "true_alerts_min": 525,
+          "true_alerts_max": 525,
+          "boundary_tied_events": 2,
+          "boundary_slots": 2,
+          "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+          "recall_at_capacity": 0.6394640682095006,
+          "precision_at_capacity": 0.06939854593522803
+        }
+      },
+      "temporal_attention_32": {
+        "validation": {
+          "events": 964840,
+          "positives": 1028,
+          "prevalence": 0.0010654616309439908,
+          "average_precision": 0.07603048003630021,
+          "brier": 0.0037881096006465156,
+          "alert_fraction": 0.01,
+          "alerts": 9648,
+          "expected_true_alerts": 561.0,
+          "true_alerts_min": 561,
+          "true_alerts_max": 561,
+          "boundary_tied_events": 1,
+          "boundary_slots": 1,
+          "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+          "recall_at_capacity": 0.5457198443579766,
+          "precision_at_capacity": 0.05814676616915423
+        },
+        "cold": {
+          "events": 208312,
+          "positives": 207,
+          "prevalence": 0.0009937017550597181,
+          "average_precision": 0.03180475159422735,
+          "brier": 0.0032135459510247407,
+          "alert_fraction": 0.01,
+          "alerts": 2083,
+          "expected_true_alerts": 56.0,
+          "true_alerts_min": 56,
+          "true_alerts_max": 56,
+          "boundary_tied_events": 1,
+          "boundary_slots": 1,
+          "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+          "recall_at_capacity": 0.27053140096618356,
+          "precision_at_capacity": 0.02688430148823812
+        },
+        "warm": {
+          "events": 756528,
+          "positives": 821,
+          "prevalence": 0.001085220903918956,
+          "average_precision": 0.08860764241836575,
+          "brier": 0.003946317232062685,
+          "alert_fraction": 0.01,
+          "alerts": 7565,
+          "expected_true_alerts": 492.0,
+          "true_alerts_min": 492,
+          "true_alerts_max": 492,
+          "boundary_tied_events": 1,
+          "boundary_slots": 1,
+          "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+          "recall_at_capacity": 0.5992691839220463,
+          "precision_at_capacity": 0.06503635161929941
+        }
+      }
+    }
+  },
+  "calibration": {
+    "history_xgboost": {
+      "calibrator": {
+        "slope": 1.2329935261738896,
+        "intercept": -3.4680935867394025,
+        "fitted_at": "2022-09-07 12:00:00",
+        "delay_hours": 24.0,
+        "model_fit_at": "2022-09-06 00:00:00",
+        "examples": 248642,
+        "positives": 242,
+        "latest_label_available_at": "2022-09-07 11:59:00"
+      },
+      "threshold": 0.018857865409916578,
+      "evaluation_first_event": "2022-09-07 12:00:00",
+      "evaluation_last_event": "2022-09-07 23:59:00",
+      "evaluation_events": 233800,
+      "evaluation_positives": 267,
+      "raw": {
+        "brier": 0.005912842115198013,
+        "log_loss": 0.028460670603683114,
+        "expected_calibration_error": 0.022265851759196646,
+        "reference_quantile_boundaries": [
+          0.0002889554481953383,
+          0.00042823573458008476,
+          0.0005950532970018689,
+          0.0008358479826711118,
+          0.0011013151961378753,
+          0.0016229300992563372,
+          0.003060662653297186,
+          0.01261921692639592,
+          0.05420421436429024
+        ],
+        "bins": [
+          {
+            "bin": 0,
+            "events": 14003,
+            "mean_probability": 0.00022127435695287496,
+            "observed_fraction": 0.0
+          },
+          {
+            "bin": 1,
+            "events": 15594,
+            "mean_probability": 0.00035786412640361143,
+            "observed_fraction": 0.0
+          },
+          {
+            "bin": 2,
+            "events": 18703,
+            "mean_probability": 0.0005093021460668938,
+            "observed_fraction": 5.3467358177832434e-05
+          },
+          {
+            "bin": 3,
+            "events": 22004,
+            "mean_probability": 0.0007145327063290865,
+            "observed_fraction": 0.0
+          },
+          {
+            "bin": 4,
+            "events": 22046,
+            "mean_probability": 0.0009610273707089019,
+            "observed_fraction": 0.0
+          },
+          {
+            "bin": 5,
+            "events": 24391,
+            "mean_probability": 0.0013293794471293848,
+            "observed_fraction": 0.0
+          },
+          {
+            "bin": 6,
+            "events": 26467,
+            "mean_probability": 0.00221155480616261,
+            "observed_fraction": 0.0
+          },
+          {
+            "bin": 7,
+            "events": 34049,
+            "mean_probability": 0.0064116000477602055,
+            "observed_fraction": 2.936943816264795e-05
+          },
+          {
+            "bin": 8,
+            "events": 32459,
+            "mean_probability": 0.029853080261095045,
+            "observed_fraction": 0.0006161619273545088
+          },
+          {
+            "bin": 9,
+            "events": 24084,
+            "mean_probability": 0.17187238086693718,
+            "observed_fraction": 0.010172728782594254
+          }
+        ]
+      },
+      "calibrated": {
+        "brier": 0.0010091995867631057,
+        "log_loss": 0.005068660818844942,
+        "expected_calibration_error": 0.00014458220454914987,
+        "reference_quantile_boundaries": [
+          1.349608035839576e-06,
+          2.1925087206532204e-06,
+          3.289967915398238e-06,
+          5.003507709791759e-06,
+          7.032492703023477e-06,
+          1.1350334254053704e-05,
+          2.4858990246914634e-05,
+          0.0001442610378243048,
+          0.000916938737120903
+        ],
+        "bins": [
+          {
+            "bin": 0,
+            "events": 14003,
+            "mean_probability": 9.796850987413906e-07,
+            "observed_fraction": 0.0
+          },
+          {
+            "bin": 1,
+            "events": 15594,
+            "mean_probability": 1.7603491687673707e-06,
+            "observed_fraction": 0.0
+          },
+          {
+            "bin": 2,
+            "events": 18703,
+            "mean_probability": 2.718755440101959e-06,
+            "observed_fraction": 5.3467358177832434e-05
+          },
+          {
+            "bin": 3,
+            "events": 22004,
+            "mean_probability": 4.129057945558412e-06,
+            "observed_fraction": 0.0
+          },
+          {
+            "bin": 4,
+            "events": 22046,
+            "mean_probability": 5.949327410457997e-06,
+            "observed_fraction": 0.0
+          },
+          {
+            "bin": 5,
+            "events": 24391,
+            "mean_probability": 8.887969337199253e-06,
+            "observed_fraction": 0.0
+          },
+          {
+            "bin": 6,
+            "events": 26467,
+            "mean_probability": 1.6716812778829368e-05,
+            "observed_fraction": 0.0
+          },
+          {
+            "bin": 7,
+            "events": 34049,
+            "mean_probability": 6.374753388327161e-05,
+            "observed_fraction": 2.936943816264795e-05
+          },
+          {
+            "bin": 8,
+            "events": 32459,
+            "mean_probability": 0.00044013051243300684,
+            "observed_fraction": 0.0006161619273545088
+          },
+          {
+            "bin": 9,
+            "events": 24084,
+            "mean_probability": 0.009132726689667931,
+            "observed_fraction": 0.010172728782594254
+          }
+        ]
+      },
+      "raw_ranking": {
+        "events": 233800,
+        "positives": 267,
+        "prevalence": 0.0011420017108639863,
+        "average_precision": 0.22334386007655568,
+        "brier": 0.005912842122924314,
+        "alert_fraction": 0.01,
+        "alerts": 2338,
+        "expected_true_alerts": 176.0,
+        "true_alerts_min": 176,
+        "true_alerts_max": 176,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.6591760299625468,
+        "precision_at_capacity": 0.07527801539777587
+      },
+      "calibrated_ranking": {
+        "events": 233800,
+        "positives": 267,
+        "prevalence": 0.0011420017108639863,
+        "average_precision": 0.22334386007655568,
+        "brier": 0.0010091995867631057,
+        "alert_fraction": 0.01,
+        "alerts": 2338,
+        "expected_true_alerts": 176.0,
+        "true_alerts_min": 176,
+        "true_alerts_max": 176,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.6591760299625468,
+        "precision_at_capacity": 0.07527801539777587
+      },
+      "alerts": {
+        "count": 2119,
+        "budget_sum": 2332,
+        "true_alerts": 169,
+        "recall": 0.6329588014981273,
+        "precision": 0.07975460122699386,
+        "fraction": 0.009063301967493585,
+        "threshold_only_fraction": 0.010662959794696322,
+        "hourly": [
+          {
+            "hour_start": "2022-09-07 12:00:00",
+            "decision_at": "2022-09-07 13:00:00",
+            "events": 19304,
+            "budget": 193,
+            "threshold_eligible": 279,
+            "alerts": 193
+          },
+          {
+            "hour_start": "2022-09-07 13:00:00",
+            "decision_at": "2022-09-07 14:00:00",
+            "events": 19192,
+            "budget": 191,
+            "threshold_eligible": 241,
+            "alerts": 191
+          },
+          {
+            "hour_start": "2022-09-07 14:00:00",
+            "decision_at": "2022-09-07 15:00:00",
+            "events": 19969,
+            "budget": 199,
+            "threshold_eligible": 263,
+            "alerts": 199
+          },
+          {
+            "hour_start": "2022-09-07 15:00:00",
+            "decision_at": "2022-09-07 16:00:00",
+            "events": 19669,
+            "budget": 196,
+            "threshold_eligible": 244,
+            "alerts": 196
+          },
+          {
+            "hour_start": "2022-09-07 16:00:00",
+            "decision_at": "2022-09-07 17:00:00",
+            "events": 19808,
+            "budget": 198,
+            "threshold_eligible": 262,
+            "alerts": 198
+          },
+          {
+            "hour_start": "2022-09-07 17:00:00",
+            "decision_at": "2022-09-07 18:00:00",
+            "events": 19671,
+            "budget": 196,
+            "threshold_eligible": 225,
+            "alerts": 196
+          },
+          {
+            "hour_start": "2022-09-07 18:00:00",
+            "decision_at": "2022-09-07 19:00:00",
+            "events": 19660,
+            "budget": 196,
+            "threshold_eligible": 229,
+            "alerts": 196
+          },
+          {
+            "hour_start": "2022-09-07 19:00:00",
+            "decision_at": "2022-09-07 20:00:00",
+            "events": 19062,
+            "budget": 190,
+            "threshold_eligible": 185,
+            "alerts": 185
+          },
+          {
+            "hour_start": "2022-09-07 20:00:00",
+            "decision_at": "2022-09-07 21:00:00",
+            "events": 19221,
+            "budget": 192,
+            "threshold_eligible": 149,
+            "alerts": 149
+          },
+          {
+            "hour_start": "2022-09-07 21:00:00",
+            "decision_at": "2022-09-07 22:00:00",
+            "events": 19567,
+            "budget": 195,
+            "threshold_eligible": 160,
+            "alerts": 160
+          },
+          {
+            "hour_start": "2022-09-07 22:00:00",
+            "decision_at": "2022-09-07 23:00:00",
+            "events": 19157,
+            "budget": 191,
+            "threshold_eligible": 136,
+            "alerts": 136
+          },
+          {
+            "hour_start": "2022-09-07 23:00:00",
+            "decision_at": "2022-09-08 00:00:00",
+            "events": 19520,
+            "budget": 195,
+            "threshold_eligible": 120,
+            "alerts": 120
+          }
+        ]
+      },
+      "feedback_event_ids_sha256": "d977f926b38e180f45008d559ed5c29de8d3f20bd600742cfa19602ee0aeb663"
+    },
+    "temporal_attention_32": {
+      "calibrator": {
+        "slope": 1.1556844093201248,
+        "intercept": -2.75556456752379,
+        "fitted_at": "2022-09-07 12:00:00",
+        "delay_hours": 24.0,
+        "model_fit_at": "2022-09-06 00:00:00",
+        "examples": 248642,
+        "positives": 242,
+        "latest_label_available_at": "2022-09-07 11:59:00"
+      },
+      "threshold": 0.022301017918209567,
+      "evaluation_first_event": "2022-09-07 12:00:00",
+      "evaluation_last_event": "2022-09-07 23:59:00",
+      "evaluation_events": 233800,
+      "evaluation_positives": 267,
+      "raw": {
+        "brier": 0.005011341834607974,
+        "log_loss": 0.021493943639686125,
+        "expected_calibration_error": 0.015725234802750853,
+        "reference_quantile_boundaries": [
+          2.0745018446177713e-05,
+          4.202301861369051e-05,
+          6.934095727046954e-05,
+          0.00010879814217332752,
+          0.00017099159595090896,
+          0.00028121926006861056,
+          0.0005566034873481844,
+          0.0024135563522577294,
+          0.025793071649968614
+        ],
+        "bins": [
+          {
+            "bin": 0,
+            "events": 19141,
+            "mean_probability": 1.050969308661232e-05,
+            "observed_fraction": 0.0
+          },
+          {
+            "bin": 1,
+            "events": 20267,
+            "mean_probability": 3.111869898838493e-05,
+            "observed_fraction": 0.0
+          },
+          {
+            "bin": 2,
+            "events": 20941,
+            "mean_probability": 5.497950364454983e-05,
+            "observed_fraction": 0.0
+          },
+          {
+            "bin": 3,
+            "events": 22095,
+            "mean_probability": 8.797910692097868e-05,
+            "observed_fraction": 0.0
+          },
+          {
+            "bin": 4,
+            "events": 22938,
+            "mean_probability": 0.00013757023041043677,
+            "observed_fraction": 0.0
+          },
+          {
+            "bin": 5,
+            "events": 23074,
+            "mean_probability": 0.0002201827176086146,
+            "observed_fraction": 0.0
+          },
+          {
+            "bin": 6,
+            "events": 24280,
+            "mean_probability": 0.0003954400013987653,
+            "observed_fraction": 4.118616144975288e-05
+          },
+          {
+            "bin": 7,
+            "events": 27579,
+            "mean_probability": 0.0011160659653145213,
+            "observed_fraction": 3.6259472787265676e-05
+          },
+          {
+            "bin": 8,
+            "events": 23641,
+            "mean_probability": 0.01089574855710413,
+            "observed_fraction": 0.0007190897170170467
+          },
+          {
+            "bin": 9,
+            "events": 29844,
+            "mean_probability": 0.12174738922131803,
+            "observed_fraction": 0.00830987803243533
+          }
+        ]
+      },
+      "calibrated": {
+        "brier": 0.0010895659593080777,
+        "log_loss": 0.0056916230026299525,
+        "expected_calibration_error": 0.0003691560614883126,
+        "reference_quantile_boundaries": [
+          2.461014313188195e-07,
+          5.564508456909667e-07,
+          9.92669500090782e-07,
+          1.6707544761833792e-06,
+          2.817512080308507e-06,
+          5.0075955397578185e-06,
+          1.1026211755745572e-05,
+          6.0205785260710085e-05,
+          0.0009553728055243706
+        ],
+        "bins": [
+          {
+            "bin": 0,
+            "events": 19141,
+            "mean_probability": 1.1610648625643803e-07,
+            "observed_fraction": 0.0
+          },
+          {
+            "bin": 1,
+            "events": 20267,
+            "mean_probability": 3.945976627770945e-07,
+            "observed_fraction": 0.0
+          },
+          {
+            "bin": 2,
+            "events": 20941,
+            "mean_probability": 7.605275524353952e-07,
+            "observed_fraction": 0.0
+          },
+          {
+            "bin": 3,
+            "events": 22095,
+            "mean_probability": 1.3090387198318476e-06,
+            "observed_fraction": 0.0
+          },
+          {
+            "bin": 4,
+            "events": 22938,
+            "mean_probability": 2.194603434695243e-06,
+            "observed_fraction": 0.0
+          },
+          {
+            "bin": 5,
+            "events": 23074,
+            "mean_probability": 3.7809561729617404e-06,
+            "observed_fraction": 0.0
+          },
+          {
+            "bin": 6,
+            "events": 24280,
+            "mean_probability": 7.4523514824642714e-06,
+            "observed_fraction": 4.118616144975288e-05
+          },
+          {
+            "bin": 7,
+            "events": 27579,
+            "mean_probability": 2.505940261076306e-05,
+            "observed_fraction": 3.6259472787265676e-05
+          },
+          {
+            "bin": 8,
+            "events": 23641,
+            "mean_probability": 0.00036282099493715835,
+            "observed_fraction": 0.0007190897170170467
+          },
+          {
+            "bin": 9,
+            "events": 29844,
+            "mean_probability": 0.010875403563747426,
+            "observed_fraction": 0.00830987803243533
+          }
+        ]
+      },
+      "raw_ranking": {
+        "events": 233800,
+        "positives": 267,
+        "prevalence": 0.0011420017108639863,
+        "average_precision": 0.10472069854190522,
+        "brier": 0.0050113418339522,
+        "alert_fraction": 0.01,
+        "alerts": 2338,
+        "expected_true_alerts": 145.0,
+        "true_alerts_min": 145,
+        "true_alerts_max": 145,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.5430711610486891,
+        "precision_at_capacity": 0.062018819503849444
+      },
+      "calibrated_ranking": {
+        "events": 233800,
+        "positives": 267,
+        "prevalence": 0.0011420017108639863,
+        "average_precision": 0.10472069854190522,
+        "brier": 0.0010895659593080777,
+        "alert_fraction": 0.01,
+        "alerts": 2338,
+        "expected_true_alerts": 145.0,
+        "true_alerts_min": 145,
+        "true_alerts_max": 145,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.5430711610486891,
+        "precision_at_capacity": 0.062018819503849444
+      },
+      "alerts": {
+        "count": 2332,
+        "budget_sum": 2332,
+        "true_alerts": 143,
+        "recall": 0.5355805243445693,
+        "precision": 0.06132075471698113,
+        "fraction": 0.009974337040205304,
+        "threshold_only_fraction": 0.015470487596236098,
+        "hourly": [
+          {
+            "hour_start": "2022-09-07 12:00:00",
+            "decision_at": "2022-09-07 13:00:00",
+            "events": 19304,
+            "budget": 193,
+            "threshold_eligible": 342,
+            "alerts": 193
+          },
+          {
+            "hour_start": "2022-09-07 13:00:00",
+            "decision_at": "2022-09-07 14:00:00",
+            "events": 19192,
+            "budget": 191,
+            "threshold_eligible": 374,
+            "alerts": 191
+          },
+          {
+            "hour_start": "2022-09-07 14:00:00",
+            "decision_at": "2022-09-07 15:00:00",
+            "events": 19969,
+            "budget": 199,
+            "threshold_eligible": 389,
+            "alerts": 199
+          },
+          {
+            "hour_start": "2022-09-07 15:00:00",
+            "decision_at": "2022-09-07 16:00:00",
+            "events": 19669,
+            "budget": 196,
+            "threshold_eligible": 326,
+            "alerts": 196
+          },
+          {
+            "hour_start": "2022-09-07 16:00:00",
+            "decision_at": "2022-09-07 17:00:00",
+            "events": 19808,
+            "budget": 198,
+            "threshold_eligible": 338,
+            "alerts": 198
+          },
+          {
+            "hour_start": "2022-09-07 17:00:00",
+            "decision_at": "2022-09-07 18:00:00",
+            "events": 19671,
+            "budget": 196,
+            "threshold_eligible": 304,
+            "alerts": 196
+          },
+          {
+            "hour_start": "2022-09-07 18:00:00",
+            "decision_at": "2022-09-07 19:00:00",
+            "events": 19660,
+            "budget": 196,
+            "threshold_eligible": 349,
+            "alerts": 196
+          },
+          {
+            "hour_start": "2022-09-07 19:00:00",
+            "decision_at": "2022-09-07 20:00:00",
+            "events": 19062,
+            "budget": 190,
+            "threshold_eligible": 232,
+            "alerts": 190
+          },
+          {
+            "hour_start": "2022-09-07 20:00:00",
+            "decision_at": "2022-09-07 21:00:00",
+            "events": 19221,
+            "budget": 192,
+            "threshold_eligible": 279,
+            "alerts": 192
+          },
+          {
+            "hour_start": "2022-09-07 21:00:00",
+            "decision_at": "2022-09-07 22:00:00",
+            "events": 19567,
+            "budget": 195,
+            "threshold_eligible": 270,
+            "alerts": 195
+          },
+          {
+            "hour_start": "2022-09-07 22:00:00",
+            "decision_at": "2022-09-07 23:00:00",
+            "events": 19157,
+            "budget": 191,
+            "threshold_eligible": 199,
+            "alerts": 191
+          },
+          {
+            "hour_start": "2022-09-07 23:00:00",
+            "decision_at": "2022-09-08 00:00:00",
+            "events": 19520,
+            "budget": 195,
+            "threshold_eligible": 215,
+            "alerts": 195
+          }
+        ]
+      },
+      "feedback_event_ids_sha256": "d977f926b38e180f45008d559ed5c29de8d3f20bd600742cfa19602ee0aeb663"
+    }
+  },
+  "ablations": {
+    "no_neighbors": {
+      "metrics": {
+        "validation": {
+          "events": 964840,
+          "positives": 1028,
+          "prevalence": 0.0010654616309439908,
+          "average_precision": 0.04982858915664351,
+          "brier": 0.0055077983030050095,
+          "alert_fraction": 0.01,
+          "alerts": 9648,
+          "expected_true_alerts": 403.0,
+          "true_alerts_min": 403,
+          "true_alerts_max": 403,
+          "boundary_tied_events": 1,
+          "boundary_slots": 1,
+          "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+          "recall_at_capacity": 0.39202334630350194,
+          "precision_at_capacity": 0.04177031509121061
+        },
+        "cold": {
+          "events": 208312,
+          "positives": 207,
+          "prevalence": 0.0009937017550597181,
+          "average_precision": 0.016125433253800402,
+          "brier": 0.004380637569846706,
+          "alert_fraction": 0.01,
+          "alerts": 2083,
+          "expected_true_alerts": 46.0,
+          "true_alerts_min": 46,
+          "true_alerts_max": 46,
+          "boundary_tied_events": 1,
+          "boundary_slots": 1,
+          "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+          "recall_at_capacity": 0.2222222222222222,
+          "precision_at_capacity": 0.022083533365338453
+        },
+        "warm": {
+          "events": 756528,
+          "positives": 821,
+          "prevalence": 0.001085220903918956,
+          "average_precision": 0.05875361130226485,
+          "brier": 0.005818165013352375,
+          "alert_fraction": 0.01,
+          "alerts": 7565,
+          "expected_true_alerts": 355.0,
+          "true_alerts_min": 355,
+          "true_alerts_max": 355,
+          "boundary_tied_events": 1,
+          "boundary_slots": 1,
+          "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+          "recall_at_capacity": 0.43239951278928135,
+          "precision_at_capacity": 0.046926635822868476
+        }
+      },
+      "seconds": 4.398731599999792,
+      "retrained": false,
+      "interpretation": "Fixed-checkpoint inference intervention; distribution mismatch, not a retrained causal effect."
+    },
+    "no_edge_time": {
+      "metrics": {
+        "validation": {
+          "events": 964840,
+          "positives": 1028,
+          "prevalence": 0.0010654616309439908,
+          "average_precision": 0.10523321786252383,
+          "brier": 0.004878387344096064,
+          "alert_fraction": 0.01,
+          "alerts": 9648,
+          "expected_true_alerts": 586.0,
+          "true_alerts_min": 586,
+          "true_alerts_max": 586,
+          "boundary_tied_events": 1,
+          "boundary_slots": 1,
+          "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+          "recall_at_capacity": 0.5700389105058365,
+          "precision_at_capacity": 0.0607379767827529
+        },
+        "cold": {
+          "events": 208312,
+          "positives": 207,
+          "prevalence": 0.0009937017550597181,
+          "average_precision": 0.02950803776178909,
+          "brier": 0.0037487488751308485,
+          "alert_fraction": 0.01,
+          "alerts": 2083,
+          "expected_true_alerts": 68.0,
+          "true_alerts_min": 68,
+          "true_alerts_max": 68,
+          "boundary_tied_events": 1,
+          "boundary_slots": 1,
+          "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+          "recall_at_capacity": 0.3285024154589372,
+          "precision_at_capacity": 0.03264522323571772
+        },
+        "warm": {
+          "events": 756528,
+          "positives": 821,
+          "prevalence": 0.001085220903918956,
+          "average_precision": 0.1249857801778591,
+          "brier": 0.005189436305597929,
+          "alert_fraction": 0.01,
+          "alerts": 7565,
+          "expected_true_alerts": 508.0,
+          "true_alerts_min": 508,
+          "true_alerts_max": 508,
+          "boundary_tied_events": 1,
+          "boundary_slots": 1,
+          "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+          "recall_at_capacity": 0.6187576126674786,
+          "precision_at_capacity": 0.06715135492399207
+        }
+      },
+      "seconds": 4.574467999999797,
+      "retrained": false,
+      "interpretation": "Fixed-checkpoint inference intervention; distribution mismatch, not a retrained causal effect."
+    }
+  },
+  "drift": {
+    "reference_day": "2022-09-06",
+    "observed_day": "2022-09-07",
+    "features": {
+      "standardized_log_paid": {
+        "population_stability_index": 2.3375557040729457e-06,
+        "reference_quantile_boundaries": [
+          -1.0515260696411133,
+          -0.7248498320579527,
+          -0.514686644077301,
+          -0.30490491986274715,
+          -0.10045704990625381,
+          0.09613109529018407,
+          0.3145751595497132,
+          0.6071398496627811,
+          1.096726202964783
+        ],
+        "reference_counts": [
+          48207,
+          48211,
+          48208,
+          48210,
+          48206,
+          48211,
+          48209,
+          48209,
+          48209,
+          48209
+        ],
+        "observed_counts": [
+          48351,
+          48292,
+          48250,
+          48322,
+          48336,
+          48360,
+          48321,
+          48178,
+          48194,
+          48147
+        ],
+        "reference_events": 482089,
+        "observed_events": 482751,
+        "constant_reference_bins": null,
+        "interpretation": "descriptive binned shift, not a significance test or universal alarm threshold"
+      },
+      "standardized_source_out_count": {
+        "population_stability_index": 0.08814909643540844,
+        "reference_quantile_boundaries": [
+          -0.21287915110588074,
+          0.22408688068389893,
+          0.42223361134529114,
+          0.5975860357284546,
+          0.7296691536903381,
+          0.8545743227005005,
+          1.0002189874649048,
+          1.16923189163208,
+          2.610184669494629
+        ],
+        "reference_counts": [
+          41282,
+          41830,
+          46516,
+          58042,
+          47789,
+          47352,
+          52905,
+          48676,
+          49487,
+          48210
+        ],
+        "observed_counts": [
+          14497,
+          39192,
+          41788,
+          55951,
+          45204,
+          46553,
+          55174,
+          58205,
+          76461,
+          49726
+        ],
+        "reference_events": 482089,
+        "observed_events": 482751,
+        "constant_reference_bins": null,
+        "interpretation": "descriptive binned shift, not a significance test or universal alarm threshold"
+      },
+      "standardized_source_age": {
+        "population_stability_index": 0.05306101453522482,
+        "reference_quantile_boundaries": [
+          -0.7472507953643799,
+          -0.6035112142562866,
+          -0.35778674483299255,
+          -0.17669625580310822,
+          -0.010077415965497494,
+          0.3866962492465973,
+          1.0337423086166382,
+          1.3374303579330444,
+          1.580919623374939
+        ],
+        "reference_counts": [
+          14087,
+          63143,
+          57987,
+          52437,
+          52350,
+          49241,
+          48076,
+          48315,
+          48229,
+          48224
+        ],
+        "observed_counts": [
+          1888,
+          63344,
+          57443,
+          53062,
+          52454,
+          49308,
+          49734,
+          51821,
+          54388,
+          49309
+        ],
+        "reference_events": 482089,
+        "observed_events": 482751,
+        "constant_reference_bins": null,
+        "interpretation": "descriptive binned shift, not a significance test or universal alarm threshold"
+      }
+    },
+    "models": {
+      "history_xgboost": {
+        "score_shift": {
+          "population_stability_index": 0.01213731610719175,
+          "reference_quantile_boundaries": [
+            0.0003074929118156433,
+            0.00046641692752018575,
+            0.0006579435314051808,
+            0.0009021777426823975,
+            0.0012053226819261909,
+            0.0018463478423655039,
+            0.003746324870735409,
+            0.014843588508665576,
+            0.05670294687151914
+          ],
+          "reference_counts": [
+            48208,
+            48210,
+            48209,
+            48209,
+            48208,
+            48209,
+            48209,
+            48209,
+            48209,
+            48209
+          ],
+          "observed_counts": [
+            43707,
+            43293,
+            42368,
+            45619,
+            47577,
+            47947,
+            49123,
+            58465,
+            58284,
+            46368
+          ],
+          "reference_events": 482089,
+          "observed_events": 482751,
+          "constant_reference_bins": null,
+          "interpretation": "descriptive binned shift, not a significance test or universal alarm threshold"
+        },
+        "days": {
+          "2022-09-06": {
+            "validation": {
+              "events": 482089,
+              "positives": 531,
+              "prevalence": 0.0011014563700893403,
+              "average_precision": 0.15457903995895986,
+              "brier": 0.006079696609973948,
+              "alert_fraction": 0.01,
+              "alerts": 4820,
+              "expected_true_alerts": 328.0,
+              "true_alerts_min": 328,
+              "true_alerts_max": 328,
+              "boundary_tied_events": 1,
+              "boundary_slots": 1,
+              "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+              "recall_at_capacity": 0.6177024482109228,
+              "precision_at_capacity": 0.06804979253112033
+            },
+            "cold": {
+              "events": 104264,
+              "positives": 112,
+              "prevalence": 0.0010741962710043736,
+              "average_precision": 0.025544474362556132,
+              "brier": 0.007503555709498508,
+              "alert_fraction": 0.01,
+              "alerts": 1042,
+              "expected_true_alerts": 41.0,
+              "true_alerts_min": 41,
+              "true_alerts_max": 41,
+              "boundary_tied_events": 1,
+              "boundary_slots": 1,
+              "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+              "recall_at_capacity": 0.36607142857142855,
+              "precision_at_capacity": 0.03934740882917467
+            },
+            "warm": {
+              "events": 377825,
+              "positives": 419,
+              "prevalence": 0.0011089790246807385,
+              "average_precision": 0.21034326841703388,
+              "brier": 0.005686770665018403,
+              "alert_fraction": 0.01,
+              "alerts": 3778,
+              "expected_true_alerts": 290.0,
+              "true_alerts_min": 290,
+              "true_alerts_max": 290,
+              "boundary_tied_events": 1,
+              "boundary_slots": 1,
+              "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+              "recall_at_capacity": 0.6921241050119332,
+              "precision_at_capacity": 0.07676019057702488
+            }
+          },
+          "2022-09-07": {
+            "validation": {
+              "events": 482751,
+              "positives": 497,
+              "prevalence": 0.001029516251649401,
+              "average_precision": 0.19587514589204932,
+              "brier": 0.005636454979596072,
+              "alert_fraction": 0.01,
+              "alerts": 4827,
+              "expected_true_alerts": 321.0,
+              "true_alerts_min": 321,
+              "true_alerts_max": 321,
+              "boundary_tied_events": 1,
+              "boundary_slots": 1,
+              "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+              "recall_at_capacity": 0.6458752515090543,
+              "precision_at_capacity": 0.06650093225605966
+            },
+            "cold": {
+              "events": 104048,
+              "positives": 95,
+              "prevalence": 0.000913040135322159,
+              "average_precision": 0.11100766984084214,
+              "brier": 0.004628898343465725,
+              "alert_fraction": 0.01,
+              "alerts": 1040,
+              "expected_true_alerts": 46.0,
+              "true_alerts_min": 46,
+              "true_alerts_max": 46,
+              "boundary_tied_events": 1,
+              "boundary_slots": 1,
+              "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+              "recall_at_capacity": 0.4842105263157895,
+              "precision_at_capacity": 0.04423076923076923
+            },
+            "warm": {
+              "events": 378703,
+              "positives": 402,
+              "prevalence": 0.001061517864923172,
+              "average_precision": 0.21751318798631764,
+              "brier": 0.005913279438013593,
+              "alert_fraction": 0.01,
+              "alerts": 3787,
+              "expected_true_alerts": 275.0,
+              "true_alerts_min": 275,
+              "true_alerts_max": 275,
+              "boundary_tied_events": 1,
+              "boundary_slots": 1,
+              "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+              "recall_at_capacity": 0.6840796019900498,
+              "precision_at_capacity": 0.07261684710852918
+            }
+          }
+        }
+      },
+      "temporal_attention_32": {
+        "score_shift": {
+          "population_stability_index": 0.002427484921874313,
+          "reference_quantile_boundaries": [
+            2.176808557123877e-05,
+            4.4042662921128795e-05,
+            7.3148739465978e-05,
+            0.00011570525675779213,
+            0.00018432528304401785,
+            0.0003122954047285022,
+            0.0006518137175589801,
+            0.0031850723084062356,
+            0.030293481051921874
+          ],
+          "reference_counts": [
+            48209,
+            48208,
+            48210,
+            48209,
+            48207,
+            48210,
+            48209,
+            48209,
+            48209,
+            48209
+          ],
+          "observed_counts": [
+            43686,
+            45206,
+            46887,
+            48291,
+            49449,
+            49884,
+            50287,
+            49850,
+            47447,
+            51764
+          ],
+          "reference_events": 482089,
+          "observed_events": 482751,
+          "constant_reference_bins": null,
+          "interpretation": "descriptive binned shift, not a significance test or universal alarm threshold"
+        },
+        "days": {
+          "2022-09-06": {
+            "validation": {
+              "events": 482089,
+              "positives": 531,
+              "prevalence": 0.0011014563700893403,
+              "average_precision": 0.1072710886986971,
+              "brier": 0.004057365828494798,
+              "alert_fraction": 0.01,
+              "alerts": 4820,
+              "expected_true_alerts": 303.0,
+              "true_alerts_min": 303,
+              "true_alerts_max": 303,
+              "boundary_tied_events": 1,
+              "boundary_slots": 1,
+              "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+              "recall_at_capacity": 0.5706214689265536,
+              "precision_at_capacity": 0.06286307053941909
+            },
+            "cold": {
+              "events": 104264,
+              "positives": 112,
+              "prevalence": 0.0010741962710043736,
+              "average_precision": 0.02828436822910548,
+              "brier": 0.0030212277955671578,
+              "alert_fraction": 0.01,
+              "alerts": 1042,
+              "expected_true_alerts": 33.0,
+              "true_alerts_min": 33,
+              "true_alerts_max": 33,
+              "boundary_tied_events": 1,
+              "boundary_slots": 1,
+              "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+              "recall_at_capacity": 0.29464285714285715,
+              "precision_at_capacity": 0.03166986564299424
+            },
+            "warm": {
+              "events": 377825,
+              "positives": 419,
+              "prevalence": 0.0011089790246807385,
+              "average_precision": 0.12778327119039254,
+              "brier": 0.004343296870287077,
+              "alert_fraction": 0.01,
+              "alerts": 3778,
+              "expected_true_alerts": 267.0,
+              "true_alerts_min": 267,
+              "true_alerts_max": 267,
+              "boundary_tied_events": 1,
+              "boundary_slots": 1,
+              "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+              "recall_at_capacity": 0.6372315035799523,
+              "precision_at_capacity": 0.0706723133933298
+            }
+          },
+          "2022-09-07": {
+            "validation": {
+              "events": 482751,
+              "positives": 497,
+              "prevalence": 0.001029516251649401,
+              "average_precision": 0.10278604689926393,
+              "brier": 0.004292004124777445,
+              "alert_fraction": 0.01,
+              "alerts": 4827,
+              "expected_true_alerts": 285.0,
+              "true_alerts_min": 285,
+              "true_alerts_max": 285,
+              "boundary_tied_events": 1,
+              "boundary_slots": 1,
+              "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+              "recall_at_capacity": 0.5734406438631791,
+              "precision_at_capacity": 0.05904288377874456
+            },
+            "cold": {
+              "events": 104048,
+              "positives": 95,
+              "prevalence": 0.000913040135322159,
+              "average_precision": 0.03371501285068212,
+              "brier": 0.003555170049173962,
+              "alert_fraction": 0.01,
+              "alerts": 1040,
+              "expected_true_alerts": 33.0,
+              "true_alerts_min": 33,
+              "true_alerts_max": 33,
+              "boundary_tied_events": 1,
+              "boundary_slots": 1,
+              "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+              "recall_at_capacity": 0.3473684210526316,
+              "precision_at_capacity": 0.03173076923076923
+            },
+            "warm": {
+              "events": 378703,
+              "positives": 402,
+              "prevalence": 0.001061517864923172,
+              "average_precision": 0.12064963626984226,
+              "brier": 0.004494448023818095,
+              "alert_fraction": 0.01,
+              "alerts": 3787,
+              "expected_true_alerts": 248.0,
+              "true_alerts_min": 248,
+              "true_alerts_max": 248,
+              "boundary_tied_events": 1,
+              "boundary_slots": 1,
+              "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+              "recall_at_capacity": 0.6169154228855721,
+              "precision_at_capacity": 0.06548719302878268
+            }
+          }
+        }
+      }
+    },
+    "caveat": "Two development days only; observed distribution changes are not a diagnosis of production drift."
+  },
+  "started_at_utc": "2026-10-26T23:29:07.282439+00:00",
+  "runtime": {
+    "seconds_this_invocation": 263.2940864999996,
+    "device": "cuda",
+    "peak_process_memory_bytes": 5273214976,
+    "peak_gpu_allocated_bytes": 892139520
+  },
+  "completed": true,
+  "completed_at_utc": "2026-10-26T23:33:30.064909+00:00",
+  "artifact_sha256": {
+    "delay-0/graph/features.npy": "cae145d367363f25ca1ce992fa5ce2ba1f650822dfbf983b3ce4c43ecdeda4ac",
+    "delay-0/graph/inputs.json": "42d6ec686984c3d8acbbc093ae613196db05a3d44d4a68909ad5df1edacc5969",
+    "delay-0/graph/membership.parquet": "293c8f99402afc4911808ecc6aefe29c00a3dc8f1d8901a53a4467f474243a42",
+    "delay-0/graph/neighborhood.joblib": "5753c6e0d4f6d11f7c71fce5b8758f8f923c0ff80e1030ff5950f11cb0203456",
+    "delay-0/graph/neighbors-32-epoch-1.pt": "9eb3f66574d4240a6644347afdce3280999bad76e9305c5e19fefcb8abfe0e10",
+    "delay-0/graph/neighbors-32-epoch-2.pt": "1241ba641c1fba9bd51237ea58cc417ad6b6839d101350434ef2bc4e3f990763",
+    "delay-0/graph/neighbors-32-epoch-3.pt": "43b5a92775aba7f5c64f24a177af143a3469c35bb414cac8fa6b7c9be74eb2a0",
+    "delay-0/graph/neighbors-32-latest.pt": "43b5a92775aba7f5c64f24a177af143a3469c35bb414cac8fa6b7c9be74eb2a0",
+    "delay-0/graph/preprocessing.joblib": "8e369d30407e1060a673587beaa854a5f370397b5915a4ab78542ca188ae981a",
+    "delay-0/graph/report.json": "d405ca292047148a8b355cfef6ea487af0e31d33e0c55d24fededaa25b3751b4",
+    "delay-0/graph/temporal_attention_32-validation.parquet": "8aefa4d6a58883b3bfc4cc1b5d75d4c1127fa2841aef2d6aa0df356c64648065",
+    "delay-0/trees/history_xgboost-validation.parquet": "17d9a82d0660b9b45e12426ab90036085fdd628a608890886058f89c73df2f03",
+    "delay-0/trees/history_xgboost.joblib": "d6cb4419b5a51700a132e4a5f715866799fb906ddfa7ff27ba44f5d79d55a241",
+    "delay-0/trees/history_xgboost.ubj": "2dba8f665cc86854dd2748f8ad1769c522d071625710dc38f2a39a468ca84caf",
+    "delay-0/trees/membership.parquet": "0d50a225414ace49720bda8dfd84d4389b7423dbde42aa4223fb23982a3e1e9b",
+    "delay-0/trees/report.json": "85992d56fafce75c52c2c054204d05ad642fa98a635e04afd16f303c3218549d",
+    "delay-0/trees/transaction_xgboost-validation.parquet": "b880c3d681e74e0012eb7b0abdb1583467c955129e92a8909a5ab62d311a1cf9",
+    "delay-0/trees/transaction_xgboost.joblib": "f8f859a2dddd9bea537a5140c592902c17cc6d0cfe54c927f03cb0df8ac19903",
+    "delay-0/trees/transaction_xgboost.ubj": "70dd09e83177733e8734af76445f7e16a6c2178abd07f5cb04497f40d1a6ec80",
+    "delay-48/graph/features.npy": "70878925fc87f0855793598be2405c8ed39cd92ff0ebf01cb4875ab6ac5a682a",
+    "delay-48/graph/inputs.json": "1c6949e6409b9668ba77f5fd889246a5ec725ac6c96f7f967ebb907c56ac251d",
+    "delay-48/graph/membership.parquet": "b69235a799013fc3a22ab5ff7e6b08650d4b4b9e1f6a63797f94ca5d98ce292c",
+    "delay-48/graph/neighborhood.joblib": "5753c6e0d4f6d11f7c71fce5b8758f8f923c0ff80e1030ff5950f11cb0203456",
+    "delay-48/graph/neighbors-32-epoch-1.pt": "d137ca441b0f5637f5fbff0b4973b4755dde33acc2aac71b79de58c1867de6b3",
+    "delay-48/graph/neighbors-32-epoch-2.pt": "8101c03d87818c16d26594ab051162010a6f435fd44a65a3c99eba99641a77ab",
+    "delay-48/graph/neighbors-32-epoch-3.pt": "71a178e4986393e7c741a99a1987c6e6286b1cdb6b993202660179b987e4ab94",
+    "delay-48/graph/neighbors-32-latest.pt": "71a178e4986393e7c741a99a1987c6e6286b1cdb6b993202660179b987e4ab94",
+    "delay-48/graph/preprocessing.joblib": "a8e2b2d31863f95c044694718e058970b1942cf792fdb25762c6b4a455352557",
+    "delay-48/graph/report.json": "2dd7ce8f894e02aeec99e8e5ae61da2d272955d884c9ac4bd000949ba7b460c2",
+    "delay-48/graph/temporal_attention_32-validation.parquet": "23cbcf0ba2b513afb5db0a7c58e5a42453a8290ac0d8ee551c2c8ee9883cbed2",
+    "delay-48/trees/history_xgboost-validation.parquet": "a36cb8b6ac180824e8af5fe76d7abe04291d49241206cbf45e910b1dcd2b3a46",
+    "delay-48/trees/history_xgboost.joblib": "d6cb4419b5a51700a132e4a5f715866799fb906ddfa7ff27ba44f5d79d55a241",
+    "delay-48/trees/history_xgboost.ubj": "7771c0702c82b523a85b108719b1bfb0875f7e526ab771793c634cdbc86dc273",
+    "delay-48/trees/membership.parquet": "d056b97b0e967ff2d2b4933804f8e9e2361ba6b77aed366243982e241f28a633",
+    "delay-48/trees/report.json": "cec6f96a077f0f345f03bf76d3df2ffedf906dc4ca57745bbff21f465301afed",
+    "delay-48/trees/transaction_xgboost-validation.parquet": "4fa073dae36b9393f6152a9ced585e533eb5ed4396189e5caf935f830249ed05",
+    "delay-48/trees/transaction_xgboost.joblib": "f8f859a2dddd9bea537a5140c592902c17cc6d0cfe54c927f03cb0df8ac19903",
+    "delay-48/trees/transaction_xgboost.ubj": "2d1625e0666d516dfe4d8be913eee67d20532e9ef07a962c038f0bbf90021486",
+    "history_xgboost-calibrated-policy.parquet": "1f859bced99e9d4f3e5cd33f2bd56a7e3b62ff49cb142c98de80be0b4436723f",
+    "history_xgboost-calibrator.json": "f3f36d5153810064d77779b093e5b02dcaca64503bd4bf13fb8daf5585a828b9",
+    "no_edge_time-validation.parquet": "ac397f8cfe9a3f525f73499dd4de54f99c7a3cd91e5cbf957e3e927620cf5224",
+    "no_neighbors-validation.parquet": "cf9bc617573ce3112b7300509e2e1c581d4f75b04812e7b1335fded203e7d978",
+    "temporal_attention_32-calibrated-policy.parquet": "d18b36f3343e9054b11d113489bf5fd8c9b59d83e968a75aa57db695c3898e8f",
+    "temporal_attention_32-calibrator.json": "d745f2be98fb4420bf8cda34406fb5541c575c69f1e5e58c7d331a8e73e03427"
+  }
+}

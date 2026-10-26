@@ -1,0 +1,27 @@
+{
+  "seed": 42,
+  "delay_hours": [
+    0,
+    24,
+    48
+  ],
+  "calibration_at": "2022-09-07T12:00:00",
+  "calibration_delay_hours": 24,
+  "evaluation_end": "2022-09-08T00:00:00",
+  "alert_fraction": 0.01,
+  "alert_period": "closed UTC-unspecified simulator hour; decisions at period end",
+  "calibration_models": [
+    "history_xgboost",
+    "temporal_attention_32"
+  ],
+  "calibrator": "monotone sigmoid fitted to matured out-of-training predictions; unweighted log loss",
+  "calibration_min_positives": 20,
+  "graph_interventions": [
+    "no_neighbors",
+    "no_edge_time"
+  ],
+  "reference_drift_day": "2022-09-06",
+  "drift_day": "2022-09-07",
+  "status": "development analysis; final holdout unscored",
+  "selection": "fixed scenario list and budgets; no hyperparameter search or change to frozen earlier models"
+}

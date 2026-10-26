@@ -69,3 +69,18 @@ for name, model in graph['models'].items():
 for name, model in corrected['models'].items():
     assert comparison['models'][name]['validation'] == model['validation']
 print('Graph comparison, baseline preservation and independent audit are consistent.')
+
+risk = load('results/robustness-v1/report.json')
+risk_audit = load('results/robustness-v1/audit.json')
+assert risk['completed'] and risk['test_scored'] is False and risk_audit['test_scored'] is False
+assert risk_audit['passed'] and risk_audit['frozen_artifacts_unchanged'] == 27
+assert hashlib.sha256(read('results/robustness-v1/report.json')).hexdigest() == risk_audit['study_sha256']
+assert risk['delays']['0']['training_events'] > risk['delays']['24']['training_events'] > risk['delays']['48']['training_events']
+for name, calibration in risk['calibration'].items():
+    fit = calibration['calibrator']
+    assert fit['latest_label_available_at'] < fit['fitted_at'] <= calibration['evaluation_first_event']
+    assert calibration['evaluation_last_event'] < risk['protocol']['evaluation_end'].replace('T', ' ')
+    assert calibration['alerts']['count'] <= calibration['alerts']['budget_sum']
+    assert all(hour['alerts'] <= hour['budget'] for hour in calibration['alerts']['hourly'])
+assert risk['frozen_artifact_sha256'] == {**{'baseline/' + n: h for n, h in report['artifact_sha256'].items()}, **{'graph/' + n: h for n, h in graph['artifact_sha256'].items()}}
+print('Delayed-label, calibration, hourly capacity and frozen-artifact evidence are consistent.')
