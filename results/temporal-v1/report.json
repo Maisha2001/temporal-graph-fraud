@@ -1,0 +1,344 @@
+{
+  "stage": "development_validation",
+  "test_scored": false,
+  "config": {
+    "seed": 42,
+    "epochs": 3,
+    "batch_size": 4096,
+    "hidden": 32,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "neighbors": [
+      0,
+      8,
+      32
+    ],
+    "threads": 4,
+    "checkpoint_selection": "fixed final epoch; development labels do not select epochs or hyperparameters",
+    "sampling": "latest incident interactions strictly before query minute; observable-content hash orders minute ties; self-loop stored once",
+    "positive_weight": "sqrt(training negatives / positives)",
+    "architecture": "one-hop temporal attention over both endpoints; no account ID embeddings; no recurrent memory"
+  },
+  "data_config": {
+    "source": "https://www.kaggle.com/api/v1/datasets/download/ealtman2019/ibm-transactions-for-anti-money-laundering-aml/HI-Small_Trans.csv",
+    "filename": "HI-Small_Trans.csv",
+    "sha256": "b19d39f515523373f991b689c07e11e7b0b95c17a2c27a87d91584ae16c5b040",
+    "bytes": 475664283,
+    "license": "CDLA-Sharing-1.0",
+    "fit_at": "2022-09-06T00:00:00",
+    "test_start": "2022-09-08T00:00:00",
+    "label_delay_hours": 24,
+    "entity_holdout_modulus": 10,
+    "entity_holdout_bucket": 0,
+    "seed": 42,
+    "alert_fraction": 0.01,
+    "trees": 150,
+    "max_depth": 4,
+    "learning_rate": 0.08,
+    "threads": 4,
+    "evaluation": "development validation only; September8 onward remains unscored"
+  },
+  "input_manifest_sha256": "f1685dd859fc2b856466eb682c247b8a237b78e20d6dedfcf30bb73763697334",
+  "data_counts": {
+    "raw_rows": 5078345,
+    "reserved_test_rows": 1346673,
+    "development_rows": 3731672
+  },
+  "train_events": 1851794,
+  "train_positives": 1187,
+  "validation_events": 964840,
+  "models": {
+    "history_mlp": {
+      "validation": {
+        "events": 964840,
+        "positives": 1028,
+        "prevalence": 0.0010654616309439908,
+        "average_precision": 0.07100731893936586,
+        "brier": 0.005135169588988432,
+        "alert_fraction": 0.01,
+        "alerts": 9648,
+        "expected_true_alerts": 453.0,
+        "true_alerts_min": 453,
+        "true_alerts_max": 453,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.4406614785992218,
+        "precision_at_capacity": 0.04695273631840796
+      },
+      "cold": {
+        "events": 208312,
+        "positives": 207,
+        "prevalence": 0.0009937017550597181,
+        "average_precision": 0.020757417805422066,
+        "brier": 0.004389766190082226,
+        "alert_fraction": 0.01,
+        "alerts": 2083,
+        "expected_true_alerts": 55.0,
+        "true_alerts_min": 55,
+        "true_alerts_max": 55,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.26570048309178745,
+        "precision_at_capacity": 0.026404224675948152
+      },
+      "warm": {
+        "events": 756528,
+        "positives": 821,
+        "prevalence": 0.001085220903918956,
+        "average_precision": 0.08573121021192374,
+        "brier": 0.00534041840044412,
+        "alert_fraction": 0.01,
+        "alerts": 7565,
+        "expected_true_alerts": 397.0,
+        "true_alerts_min": 397,
+        "true_alerts_max": 397,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.4835566382460414,
+        "precision_at_capacity": 0.05247851949768671
+      },
+      "training": {
+        "losses": [
+          {
+            "epoch": 1,
+            "weighted_bce": 0.1422588280801254,
+            "seconds": 1.0670612999999776
+          },
+          {
+            "epoch": 2,
+            "weighted_bce": 0.0598939524706857,
+            "seconds": 0.921854000000053
+          },
+          {
+            "epoch": 3,
+            "weighted_bce": 0.05590634350546096,
+            "seconds": 0.8792214999999715
+          }
+        ],
+        "updates": 1359,
+        "fit_seconds_this_invocation": 2.9931613999999627,
+        "positive_weight": 39.48496349293935,
+        "parameters": 2625,
+        "checkpoint_sha256": "1a3247d300b24fd47b9befedd2775e8020886d0810282e79a191bc1ebab6a6fb"
+      },
+      "score_seconds": 0.10447690000000875,
+      "reload_max_absolute_difference": 0.0,
+      "reload_events": 512,
+      "artifacts": {
+        "history_mlp-validation.parquet": "b4c153441b3f3ee2722fc1678cdb2d1edac59ca9228e1ee010e394134d9a1753",
+        "neighbors-0-latest.pt": "1a3247d300b24fd47b9befedd2775e8020886d0810282e79a191bc1ebab6a6fb"
+      }
+    },
+    "temporal_attention_8": {
+      "validation": {
+        "events": 964840,
+        "positives": 1028,
+        "prevalence": 0.0010654616309439908,
+        "average_precision": 0.06977610567423012,
+        "brier": 0.0033941831783370403,
+        "alert_fraction": 0.01,
+        "alerts": 9648,
+        "expected_true_alerts": 559.0,
+        "true_alerts_min": 559,
+        "true_alerts_max": 559,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.5437743190661478,
+        "precision_at_capacity": 0.057939469320066335
+      },
+      "cold": {
+        "events": 208312,
+        "positives": 207,
+        "prevalence": 0.0009937017550597181,
+        "average_precision": 0.02602253821583983,
+        "brier": 0.0028378090994888028,
+        "alert_fraction": 0.01,
+        "alerts": 2083,
+        "expected_true_alerts": 67.0,
+        "true_alerts_min": 67,
+        "true_alerts_max": 67,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.32367149758454106,
+        "precision_at_capacity": 0.03216514642342775
+      },
+      "warm": {
+        "events": 756528,
+        "positives": 821,
+        "prevalence": 0.001085220903918956,
+        "average_precision": 0.08043058469015339,
+        "brier": 0.003547382262988281,
+        "alert_fraction": 0.01,
+        "alerts": 7565,
+        "expected_true_alerts": 494.0,
+        "true_alerts_min": 494,
+        "true_alerts_max": 494,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.6017052375152253,
+        "precision_at_capacity": 0.06530072703238599
+      },
+      "training": {
+        "losses": [
+          {
+            "epoch": 1,
+            "weighted_bce": 0.10252537417621024,
+            "seconds": 7.378862599999934
+          },
+          {
+            "epoch": 2,
+            "weighted_bce": 0.05516424626311869,
+            "seconds": 6.900905500000022
+          },
+          {
+            "epoch": 3,
+            "weighted_bce": 0.05173185932486808,
+            "seconds": 7.093053800000007
+          }
+        ],
+        "updates": 1359,
+        "fit_seconds_this_invocation": 21.51227019999999,
+        "positive_weight": 39.48496349293935,
+        "parameters": 9185,
+        "checkpoint_sha256": "b69121e6dc89b813217e5615d8d3d4b6c813dbb7d6a7dab4ca689466df402a7a"
+      },
+      "score_seconds": 2.2799698000000035,
+      "reload_max_absolute_difference": 5.960464477539063e-08,
+      "reload_events": 512,
+      "artifacts": {
+        "temporal_attention_8-validation.parquet": "8c4a5b7d0f234f279aaddfe7b62958c53d61aefed5df0a76e04c0f5299c9eca1",
+        "neighbors-8-latest.pt": "b69121e6dc89b813217e5615d8d3d4b6c813dbb7d6a7dab4ca689466df402a7a"
+      }
+    },
+    "temporal_attention_32": {
+      "validation": {
+        "events": 964840,
+        "positives": 1028,
+        "prevalence": 0.0010654616309439908,
+        "average_precision": 0.10365402583589334,
+        "brier": 0.004174765472133893,
+        "alert_fraction": 0.01,
+        "alerts": 9648,
+        "expected_true_alerts": 585.0,
+        "true_alerts_min": 585,
+        "true_alerts_max": 585,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.5690661478599222,
+        "precision_at_capacity": 0.06063432835820896
+      },
+      "cold": {
+        "events": 208312,
+        "positives": 207,
+        "prevalence": 0.0009937017550597181,
+        "average_precision": 0.02972951203320789,
+        "brier": 0.0032879220983595115,
+        "alert_fraction": 0.01,
+        "alerts": 2083,
+        "expected_true_alerts": 67.0,
+        "true_alerts_min": 67,
+        "true_alerts_max": 67,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.32367149758454106,
+        "precision_at_capacity": 0.03216514642342775
+      },
+      "warm": {
+        "events": 756528,
+        "positives": 821,
+        "prevalence": 0.001085220903918956,
+        "average_precision": 0.1228553635614228,
+        "brier": 0.004418960157429995,
+        "alert_fraction": 0.01,
+        "alerts": 7565,
+        "expected_true_alerts": 517.0,
+        "true_alerts_min": 517,
+        "true_alerts_max": 517,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.6297198538367844,
+        "precision_at_capacity": 0.0683410442828817
+      },
+      "training": {
+        "losses": [
+          {
+            "epoch": 1,
+            "weighted_bce": 0.10214192568533098,
+            "seconds": 10.361875199999986
+          },
+          {
+            "epoch": 2,
+            "weighted_bce": 0.054951536605770346,
+            "seconds": 10.388545499999964
+          },
+          {
+            "epoch": 3,
+            "weighted_bce": 0.051199044046789766,
+            "seconds": 10.309294399999999
+          }
+        ],
+        "updates": 1359,
+        "fit_seconds_this_invocation": 31.192163800000003,
+        "positive_weight": 39.48496349293935,
+        "parameters": 9185,
+        "checkpoint_sha256": "5e07484999c548ceedceb4d9bfe1d2a523f2fdf0ce00763b9024663e936da2a2"
+      },
+      "score_seconds": 3.8097864000000072,
+      "reload_max_absolute_difference": 4.470348358154297e-08,
+      "reload_events": 512,
+      "artifacts": {
+        "temporal_attention_32-validation.parquet": "a6f321b34166f2e4f621d723d905fe0c4ef586c89c753aaa44ba135dc67eb8f8",
+        "neighbors-32-latest.pt": "5e07484999c548ceedceb4d9bfe1d2a523f2fdf0ce00763b9024663e936da2a2"
+      }
+    }
+  },
+  "runtime": {
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 5070",
+    "peak_gpu_allocated_bytes": 892179968,
+    "peak_process_memory_bytes": 4051165184,
+    "preprocessing_seconds": 38.85136320000004,
+    "total_seconds_this_invocation": 103.28623100000004,
+    "python": "3.13.13",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "torch-geometric": "2.8.1",
+      "numpy": "2.3.4",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.7.2"
+    }
+  },
+  "completed_at_utc": "2026-10-26T23:07:16.429332+00:00",
+  "artifact_sha256": {
+    "features.npy": "0810bb8732b19626720676dfec7e381360613dd26a0e5fcb7b85feef58a5adc5",
+    "history_mlp-validation.parquet": "b4c153441b3f3ee2722fc1678cdb2d1edac59ca9228e1ee010e394134d9a1753",
+    "inputs.json": "f1685dd859fc2b856466eb682c247b8a237b78e20d6dedfcf30bb73763697334",
+    "membership.parquet": "9f0091640f532dc33997aba17097cbc218bcc60571714ac54f1e71cb3335cc3f",
+    "neighborhood.joblib": "5753c6e0d4f6d11f7c71fce5b8758f8f923c0ff80e1030ff5950f11cb0203456",
+    "neighbors-0-epoch-1.pt": "303473aecff63d57c396ad4138787cf0ad5be3b949513da8ebb47b19a9779b12",
+    "neighbors-0-epoch-2.pt": "bf684f2e281f896db51f39ce8ac8bd90bc4562ada268b408158b7eca3a11b2e1",
+    "neighbors-0-epoch-3.pt": "1a3247d300b24fd47b9befedd2775e8020886d0810282e79a191bc1ebab6a6fb",
+    "neighbors-0-latest.pt": "1a3247d300b24fd47b9befedd2775e8020886d0810282e79a191bc1ebab6a6fb",
+    "neighbors-32-epoch-1.pt": "13ba11b0179280fecd75f4f055579f30605a355499469b7981f1c969ba8b2012",
+    "neighbors-32-epoch-2.pt": "bf278f8859effc1be336a0c9be31533a9544cc5639ad363049622db75713ea7a",
+    "neighbors-32-epoch-3.pt": "5e07484999c548ceedceb4d9bfe1d2a523f2fdf0ce00763b9024663e936da2a2",
+    "neighbors-32-latest.pt": "5e07484999c548ceedceb4d9bfe1d2a523f2fdf0ce00763b9024663e936da2a2",
+    "neighbors-8-epoch-1.pt": "06ee259b6b27141bbfc3f7f79f2aba3b67e05dbc78d5833b4e25d7c654969d6d",
+    "neighbors-8-epoch-2.pt": "89abe5c322a80bdee5e05914d341a425ebe07eaf2fe5c8271958989be371cef7",
+    "neighbors-8-epoch-3.pt": "b69121e6dc89b813217e5615d8d3d4b6c813dbb7d6a7dab4ca689466df402a7a",
+    "neighbors-8-latest.pt": "b69121e6dc89b813217e5615d8d3d4b6c813dbb7d6a7dab4ca689466df402a7a",
+    "preprocessing.joblib": "2f376afc033c1419d6eb8c0be33824c381cac048954add523a1d070246202596",
+    "temporal_attention_32-validation.parquet": "a6f321b34166f2e4f621d723d905fe0c4ef586c89c753aaa44ba135dc67eb8f8",
+    "temporal_attention_8-validation.parquet": "8c4a5b7d0f234f279aaddfe7b62958c53d61aefed5df0a76e04c0f5299c9eca1"
+  }
+}

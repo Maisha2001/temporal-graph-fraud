@@ -1,0 +1,18 @@
+{
+  "seed": 42,
+  "epochs": 3,
+  "batch_size": 4096,
+  "hidden": 32,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "neighbors": [
+    0,
+    8,
+    32
+  ],
+  "threads": 4,
+  "checkpoint_selection": "fixed final epoch; development labels do not select epochs or hyperparameters",
+  "sampling": "latest incident interactions strictly before query minute; observable-content hash orders minute ties; self-loop stored once",
+  "positive_weight": "sqrt(training negatives / positives)",
+  "architecture": "one-hop temporal attention over both endpoints; no account ID embeddings; no recurrent memory"
+}

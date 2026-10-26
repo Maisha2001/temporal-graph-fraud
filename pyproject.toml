@@ -4,13 +4,17 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "temporal-graph-fraud"
-version = "0.1.0"
+version = "0.2.0"
 description = "Causal transaction graph baselines on synthetic AML data"
 requires-python = ">=3.11"
 dependencies = ["numpy==2.3.4", "pandas==2.3.3", "pyarrow==22.0.0", "scikit-learn==1.7.2", "xgboost==3.1.1"]
 
+[project.optional-dependencies]
+graph = ["torch==2.11.0", "torch-geometric==2.8.1"]
+
 [project.scripts]
 fraud-baseline = "temporal_fraud.experiment:main"
+fraud-graph = "temporal_fraud.graph_experiment:main"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

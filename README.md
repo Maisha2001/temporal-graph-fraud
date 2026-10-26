@@ -1,13 +1,13 @@
 # Temporal Graph Fraud Detection
 
 Chronological transaction classification on IBM's independently generated,
-synthetic anti-money-laundering data. The current working baseline compares
-transaction attributes with strictly prior account activity. It includes a
-verified data download, account holdouts, delayed-label training, saved models,
-and leakage regression tests.
+synthetic anti-money-laundering data. The working experiments compare transaction and history XGBoost baselines,
+a history MLP, and a temporal graph attention model with two neighborhood budgets.
+They include a verified download, account holdouts, delayed-label training,
+checkpoint recovery, saved predictions and leakage regression tests.
 
-This is an experimental foundation. Temporal neural modeling, streaming service
-integration and the analyst application are not implemented yet. Results concern
+This is an experimental implementation. Streaming service integration and the
+analyst application are not implemented yet. Results concern
 simulated laundering labels; they do not establish real-world fraud detection.
 
 ## Run
@@ -36,6 +36,26 @@ The command writes a report, split membership, validation predictions, XGBoost
 models and fitted preprocessors into the output directory. Treat joblib files as
 trusted local artifacts only; do not load unknown files. Data and generated
 artifacts are excluded from Git.
+
+## Temporal graph experiments
+
+After the baseline setup, install the graph dependencies in the same separate environment:
+
+```sh
+python -m pip install torch==2.11.0 --index-url https://download.pytorch.org/whl/cpu
+python -m pip install -r requirements/graph.txt
+python -m pip install --no-deps -e .
+python -m pytest -q
+fraud-graph --data data/HI-Small_Trans.csv --output artifacts/temporal-v1
+```
+
+For the measured NVIDIA run, install the same Torch version using
+`https://download.pytorch.org/whl/cu128` instead of the CPU index, then add
+`--device cuda`. No compiled PyG extensions are required. The command refuses an
+existing output directory unless `--resume` is supplied. Resume verifies cached
+inputs and restores model/optimizer state from the last completed epoch.
+See [the model and reproduction notes](docs/temporal-model.md) and
+[graph comparison results](results/temporal-v1/README.md).
 
 ## Evaluation
 

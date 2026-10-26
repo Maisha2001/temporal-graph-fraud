@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "test_scored": false,
+  "original_baseline_artifacts_verified": 7,
+  "graph_artifacts_verified": 20,
+  "membership_rows_identical": 3195268,
+  "exhaustive_endpoint_queries": 128,
+  "independently_recomputed_metric_groups": 9,
+  "cpu_checkpoint_predictions_per_model": 256,
+  "cpu_vs_saved_gpu_max_absolute_difference": {
+    "history_mlp": 5.960464477539063e-08,
+    "temporal_attention_8": 4.470348358154297e-08,
+    "temporal_attention_32": 5.960464477539063e-08
+  },
+  "run_report_sha256": "f8ccbb5b0c00d7b8f9e708db9aa99c50fb199f780fd1e46d867b35b0f89d34fe"
+}
