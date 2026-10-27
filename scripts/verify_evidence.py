@@ -84,3 +84,17 @@ for name, calibration in risk['calibration'].items():
     assert all(hour['alerts'] <= hour['budget'] for hour in calibration['alerts']['hourly'])
 assert risk['frozen_artifact_sha256'] == {**{'baseline/' + n: h for n, h in report['artifact_sha256'].items()}, **{'graph/' + n: h for n, h in graph['artifact_sha256'].items()}}
 print('Delayed-label, calibration, hourly capacity and frozen-artifact evidence are consistent.')
+
+service = load('results/service-v1/report.json')
+service_audit = load('results/service-v1/audit.json')
+assert service['completed'] and service['test_scored'] is False
+assert service_audit['passed'] and service_audit['test_scored'] is False
+assert hashlib.sha256(read('results/service-v1/report.json')).hexdigest() == service_audit['report_sha256']
+assert service['events_per_stream'] * 4 == service_audit['scored_event_copies_checked']
+assert service['api_restart_pid_changed'] and len(set(service['api_process_ids'])) == 2
+assert service['http_api_peak_process_bytes'] > 100_000_000
+assert service['kafka']['duplicate_count'] == 1 and service['rollback_test_passed']
+assert service_audit['persistent_account_states_checked'] == 33044
+assert service_audit['persistent_neighbor_vectors_checked'] == 772000
+assert all(max(errors.values()) < 1e-6 for errors in service_audit['raw_and_calibrated_max_absolute_errors'].values())
+print('Stateful service parity, persistence, recovery and measured load evidence are consistent.')

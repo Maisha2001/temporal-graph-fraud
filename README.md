@@ -78,3 +78,11 @@ download or retrain on the full dataset.
 
 Code is MIT licensed. IBM data remains under CDLA-Sharing-1.0; no raw transactions
 or derived transaction tables are included in this repository.
+
+## Stateful local serving
+
+[HTTP/Kafka setup](docs/serving.md) replays complete transaction minutes through
+frozen tree and graph models with PostgreSQL state and retry-safe receipts.
+[Service measurements](results/service-v1/README.md) cover prediction parity,
+process restart, redelivery, concurrent replay and latency. This remains a
+bounded synthetic development application; the final holdout is unscored.

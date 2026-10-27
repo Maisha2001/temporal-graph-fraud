@@ -14,3 +14,4 @@ artifacts/
 *.pt
 *.npy
 *.partial
+!results/service-v1/http-latencies.csv

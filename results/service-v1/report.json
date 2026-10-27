@@ -1,0 +1,106 @@
+{
+  "test_scored": false,
+  "completed": true,
+  "source_preparation_sha256": "89b8d912cd4007db17f90a151f3807ea73804d687f85d2e902b7921a10d8d0b4",
+  "model_fingerprint": "75531b67f5d3ef8db787ffc895ea1218cfcc473d6bf61df76b2a18386504fab8",
+  "events_per_stream": 9567,
+  "complete_minutes_per_stream": 30,
+  "streams": {
+    "serial": "service-0a6392ba21ac-serial",
+    "parallel-a": "service-0a6392ba21ac-parallel-a",
+    "parallel-b": "service-0a6392ba21ac-parallel-b",
+    "kafka": "service-0a6392ba21ac-kafka"
+  },
+  "snapshot_import_seconds_four_streams": 16.38769030000003,
+  "cpu_threads": 4,
+  "device": "cpu",
+  "http_api_peak_process_bytes": 1101275136,
+  "api_process_ids": [
+    10168,
+    10300
+  ],
+  "api_restart_pid_changed": true,
+  "platform": "Windows-11-10.0.26300-SP0",
+  "python": "3.13.13",
+  "serial": {
+    "batch_latency": {
+      "count": 30,
+      "min_ms": 416.90440000002127,
+      "p50_ms": 493.6587999999915,
+      "p95_ms": 582.168660000002,
+      "p99_ms": 636.3821950000374,
+      "max_ms": 654.5984000000544
+    },
+    "total_wall_including_restart_seconds": 20.576015900000016,
+    "restart_duplicate_preserved": true
+  },
+  "concurrent_two_streams": {
+    "batch_latency": {
+      "count": 60,
+      "min_ms": 785.645000000045,
+      "p50_ms": 980.5951499999424,
+      "p95_ms": 1137.5444149999737,
+      "p99_ms": 1169.9252289999947,
+      "max_ms": 1173.7465999999586
+    },
+    "wall_seconds": 29.346517999999946,
+    "events_per_second": 652.0023942874598
+  },
+  "kafka": {
+    "wall_including_restart_seconds": 16.33208239999999,
+    "messages_after_restart": 30,
+    "duplicate_count": 1,
+    "database_processing_latency": {
+      "count": 30,
+      "min_ms": 16.286000000036438,
+      "p50_ms": 507.1131499999524,
+      "p95_ms": 612.6753350000172,
+      "p99_ms": 628.3660139999699,
+      "max_ms": 628.9266999999654
+    },
+    "enqueue_to_database_latency": {
+      "count": 30,
+      "min_ms": 1667.5970554351807,
+      "p50_ms": 9325.352907180786,
+      "p95_ms": 16073.884546756744,
+      "p99_ms": 16684.893264770508,
+      "max_ms": 16833.23860168457
+    },
+    "database_commit_before_ack_recovery": true
+  },
+  "max_absolute_difference_from_frozen_offline": {
+    "serial": {
+      "history_xgboost": 0.0,
+      "temporal_attention_32": 1.7881393432617188e-07
+    },
+    "parallel-a": {
+      "history_xgboost": 0.0,
+      "temporal_attention_32": 1.7881393432617188e-07
+    },
+    "parallel-b": {
+      "history_xgboost": 0.0,
+      "temporal_attention_32": 1.7881393432617188e-07
+    },
+    "kafka": {
+      "history_xgboost": 0.0,
+      "temporal_attention_32": 1.7881393432617188e-07
+    }
+  },
+  "rollback_test_passed": true,
+  "unknown_accounts_rejected": true,
+  "limitations": [
+    "Bounded single-partition ordered replay; not arbitrary event-time ingestion.",
+    "Complete minutes are producer-declared watermarks. Missing events cannot be inferred by the server.",
+    "Two concurrent replay streams on one local CPU service; not a distributed capacity guarantee.",
+    "Batch latency excludes up-to-one-minute event aggregation and any later hourly alert decision.",
+    "Kafka burst queue delays include deliberate crash/restart, not steady-state per-event inference.",
+    "Synthetic development data only; final holdout untouched."
+  ],
+  "artifact_sha256": {
+    "api-1.log": "e115e1cc191009f91159a5d25a21c632d062ea964f309cddec631ce8a0b0c580",
+    "api-2.log": "fe8923323a29e32abf0782bb936472c18b25bd514b1deb7f80426d8ffa2c508f",
+    "http-latencies.parquet": "12cf39a114e7bdd7b7f102c4049e98e0cdbde4028a34f8502379208740646767",
+    "kafka-latencies.json": "79258468456959c90d0a02297c2a4ec9dd2f686a736f7ad4782ffd351364e7fe",
+    "responses.jsonl": "01e017f1465f6c0c5e6a649979f58665b2292d9e82d23ef639af1cdecb627242"
+  }
+}

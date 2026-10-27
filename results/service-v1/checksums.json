@@ -1,0 +1,8 @@
+{
+  "results/service-v1/audit.json": "9709d1b4e3d92f3d9a58b5575646cfa9bab6ead6178c86c1640cfdeee0b0c1b2",
+  "results/service-v1/http-latencies.csv": "bc7bd930dc24ed3ce27d1d801e8e5dbe130d808aef9d17308bc2b243686826a4",
+  "results/service-v1/kafka-latencies.json": "6a5e5827a07b84fbeb31d530abe47876ecf93832ea711efa33a6675381811f66",
+  "results/service-v1/README.md": "2c98ed3805b6fcf37541293a63df748a6a023ba11f19778f7f541aa55bfb5303",
+  "results/service-v1/report.json": "7448834ec26877ff67d35f0bd60003a34efe288ee56afd5efb9a546cea845665",
+  "docs/serving.md": "663b991ef6bc1ba7681188600662bc821b7966429b3d7263775eea575dfbc46b"
+}

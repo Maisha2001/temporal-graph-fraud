@@ -1,0 +1,182 @@
+[
+  {
+    "sequence": 0,
+    "duplicate": true,
+    "processing_seconds": 0.016286000000036438,
+    "enqueue_to_database_seconds": 1.6675970554351807
+  },
+  {
+    "sequence": 1,
+    "duplicate": false,
+    "processing_seconds": 0.5121742999999697,
+    "enqueue_to_database_seconds": 2.1874191761016846
+  },
+  {
+    "sequence": 2,
+    "duplicate": false,
+    "processing_seconds": 0.5939383999999563,
+    "enqueue_to_database_seconds": 2.7889761924743652
+  },
+  {
+    "sequence": 3,
+    "duplicate": false,
+    "processing_seconds": 0.5354138999999805,
+    "enqueue_to_database_seconds": 3.331082344055176
+  },
+  {
+    "sequence": 4,
+    "duplicate": false,
+    "processing_seconds": 0.540565499999957,
+    "enqueue_to_database_seconds": 3.879188060760498
+  },
+  {
+    "sequence": 5,
+    "duplicate": false,
+    "processing_seconds": 0.48324700000000576,
+    "enqueue_to_database_seconds": 4.370060920715332
+  },
+  {
+    "sequence": 6,
+    "duplicate": false,
+    "processing_seconds": 0.546641300000033,
+    "enqueue_to_database_seconds": 4.924081087112427
+  },
+  {
+    "sequence": 7,
+    "duplicate": false,
+    "processing_seconds": 0.626993299999981,
+    "enqueue_to_database_seconds": 5.557615041732788
+  },
+  {
+    "sequence": 8,
+    "duplicate": false,
+    "processing_seconds": 0.4700743999999304,
+    "enqueue_to_database_seconds": 6.035497426986694
+  },
+  {
+    "sequence": 9,
+    "duplicate": false,
+    "processing_seconds": 0.47531390000006013,
+    "enqueue_to_database_seconds": 6.518354415893555
+  },
+  {
+    "sequence": 10,
+    "duplicate": false,
+    "processing_seconds": 0.43360409999991134,
+    "enqueue_to_database_seconds": 6.95947265625
+  },
+  {
+    "sequence": 11,
+    "duplicate": false,
+    "processing_seconds": 0.46925769999995737,
+    "enqueue_to_database_seconds": 7.435346603393555
+  },
+  {
+    "sequence": 12,
+    "duplicate": false,
+    "processing_seconds": 0.48575319999997646,
+    "enqueue_to_database_seconds": 7.92884373664856
+  },
+  {
+    "sequence": 13,
+    "duplicate": false,
+    "processing_seconds": 0.5103493999999955,
+    "enqueue_to_database_seconds": 8.44746732711792
+  },
+  {
+    "sequence": 14,
+    "duplicate": false,
+    "processing_seconds": 0.5514815999999882,
+    "enqueue_to_database_seconds": 9.006601095199585
+  },
+  {
+    "sequence": 15,
+    "duplicate": false,
+    "processing_seconds": 0.6289266999999654,
+    "enqueue_to_database_seconds": 9.644104719161987
+  },
+  {
+    "sequence": 16,
+    "duplicate": false,
+    "processing_seconds": 0.47942199999999957,
+    "enqueue_to_database_seconds": 10.129609107971191
+  },
+  {
+    "sequence": 17,
+    "duplicate": false,
+    "processing_seconds": 0.5027218000000175,
+    "enqueue_to_database_seconds": 10.639846324920654
+  },
+  {
+    "sequence": 18,
+    "duplicate": false,
+    "processing_seconds": 0.4771103000000494,
+    "enqueue_to_database_seconds": 11.124359130859375
+  },
+  {
+    "sequence": 19,
+    "duplicate": false,
+    "processing_seconds": 0.4667359000000033,
+    "enqueue_to_database_seconds": 11.59750771522522
+  },
+  {
+    "sequence": 20,
+    "duplicate": false,
+    "processing_seconds": 0.5112245999999914,
+    "enqueue_to_database_seconds": 12.116082191467285
+  },
+  {
+    "sequence": 21,
+    "duplicate": false,
+    "processing_seconds": 0.48153629999990244,
+    "enqueue_to_database_seconds": 12.60494589805603
+  },
+  {
+    "sequence": 22,
+    "duplicate": false,
+    "processing_seconds": 0.5108799999999292,
+    "enqueue_to_database_seconds": 13.122306823730469
+  },
+  {
+    "sequence": 23,
+    "duplicate": false,
+    "processing_seconds": 0.501570999999899,
+    "enqueue_to_database_seconds": 13.631643295288086
+  },
+  {
+    "sequence": 24,
+    "duplicate": false,
+    "processing_seconds": 0.5951756000000614,
+    "enqueue_to_database_seconds": 14.234491348266602
+  },
+  {
+    "sequence": 25,
+    "duplicate": false,
+    "processing_seconds": 0.47746300000005704,
+    "enqueue_to_database_seconds": 14.718385219573975
+  },
+  {
+    "sequence": 26,
+    "duplicate": false,
+    "processing_seconds": 0.5102132999999185,
+    "enqueue_to_database_seconds": 15.23594045639038
+  },
+  {
+    "sequence": 27,
+    "duplicate": false,
+    "processing_seconds": 0.5276624000000538,
+    "enqueue_to_database_seconds": 15.770995378494263
+  },
+  {
+    "sequence": 28,
+    "duplicate": false,
+    "processing_seconds": 0.5438191000000643,
+    "enqueue_to_database_seconds": 16.32170295715332
+  },
+  {
+    "sequence": 29,
+    "duplicate": false,
+    "processing_seconds": 0.5040129999999863,
+    "enqueue_to_database_seconds": 16.83323860168457
+  }
+]

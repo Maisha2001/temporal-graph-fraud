@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "test_scored": false,
+  "prepared_artifacts_verified": 10,
+  "measurement_artifacts_verified": 5,
+  "scored_event_copies_checked": 38268,
+  "metric_groups_checked": 8,
+  "persistent_account_states_checked": 33044,
+  "persistent_neighbor_vectors_checked": 772000,
+  "http_latency_samples_checked": 90,
+  "kafka_ack_recovery_duplicates": 1,
+  "raw_and_calibrated_max_absolute_errors": {
+    "serial": {
+      "history_xgboost": 0.0,
+      "history_xgboost_calibrated": 0.0,
+      "temporal_attention_32": 1.7881393432617188e-07,
+      "temporal_attention_32_calibrated": 4.930830749261261e-08
+    },
+    "parallel-a": {
+      "history_xgboost": 0.0,
+      "history_xgboost_calibrated": 0.0,
+      "temporal_attention_32": 1.7881393432617188e-07,
+      "temporal_attention_32_calibrated": 4.930830749261261e-08
+    },
+    "parallel-b": {
+      "history_xgboost": 0.0,
+      "history_xgboost_calibrated": 0.0,
+      "temporal_attention_32": 1.7881393432617188e-07,
+      "temporal_attention_32_calibrated": 4.930830749261261e-08
+    },
+    "kafka": {
+      "history_xgboost": 0.0,
+      "history_xgboost_calibrated": 0.0,
+      "temporal_attention_32": 1.7881393432617188e-07,
+      "temporal_attention_32_calibrated": 4.930830749261261e-08
+    }
+  },
+  "report_sha256": "7448834ec26877ff67d35f0bd60003a34efe288ee56afd5efb9a546cea845665"
+}
