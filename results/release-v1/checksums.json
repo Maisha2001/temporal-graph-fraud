@@ -1,0 +1,12 @@
+{
+  "results/release-v1/browser.json": "b3748803c84eae49b77720bd4d947f0199c0da781157dd3542a86593575514c5",
+  "results/release-v1/model-checksums.json": "cfcedc35512e4d7205858ca17a3e11b087d96076eb298ab850bbd393f96bdb7f",
+  "results/release-v1/package.json": "f4152ec41561240e34a15f298384a77d688bf2e0f87e6ffbd52dfdac15ced44c",
+  "results/release-v1/README.md": "faf09ac52beab32f8611267ac8ef64af7565f76451fdb3b536045a91a1b97fcd",
+  "results/release-v1/tracking.json": "d878a3064fdc6ca20ccf2902b0d3c2c7e7253881c3f8593bdc5a3aa8b7b00239",
+  "README.md": "2df1d8d2a16ec66b2934511f1fbd14944b5fb75fefe38cc80f056a96ee12651e",
+  "docs/reproduction.md": "e0e2332a2c31878ecb0c56fefd185856954d3b8fd47d3cc2e73d3392012c8214",
+  "docs/workbench.md": "476fd6287b4e645ff6b85932c973db519a0000e8a199d2916d60ca58de34492f",
+  "examples/investigation/cases.json": "75977f6540cfc8f6ee9e9b1e3b663359e45c1d7ee937d66d02fbc969ca3de82b",
+  "examples/investigation/manifest.json": "33d3a17743a399a3547dbbfa3db439b1fa0da7b3d3403723afd2bd9a1c0e637a"
+}

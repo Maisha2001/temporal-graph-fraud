@@ -50,7 +50,7 @@ prior = corrected['models']['train_prior']['validation']
 assert abs(prior['recall_at_capacity'] - prior['alerts'] / prior['events']) < 1e-12
 for model in report['models']:
     assert corrected['models'][model]['validation']['average_precision'] == report['models'][model]['validation']['average_precision']
-print(f'Verified {count} evidence files; final holdout remains unscored.')
+print(f'Verified {count} evidence files; historical development evidence preserved.')
 
 graph = load('results/temporal-v1/report.json')
 audit = load('results/temporal-v1/audit.json')
@@ -98,3 +98,29 @@ assert service_audit['persistent_account_states_checked'] == 33044
 assert service_audit['persistent_neighbor_vectors_checked'] == 772000
 assert all(max(errors.values()) < 1e-6 for errors in service_audit['raw_and_calibrated_max_absolute_errors'].values())
 print('Stateful service parity, persistence, recovery and measured load evidence are consistent.')
+
+
+final = load('results/heldout-v1/report.json')
+final_audit = load('results/heldout-v1/audit.json')
+protocol = load('results/heldout-v1/protocol.json')
+predictions = load('results/heldout-v1/predictions-frozen.json')
+assert final['test_scored'] is True and final_audit['passed']
+assert final['events'] == 1346673 and final['positives'] == 2150
+assert hashlib.sha256(read('results/heldout-v1/report.json')).hexdigest() == final_audit['report_sha256']
+assert final_audit['freeze_precedes_label_open']
+assert hashlib.sha256(read('results/heldout-v1/protocol.json')).hexdigest() == final['protocol_sha256'] == predictions['protocol_sha256']
+assert hashlib.sha256(read('results/heldout-v1/predictions-frozen.json')).hexdigest() == final['prediction_freeze_sha256']
+assert protocol['frozen_at_utc'] < predictions['frozen_at_utc'] < final['labels_opened_at_utc']
+assert final_audit['source_artifacts_verified'] == 74
+assert final_audit['independent_metric_groups'] == 112
+assert final_audit['closed_hour_policies_checked'] == 434
+for name, hashes in load('results/heldout-v1/source-provenance.json')['files'].items():
+    assert protocol['source_sha256'][name] == hashes['frozen_windows_bytes_sha256']
+    assert hashlib.sha256(read('src/temporal_fraud/' + name).replace(b'\r\n',b'\n')).hexdigest() == hashes['canonical_git_lf_sha256']
+browser = load('results/release-v1/browser.json')
+tracking = load('results/release-v1/tracking.json')
+assert browser['passed'] and browser['actual_saved_model_cases'] == 93 and browser['cold_filter_cases'] == 14
+assert browser['server_stopped'] and browser['test_data_used'] is False
+assert tracking['status'] == 'FINISHED' and tracking['metrics_verified'] == 32
+assert tracking['model_artifacts_verified'] == 14 and tracking['report_sha256'] == final_audit['report_sha256']
+print('Final evaluation, canonical source provenance, investigation and local MLflow evidence verified.')

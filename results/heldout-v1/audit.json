@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "test_scored": true,
+  "events": 1346673,
+  "positives": 2150,
+  "source_artifacts_verified": 74,
+  "result_artifacts_verified": 9,
+  "independent_metric_groups": 112,
+  "float64_vs_recorded_brier_max_difference": 7.035195259685878e-09,
+  "closed_hour_policies_checked": 434,
+  "exhaustive_endpoint_queries": 128,
+  "cpu_reload_predictions_per_neural_arm": 256,
+  "cpu_vs_saved_max_absolute_difference": {
+    "history_mlp": 5.960464477539063e-08,
+    "temporal_attention_8": 5.960464477539063e-08,
+    "temporal_attention_32": 7.450580596923828e-08
+  },
+  "freeze_precedes_label_open": true,
+  "report_sha256": "8cc9a470baaf246449ecb585258eaa40199d8882fbdbf3c7538360b94a02f1f2",
+  "prediction_sha256": "80430307d3b54ddde5df17bf3970fb5d4b2add4a7cbd25af808fa94c25577796"
+}

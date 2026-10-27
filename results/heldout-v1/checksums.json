@@ -1,0 +1,9 @@
+{
+  "results/heldout-v1/audit.json": "3a861dfd1d5713ed133a49809f5815d83717c459384e4dfdcca3795392d2359a",
+  "results/heldout-v1/predictions-frozen.json": "18e69b96fc65e0399decefa263012089a2ea59ce3a056f0d4a357049c1af94eb",
+  "results/heldout-v1/protocol.json": "bee97fd6e8209fa69c261d365ab766e24bcfe6d0df79ac33e8e7a798aa5187a2",
+  "results/heldout-v1/README.md": "4a9ed9dd4692f60912639d2d2fdda5c262e32e7531d3dcaf9710ff6548312712",
+  "results/heldout-v1/report.json": "8cc9a470baaf246449ecb585258eaa40199d8882fbdbf3c7538360b94a02f1f2",
+  "results/heldout-v1/source-provenance.json": "aa21dec9a6de63394b568b4c32cdf6c25cd6095205ee0af1c6a1adda9cd98c04",
+  "docs/model-card.md": "c54f775f9380261fc0f7fdd4d77396792f6fd0c7135d229cc65cb09d2cfce200"
+}

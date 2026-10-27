@@ -1,0 +1,41 @@
+{
+  "note": "Frozen source hashes retain original working-file bytes; canonical hashes account only for Git CRLF-to-LF normalization. No evaluated logic changed. Historical data_config.evaluation is retained from development; this protocol and final report govern final evaluation.",
+  "files": {
+    "data.py": {
+      "frozen_windows_bytes_sha256": "6d9244c2adad7153a314f89cfbb9f1913be2eff356e4505f4640eb3fb076fdef",
+      "canonical_git_lf_sha256": "6d9244c2adad7153a314f89cfbb9f1913be2eff356e4505f4640eb3fb076fdef"
+    },
+    "features.py": {
+      "frozen_windows_bytes_sha256": "9eb304da50a0841417bcb470a410f1e4079f0a551af7487a29f0668e7fc638c2",
+      "canonical_git_lf_sha256": "9eb304da50a0841417bcb470a410f1e4079f0a551af7487a29f0668e7fc638c2"
+    },
+    "graph_model.py": {
+      "frozen_windows_bytes_sha256": "c86d443b847c0b25bf35481c12b015e35d6f9723a36a38bbe37ee927612646c2",
+      "canonical_git_lf_sha256": "c86d443b847c0b25bf35481c12b015e35d6f9723a36a38bbe37ee927612646c2"
+    },
+    "metrics.py": {
+      "frozen_windows_bytes_sha256": "b6ded601d8cc0b22b14e2fdf61ab3961f13a2df5f2158747436f25c70c1f5683",
+      "canonical_git_lf_sha256": "b6ded601d8cc0b22b14e2fdf61ab3961f13a2df5f2158747436f25c70c1f5683"
+    },
+    "risk.py": {
+      "frozen_windows_bytes_sha256": "d1c20d9dc8afb6c05421ee87a6be1ff1e2aa7f31365ebc9d9e613738d74c92da",
+      "canonical_git_lf_sha256": "d1c20d9dc8afb6c05421ee87a6be1ff1e2aa7f31365ebc9d9e613738d74c92da"
+    },
+    "runtime.py": {
+      "frozen_windows_bytes_sha256": "8b8869f63444eb2fb1426b94bf76bf4941d17ca4e3a6c5c0942c48beeaa7481c",
+      "canonical_git_lf_sha256": "8b8869f63444eb2fb1426b94bf76bf4941d17ca4e3a6c5c0942c48beeaa7481c"
+    },
+    "streaming.py": {
+      "frozen_windows_bytes_sha256": "75906c5b2e5eaa2a15d781f5a80014bc3bbc6b4eb616bb9f93618a38af019b19",
+      "canonical_git_lf_sha256": "75906c5b2e5eaa2a15d781f5a80014bc3bbc6b4eb616bb9f93618a38af019b19"
+    },
+    "temporal.py": {
+      "frozen_windows_bytes_sha256": "8b358993ef837f16022eaeb2e04c2dd927dd67539f8434b7f6101b54c886c45c",
+      "canonical_git_lf_sha256": "8b358993ef837f16022eaeb2e04c2dd927dd67539f8434b7f6101b54c886c45c"
+    },
+    "release_eval.py": {
+      "frozen_windows_bytes_sha256": "5375a253bed2f34fdb95bbdbba9bc6e56ac4d28be7a18cc7667420dd86876d9d",
+      "canonical_git_lf_sha256": "5375a253bed2f34fdb95bbdbba9bc6e56ac4d28be7a18cc7667420dd86876d9d"
+    }
+  }
+}

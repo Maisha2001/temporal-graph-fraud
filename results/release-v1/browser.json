@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "actual_saved_model_cases": 93,
+  "context_edges": 1067,
+  "source_case_sha256": "4596574a73c870bd389cc2014baec5ef301b7142caafa222a9174fcc03b64f55",
+  "graph_top_event": 2821099,
+  "tree_top_event": 3313379,
+  "cold_filter_cases": 14,
+  "explicit_outcomes_passed": true,
+  "export_hides_labels": true,
+  "mobile_no_overflow": true,
+  "javascript_errors": [],
+  "server_stopped": true,
+  "test_data_used": false,
+  "supersedes": "investigation-browser-v1 had initial encoding and asynchronous measurement errors; preserved privately",
+  "screenshots": {
+    "overview.png": "8940dc321d0b82645e2af8637eb9b610710c0d1927b5ebd2b90d4e99aba71c16",
+    "mobile.png": "d51d911c75fd6d3e28769c43766e971217a3f86fb4818f6d7634aa68cc24fb1e"
+  }
+}

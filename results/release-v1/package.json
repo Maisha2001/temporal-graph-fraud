@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "environment": "new isolated Python 3.13 virtual environment; no system site packages",
+  "device": "cpu",
+  "wheel": {
+    "bytes": 46412,
+    "sha256": "c72dadf609eb7652ee1c1f84ed0857422d6b6f2ba1bf38f2479aff72457ffd76"
+  },
+  "model_archive": {
+    "bytes": 363508,
+    "sha256": "100fa862c79b6483c9f2688b95b0b28c53e2687a8a741bf430d9b9e22a50cc25"
+  },
+  "model_archive_files": 14,
+  "model_files_match_originals": true,
+  "installed_wheel_scoring": {
+    "notice": "Authored example; verifies model loading, not predictive accuracy.",
+    "scores": [
+      {
+        "event_id": 1,
+        "history_xgboost": 0.010308343917131424,
+        "temporal_attention_32": 0.0008031547185964882,
+        "history_xgboost_calibrated": 0.00011209874863853269,
+        "temporal_attention_32_calibrated": 1.684977773633942e-05
+      }
+    ]
+  },
+  "installed_wheel_interface": {
+    "wheel_module_location_verified": true,
+    "authored_cases": 3,
+    "packaged_assets_served": true,
+    "label_hidden": true
+  },
+  "sql_schema_packaged": true,
+  "web_assets_match_source": true,
+  "local_full_suite": {
+    "passed": 72,
+    "skipped": 0,
+    "warnings": 217,
+    "seconds": 15.34,
+    "browser": true,
+    "postgresql": true,
+    "kafka": true,
+    "mlflow": true
+  }
+}

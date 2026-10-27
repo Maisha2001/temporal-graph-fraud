@@ -1,0 +1,5465 @@
+{
+  "stage": "final_frozen_temporal_holdout",
+  "test_scored": true,
+  "completed": true,
+  "labels_opened_at_utc": "2026-10-27T22:22:13.789501+00:00",
+  "completed_at_utc": "2026-10-27T22:22:19.284882+00:00",
+  "protocol_sha256": "bee97fd6e8209fa69c261d365ab766e24bcfe6d0df79ac33e8e7a798aa5187a2",
+  "prediction_freeze_sha256": "18e69b96fc65e0399decefa263012089a2ea59ce3a056f0d4a357049c1af94eb",
+  "events": 1346673,
+  "positives": 2150,
+  "first_event": "2022-09-08 00:00:00",
+  "last_event": "2022-09-18 16:18:00",
+  "runtime": {
+    "seconds": 65.13165299999991,
+    "model_seconds": {
+      "transaction_xgboost": 1.667997000000014,
+      "history_xgboost": 1.757957599999827,
+      "history_mlp": 0.4069297999999435,
+      "temporal_attention_8": 4.170954199999869,
+      "temporal_attention_32": 6.265542900000128
+    },
+    "device": "cuda",
+    "cpu_threads": 4,
+    "peak_process_bytes": 5909512192,
+    "peak_torch_allocated_bytes": 1181807104
+  },
+  "models": {
+    "train_prior": {
+      "all": {
+        "events": 1346673,
+        "positives": 2150,
+        "prevalence": 0.001596527145045605,
+        "average_precision": 0.001596527145045605,
+        "brier": 0.0015948912781981843,
+        "alert_fraction": 0.01,
+        "alerts": 13466,
+        "expected_true_alerts": 21.498834535184116,
+        "true_alerts_min": 0,
+        "true_alerts_max": 2150,
+        "boundary_tied_events": 1346673,
+        "boundary_slots": 13466,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.00999945792334145,
+        "precision_at_capacity": 0.001596527145045605
+      },
+      "cold": {
+        "events": 288672,
+        "positives": 404,
+        "prevalence": 0.0013995122491963197,
+        "average_precision": 0.0013995122491963197,
+        "brier": 0.0013981289554551662,
+        "alert_fraction": 0.01,
+        "alerts": 2886,
+        "expected_true_alerts": 4.038992351180578,
+        "true_alerts_min": 0,
+        "true_alerts_max": 404,
+        "boundary_tied_events": 288672,
+        "boundary_slots": 2886,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.009997505819753907,
+        "precision_at_capacity": 0.0013995122491963195
+      },
+      "warm": {
+        "events": 1058001,
+        "positives": 1746,
+        "prevalence": 0.0016502819940623875,
+        "average_precision": 0.0016502819940623875,
+        "brier": 0.0016485772134958569,
+        "alert_fraction": 0.01,
+        "alerts": 10580,
+        "expected_true_alerts": 17.45998349718006,
+        "true_alerts_min": 0,
+        "true_alerts_max": 1746,
+        "boundary_tied_events": 1058001,
+        "boundary_slots": 10580,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.009999990548213092,
+        "precision_at_capacity": 0.0016502819940623873
+      },
+      "2022-09-08": {
+        "events": 482773,
+        "positives": 539,
+        "prevalence": 0.0011164667452405169,
+        "average_precision": 0.0011164667452405169,
+        "brier": 0.001115446315849497,
+        "alert_fraction": 0.01,
+        "alerts": 4827,
+        "expected_true_alerts": 5.389184979275974,
+        "true_alerts_min": 0,
+        "true_alerts_max": 539,
+        "boundary_tied_events": 482773,
+        "boundary_slots": 4827,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.00999848790218177,
+        "precision_at_capacity": 0.0011164667452405166
+      },
+      "2022-09-09": {
+        "events": 654467,
+        "positives": 514,
+        "prevalence": 0.0007853719133279447,
+        "average_precision": 0.0007853719133279447,
+        "brier": 0.0007847759475278857,
+        "alert_fraction": 0.01,
+        "alerts": 6544,
+        "expected_true_alerts": 5.13947380081807,
+        "true_alerts_min": 0,
+        "true_alerts_max": 514,
+        "boundary_tied_events": 654467,
+        "boundary_slots": 6544,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.009998976266183016,
+        "precision_at_capacity": 0.0007853719133279447
+      },
+      "2022-09-10": {
+        "events": 208325,
+        "positives": 442,
+        "prevalence": 0.002121684867394696,
+        "average_precision": 0.002121684867394696,
+        "brier": 0.0021193757483211335,
+        "alert_fraction": 0.01,
+        "alerts": 2083,
+        "expected_true_alerts": 4.4194695787831515,
+        "true_alerts_min": 0,
+        "true_alerts_max": 442,
+        "boundary_tied_events": 208325,
+        "boundary_slots": 2083,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.00999879995199808,
+        "precision_at_capacity": 0.002121684867394696
+      },
+      "2022-09-11": {
+        "events": 396,
+        "positives": 232,
+        "prevalence": 0.5858585858585859,
+        "average_precision": 0.5858585858585859,
+        "brier": 0.5851079260034406,
+        "alert_fraction": 0.01,
+        "alerts": 3,
+        "expected_true_alerts": 1.7575757575757576,
+        "true_alerts_min": 0,
+        "true_alerts_max": 3,
+        "boundary_tied_events": 396,
+        "boundary_slots": 3,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.007575757575757576,
+        "precision_at_capacity": 0.5858585858585859
+      },
+      "2022-09-12": {
+        "events": 281,
+        "positives": 170,
+        "prevalence": 0.604982206405694,
+        "average_precision": 0.604982206405694,
+        "brier": 0.6042070300680572,
+        "alert_fraction": 0.01,
+        "alerts": 2,
+        "expected_true_alerts": 1.209964412811388,
+        "true_alerts_min": 0,
+        "true_alerts_max": 2,
+        "boundary_tied_events": 281,
+        "boundary_slots": 2,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.007117437722419929,
+        "precision_at_capacity": 0.604982206405694
+      },
+      "2022-09-13": {
+        "events": 184,
+        "positives": 106,
+        "prevalence": 0.5760869565217391,
+        "average_precision": 0.5760869565217391,
+        "brier": 0.5753488238958893,
+        "alert_fraction": 0.01,
+        "alerts": 1,
+        "expected_true_alerts": 0.5760869565217391,
+        "true_alerts_min": 0,
+        "true_alerts_max": 1,
+        "boundary_tied_events": 184,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.005434782608695652,
+        "precision_at_capacity": 0.5760869565217391
+      },
+      "2022-09-14": {
+        "events": 121,
+        "positives": 70,
+        "prevalence": 0.5785123966942148,
+        "average_precision": 0.5785123966942148,
+        "brier": 0.5777711546539432,
+        "alert_fraction": 0.01,
+        "alerts": 1,
+        "expected_true_alerts": 0.5785123966942148,
+        "true_alerts_min": 0,
+        "true_alerts_max": 1,
+        "boundary_tied_events": 121,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.008264462809917356,
+        "precision_at_capacity": 0.5785123966942148
+      },
+      "2022-09-15": {
+        "events": 46,
+        "positives": 28,
+        "prevalence": 0.6086956521739131,
+        "average_precision": 0.6086956521739131,
+        "brier": 0.6079157151986171,
+        "alert_fraction": 0.01,
+        "alerts": 0,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 0,
+        "boundary_slots": 0,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": null
+      },
+      "2022-09-16": {
+        "events": 46,
+        "positives": 26,
+        "prevalence": 0.5652173913043478,
+        "average_precision": 0.5652173913043478,
+        "brier": 0.5644931934616468,
+        "alert_fraction": 0.01,
+        "alerts": 0,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 0,
+        "boundary_slots": 0,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": null
+      },
+      "2022-09-17": {
+        "events": 23,
+        "positives": 15,
+        "prevalence": 0.6521739130434783,
+        "average_precision": 0.6521739130434783,
+        "brier": 0.6513382369355872,
+        "alert_fraction": 0.01,
+        "alerts": 0,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 0,
+        "boundary_slots": 0,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": null
+      },
+      "2022-09-18": {
+        "events": 11,
+        "positives": 8,
+        "prevalence": 0.7272727272727273,
+        "average_precision": 0.7272727272727273,
+        "brier": 0.7263407744812634,
+        "alert_fraction": 0.01,
+        "alerts": 0,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 0,
+        "boundary_slots": 0,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": null
+      }
+    },
+    "transaction_xgboost": {
+      "all": {
+        "events": 1346673,
+        "positives": 2150,
+        "prevalence": 0.001596527145045605,
+        "average_precision": 0.09098169365865993,
+        "brier": 0.0052284214502357085,
+        "alert_fraction": 0.01,
+        "alerts": 13466,
+        "expected_true_alerts": 961.92,
+        "true_alerts_min": 960,
+        "true_alerts_max": 966,
+        "boundary_tied_events": 200,
+        "boundary_slots": 64,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.44740465116279066,
+        "precision_at_capacity": 0.07143323926927075
+      },
+      "cold": {
+        "events": 288672,
+        "positives": 404,
+        "prevalence": 0.0013995122491963197,
+        "average_precision": 0.062151849653530655,
+        "brier": 0.00470229758917981,
+        "alert_fraction": 0.01,
+        "alerts": 2886,
+        "expected_true_alerts": 158.0,
+        "true_alerts_min": 158,
+        "true_alerts_max": 158,
+        "boundary_tied_events": 7,
+        "boundary_slots": 2,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.3910891089108911,
+        "precision_at_capacity": 0.05474705474705475
+      },
+      "warm": {
+        "events": 1058001,
+        "positives": 1746,
+        "prevalence": 0.0016502819940623875,
+        "average_precision": 0.09919251980622029,
+        "brier": 0.005371972569014168,
+        "alert_fraction": 0.01,
+        "alerts": 10580,
+        "expected_true_alerts": 807.0,
+        "true_alerts_min": 807,
+        "true_alerts_max": 807,
+        "boundary_tied_events": 11,
+        "boundary_slots": 11,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.46219931271477666,
+        "precision_at_capacity": 0.07627599243856333
+      },
+      "2022-09-08": {
+        "events": 482773,
+        "positives": 539,
+        "prevalence": 0.0011164667452405169,
+        "average_precision": 0.04643332829257841,
+        "brier": 0.004727607132050859,
+        "alert_fraction": 0.01,
+        "alerts": 4827,
+        "expected_true_alerts": 217.0,
+        "true_alerts_min": 217,
+        "true_alerts_max": 217,
+        "boundary_tied_events": 7,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.4025974025974026,
+        "precision_at_capacity": 0.04495545887714937
+      },
+      "2022-09-09": {
+        "events": 654467,
+        "positives": 514,
+        "prevalence": 0.0007853719133279447,
+        "average_precision": 0.03889330223293193,
+        "brier": 0.004723307086417277,
+        "alert_fraction": 0.01,
+        "alerts": 6544,
+        "expected_true_alerts": 190.2,
+        "true_alerts_min": 190,
+        "true_alerts_max": 191,
+        "boundary_tied_events": 5,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.37003891050583654,
+        "precision_at_capacity": 0.02906479217603912
+      },
+      "2022-09-10": {
+        "events": 208325,
+        "positives": 442,
+        "prevalence": 0.002121684867394696,
+        "average_precision": 0.09745875339844252,
+        "brier": 0.006686160084837066,
+        "alert_fraction": 0.01,
+        "alerts": 2083,
+        "expected_true_alerts": 184.62962962962962,
+        "true_alerts_min": 183,
+        "true_alerts_max": 185,
+        "boundary_tied_events": 54,
+        "boundary_slots": 44,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.4177140941846824,
+        "precision_at_capacity": 0.08863640404686972
+      },
+      "2022-09-11": {
+        "events": 396,
+        "positives": 232,
+        "prevalence": 0.5858585858585859,
+        "average_precision": 0.963029574019541,
+        "brier": 0.23752354545453033,
+        "alert_fraction": 0.01,
+        "alerts": 3,
+        "expected_true_alerts": 3.0,
+        "true_alerts_min": 3,
+        "true_alerts_max": 3,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.01293103448275862,
+        "precision_at_capacity": 1.0
+      },
+      "2022-09-12": {
+        "events": 281,
+        "positives": 170,
+        "prevalence": 0.604982206405694,
+        "average_precision": 0.9817584251969399,
+        "brier": 0.25350425764116685,
+        "alert_fraction": 0.01,
+        "alerts": 2,
+        "expected_true_alerts": 2.0,
+        "true_alerts_min": 2,
+        "true_alerts_max": 2,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.011764705882352941,
+        "precision_at_capacity": 1.0
+      },
+      "2022-09-13": {
+        "events": 184,
+        "positives": 106,
+        "prevalence": 0.5760869565217391,
+        "average_precision": 0.9584603836602625,
+        "brier": 0.2766615837054632,
+        "alert_fraction": 0.01,
+        "alerts": 1,
+        "expected_true_alerts": 1.0,
+        "true_alerts_min": 1,
+        "true_alerts_max": 1,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.009433962264150943,
+        "precision_at_capacity": 1.0
+      },
+      "2022-09-14": {
+        "events": 121,
+        "positives": 70,
+        "prevalence": 0.5785123966942148,
+        "average_precision": 0.9599240780537412,
+        "brier": 0.22346158599833274,
+        "alert_fraction": 0.01,
+        "alerts": 1,
+        "expected_true_alerts": 1.0,
+        "true_alerts_min": 1,
+        "true_alerts_max": 1,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.014285714285714285,
+        "precision_at_capacity": 1.0
+      },
+      "2022-09-15": {
+        "events": 46,
+        "positives": 28,
+        "prevalence": 0.6086956521739131,
+        "average_precision": 0.9770677838201672,
+        "brier": 0.2438629789575408,
+        "alert_fraction": 0.01,
+        "alerts": 0,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 0,
+        "boundary_slots": 0,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": null
+      },
+      "2022-09-16": {
+        "events": 46,
+        "positives": 26,
+        "prevalence": 0.5652173913043478,
+        "average_precision": 0.9999999999999998,
+        "brier": 0.2412762279234021,
+        "alert_fraction": 0.01,
+        "alerts": 0,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 0,
+        "boundary_slots": 0,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": null
+      },
+      "2022-09-17": {
+        "events": 23,
+        "positives": 15,
+        "prevalence": 0.6521739130434783,
+        "average_precision": 1.0,
+        "brier": 0.23354331635068967,
+        "alert_fraction": 0.01,
+        "alerts": 0,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 0,
+        "boundary_slots": 0,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": null
+      },
+      "2022-09-18": {
+        "events": 11,
+        "positives": 8,
+        "prevalence": 0.7272727272727273,
+        "average_precision": 1.0,
+        "brier": 0.3221363267627729,
+        "alert_fraction": 0.01,
+        "alerts": 0,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 0,
+        "boundary_slots": 0,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": null
+      }
+    },
+    "history_xgboost": {
+      "all": {
+        "events": 1346673,
+        "positives": 2150,
+        "prevalence": 0.001596527145045605,
+        "average_precision": 0.17657254623104104,
+        "brier": 0.010530876051906259,
+        "alert_fraction": 0.01,
+        "alerts": 13466,
+        "expected_true_alerts": 1152.0,
+        "true_alerts_min": 1152,
+        "true_alerts_max": 1152,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.5358139534883721,
+        "precision_at_capacity": 0.08554878954403683
+      },
+      "cold": {
+        "events": 288672,
+        "positives": 404,
+        "prevalence": 0.0013995122491963197,
+        "average_precision": 0.16694366005798167,
+        "brier": 0.005764211123121613,
+        "alert_fraction": 0.01,
+        "alerts": 2886,
+        "expected_true_alerts": 227.0,
+        "true_alerts_min": 227,
+        "true_alerts_max": 227,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.5618811881188119,
+        "precision_at_capacity": 0.07865557865557865
+      },
+      "warm": {
+        "events": 1058001,
+        "positives": 1746,
+        "prevalence": 0.0016502819940623875,
+        "average_precision": 0.18491700428524604,
+        "brier": 0.011831444480784985,
+        "alert_fraction": 0.01,
+        "alerts": 10580,
+        "expected_true_alerts": 960.0,
+        "true_alerts_min": 960,
+        "true_alerts_max": 960,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.5498281786941581,
+        "precision_at_capacity": 0.09073724007561437
+      },
+      "2022-09-08": {
+        "events": 482773,
+        "positives": 539,
+        "prevalence": 0.0011164667452405169,
+        "average_precision": 0.1478458957168736,
+        "brier": 0.005921288839413671,
+        "alert_fraction": 0.01,
+        "alerts": 4827,
+        "expected_true_alerts": 330.0,
+        "true_alerts_min": 330,
+        "true_alerts_max": 330,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.6122448979591837,
+        "precision_at_capacity": 0.06836544437538844
+      },
+      "2022-09-09": {
+        "events": 654467,
+        "positives": 514,
+        "prevalence": 0.0007853719133279447,
+        "average_precision": 0.04314773195921483,
+        "brier": 0.014371953162624547,
+        "alert_fraction": 0.01,
+        "alerts": 6544,
+        "expected_true_alerts": 194.0,
+        "true_alerts_min": 194,
+        "true_alerts_max": 194,
+        "boundary_tied_events": 4,
+        "boundary_slots": 4,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.377431906614786,
+        "precision_at_capacity": 0.029645476772616138
+      },
+      "2022-09-10": {
+        "events": 208325,
+        "positives": 442,
+        "prevalence": 0.002121684867394696,
+        "average_precision": 0.17611283217267004,
+        "brier": 0.008706722787730856,
+        "alert_fraction": 0.01,
+        "alerts": 2083,
+        "expected_true_alerts": 246.0,
+        "true_alerts_min": 246,
+        "true_alerts_max": 246,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.5565610859728507,
+        "precision_at_capacity": 0.11809889582333173
+      },
+      "2022-09-11": {
+        "events": 396,
+        "positives": 232,
+        "prevalence": 0.5858585858585859,
+        "average_precision": 0.9333522884329843,
+        "brier": 0.12161495672296715,
+        "alert_fraction": 0.01,
+        "alerts": 3,
+        "expected_true_alerts": 3.0,
+        "true_alerts_min": 3,
+        "true_alerts_max": 3,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.01293103448275862,
+        "precision_at_capacity": 1.0
+      },
+      "2022-09-12": {
+        "events": 281,
+        "positives": 170,
+        "prevalence": 0.604982206405694,
+        "average_precision": 0.9779946475405409,
+        "brier": 0.07990821532279851,
+        "alert_fraction": 0.01,
+        "alerts": 2,
+        "expected_true_alerts": 2.0,
+        "true_alerts_min": 2,
+        "true_alerts_max": 2,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.011764705882352941,
+        "precision_at_capacity": 1.0
+      },
+      "2022-09-13": {
+        "events": 184,
+        "positives": 106,
+        "prevalence": 0.5760869565217391,
+        "average_precision": 0.9633382368584124,
+        "brier": 0.08566036054102948,
+        "alert_fraction": 0.01,
+        "alerts": 1,
+        "expected_true_alerts": 1.0,
+        "true_alerts_min": 1,
+        "true_alerts_max": 1,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.009433962264150943,
+        "precision_at_capacity": 1.0
+      },
+      "2022-09-14": {
+        "events": 121,
+        "positives": 70,
+        "prevalence": 0.5785123966942148,
+        "average_precision": 0.9499284838939681,
+        "brier": 0.07921150620097785,
+        "alert_fraction": 0.01,
+        "alerts": 1,
+        "expected_true_alerts": 1.0,
+        "true_alerts_min": 1,
+        "true_alerts_max": 1,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.014285714285714285,
+        "precision_at_capacity": 1.0
+      },
+      "2022-09-15": {
+        "events": 46,
+        "positives": 28,
+        "prevalence": 0.6086956521739131,
+        "average_precision": 0.9663651266889388,
+        "brier": 0.05735195192452,
+        "alert_fraction": 0.01,
+        "alerts": 0,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 0,
+        "boundary_slots": 0,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": null
+      },
+      "2022-09-16": {
+        "events": 46,
+        "positives": 26,
+        "prevalence": 0.5652173913043478,
+        "average_precision": 0.9999999999999998,
+        "brier": 0.04733220348312924,
+        "alert_fraction": 0.01,
+        "alerts": 0,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 0,
+        "boundary_slots": 0,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": null
+      },
+      "2022-09-17": {
+        "events": 23,
+        "positives": 15,
+        "prevalence": 0.6521739130434783,
+        "average_precision": 1.0,
+        "brier": 0.0717071609821034,
+        "alert_fraction": 0.01,
+        "alerts": 0,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 0,
+        "boundary_slots": 0,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": null
+      },
+      "2022-09-18": {
+        "events": 11,
+        "positives": 8,
+        "prevalence": 0.7272727272727273,
+        "average_precision": 1.0,
+        "brier": 0.07149159380555178,
+        "alert_fraction": 0.01,
+        "alerts": 0,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 0,
+        "boundary_slots": 0,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": null
+      }
+    },
+    "history_mlp": {
+      "all": {
+        "events": 1346673,
+        "positives": 2150,
+        "prevalence": 0.001596527145045605,
+        "average_precision": 0.0948871860474009,
+        "brier": 0.006472603661007433,
+        "alert_fraction": 0.01,
+        "alerts": 13466,
+        "expected_true_alerts": 960.0,
+        "true_alerts_min": 960,
+        "true_alerts_max": 960,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.44651162790697674,
+        "precision_at_capacity": 0.07129065795336403
+      },
+      "cold": {
+        "events": 288672,
+        "positives": 404,
+        "prevalence": 0.0013995122491963197,
+        "average_precision": 0.059548305258563514,
+        "brier": 0.00470462492502535,
+        "alert_fraction": 0.01,
+        "alerts": 2886,
+        "expected_true_alerts": 156.0,
+        "true_alerts_min": 156,
+        "true_alerts_max": 156,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.38613861386138615,
+        "precision_at_capacity": 0.05405405405405406
+      },
+      "warm": {
+        "events": 1058001,
+        "positives": 1746,
+        "prevalence": 0.0016502819940623875,
+        "average_precision": 0.10312262141218563,
+        "brier": 0.0069549906886883315,
+        "alert_fraction": 0.01,
+        "alerts": 10580,
+        "expected_true_alerts": 808.0,
+        "true_alerts_min": 808,
+        "true_alerts_max": 808,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.4627720504009164,
+        "precision_at_capacity": 0.07637051039697543
+      },
+      "2022-09-08": {
+        "events": 482773,
+        "positives": 539,
+        "prevalence": 0.0011164667452405169,
+        "average_precision": 0.07045064201401695,
+        "brier": 0.005127401028560785,
+        "alert_fraction": 0.01,
+        "alerts": 4827,
+        "expected_true_alerts": 238.0,
+        "true_alerts_min": 238,
+        "true_alerts_max": 238,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.44155844155844154,
+        "precision_at_capacity": 0.04930598715558318
+      },
+      "2022-09-09": {
+        "events": 654467,
+        "positives": 514,
+        "prevalence": 0.0007853719133279447,
+        "average_precision": 0.03391841567869356,
+        "brier": 0.006522447854773545,
+        "alert_fraction": 0.01,
+        "alerts": 6544,
+        "expected_true_alerts": 181.0,
+        "true_alerts_min": 181,
+        "true_alerts_max": 181,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.3521400778210117,
+        "precision_at_capacity": 0.027658924205378972
+      },
+      "2022-09-10": {
+        "events": 208325,
+        "positives": 442,
+        "prevalence": 0.002121684867394696,
+        "average_precision": 0.09455541184156832,
+        "brier": 0.008366723682559763,
+        "alert_fraction": 0.01,
+        "alerts": 2083,
+        "expected_true_alerts": 174.0,
+        "true_alerts_min": 174,
+        "true_alerts_max": 174,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.3936651583710407,
+        "precision_at_capacity": 0.08353336533845415
+      },
+      "2022-09-11": {
+        "events": 396,
+        "positives": 232,
+        "prevalence": 0.5858585858585859,
+        "average_precision": 0.9309754207746858,
+        "brier": 0.2009348286643218,
+        "alert_fraction": 0.01,
+        "alerts": 3,
+        "expected_true_alerts": 3.0,
+        "true_alerts_min": 3,
+        "true_alerts_max": 3,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.01293103448275862,
+        "precision_at_capacity": 1.0
+      },
+      "2022-09-12": {
+        "events": 281,
+        "positives": 170,
+        "prevalence": 0.604982206405694,
+        "average_precision": 0.9449551670942358,
+        "brier": 0.19296327938292465,
+        "alert_fraction": 0.01,
+        "alerts": 2,
+        "expected_true_alerts": 2.0,
+        "true_alerts_min": 2,
+        "true_alerts_max": 2,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.011764705882352941,
+        "precision_at_capacity": 1.0
+      },
+      "2022-09-13": {
+        "events": 184,
+        "positives": 106,
+        "prevalence": 0.5760869565217391,
+        "average_precision": 0.9193176602581369,
+        "brier": 0.2159852370694134,
+        "alert_fraction": 0.01,
+        "alerts": 1,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": 0.0
+      },
+      "2022-09-14": {
+        "events": 121,
+        "positives": 70,
+        "prevalence": 0.5785123966942148,
+        "average_precision": 0.9261184611168778,
+        "brier": 0.22188813317445377,
+        "alert_fraction": 0.01,
+        "alerts": 1,
+        "expected_true_alerts": 1.0,
+        "true_alerts_min": 1,
+        "true_alerts_max": 1,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.014285714285714285,
+        "precision_at_capacity": 1.0
+      },
+      "2022-09-15": {
+        "events": 46,
+        "positives": 28,
+        "prevalence": 0.6086956521739131,
+        "average_precision": 0.9400599834195097,
+        "brier": 0.22159570952754826,
+        "alert_fraction": 0.01,
+        "alerts": 0,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 0,
+        "boundary_slots": 0,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": null
+      },
+      "2022-09-16": {
+        "events": 46,
+        "positives": 26,
+        "prevalence": 0.5652173913043478,
+        "average_precision": 0.9999999999999998,
+        "brier": 0.21807984104109882,
+        "alert_fraction": 0.01,
+        "alerts": 0,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 0,
+        "boundary_slots": 0,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": null
+      },
+      "2022-09-17": {
+        "events": 23,
+        "positives": 15,
+        "prevalence": 0.6521739130434783,
+        "average_precision": 1.0,
+        "brier": 0.2054912194942448,
+        "alert_fraction": 0.01,
+        "alerts": 0,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 0,
+        "boundary_slots": 0,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": null
+      },
+      "2022-09-18": {
+        "events": 11,
+        "positives": 8,
+        "prevalence": 0.7272727272727273,
+        "average_precision": 1.0,
+        "brier": 0.368293373824161,
+        "alert_fraction": 0.01,
+        "alerts": 0,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 0,
+        "boundary_slots": 0,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": null
+      }
+    },
+    "temporal_attention_8": {
+      "all": {
+        "events": 1346673,
+        "positives": 2150,
+        "prevalence": 0.001596527145045605,
+        "average_precision": 0.10339830250261275,
+        "brier": 0.005265060548684738,
+        "alert_fraction": 0.01,
+        "alerts": 13466,
+        "expected_true_alerts": 1193.0,
+        "true_alerts_min": 1193,
+        "true_alerts_max": 1193,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.5548837209302325,
+        "precision_at_capacity": 0.08859349472746175
+      },
+      "cold": {
+        "events": 288672,
+        "positives": 404,
+        "prevalence": 0.0013995122491963197,
+        "average_precision": 0.10033621543127186,
+        "brier": 0.0034291974809069303,
+        "alert_fraction": 0.01,
+        "alerts": 2886,
+        "expected_true_alerts": 231.0,
+        "true_alerts_min": 231,
+        "true_alerts_max": 231,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.5717821782178217,
+        "precision_at_capacity": 0.08004158004158005
+      },
+      "warm": {
+        "events": 1058001,
+        "positives": 1746,
+        "prevalence": 0.0016502819940623875,
+        "average_precision": 0.10718385341414483,
+        "brier": 0.005765969587051956,
+        "alert_fraction": 0.01,
+        "alerts": 10580,
+        "expected_true_alerts": 992.0,
+        "true_alerts_min": 992,
+        "true_alerts_max": 992,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.56815578465063,
+        "precision_at_capacity": 0.09376181474480151
+      },
+      "2022-09-08": {
+        "events": 482773,
+        "positives": 539,
+        "prevalence": 0.0011164667452405169,
+        "average_precision": 0.07356326207954658,
+        "brier": 0.003655239405352009,
+        "alert_fraction": 0.01,
+        "alerts": 4827,
+        "expected_true_alerts": 306.0,
+        "true_alerts_min": 306,
+        "true_alerts_max": 306,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.5677179962894249,
+        "precision_at_capacity": 0.06339341205717837
+      },
+      "2022-09-09": {
+        "events": 654467,
+        "positives": 514,
+        "prevalence": 0.0007853719133279447,
+        "average_precision": 0.040212797350644945,
+        "brier": 0.005605275116824012,
+        "alert_fraction": 0.01,
+        "alerts": 6544,
+        "expected_true_alerts": 222.0,
+        "true_alerts_min": 222,
+        "true_alerts_max": 222,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.43190661478599224,
+        "precision_at_capacity": 0.0339242053789731
+      },
+      "2022-09-10": {
+        "events": 208325,
+        "positives": 442,
+        "prevalence": 0.002121684867394696,
+        "average_precision": 0.07433854252691577,
+        "brier": 0.006931447530503271,
+        "alert_fraction": 0.01,
+        "alerts": 2083,
+        "expected_true_alerts": 196.0,
+        "true_alerts_min": 196,
+        "true_alerts_max": 196,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.4434389140271493,
+        "precision_at_capacity": 0.09409505520883342
+      },
+      "2022-09-11": {
+        "events": 396,
+        "positives": 232,
+        "prevalence": 0.5858585858585859,
+        "average_precision": 0.8980269316841674,
+        "brier": 0.21209859047613747,
+        "alert_fraction": 0.01,
+        "alerts": 3,
+        "expected_true_alerts": 3.0,
+        "true_alerts_min": 3,
+        "true_alerts_max": 3,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.01293103448275862,
+        "precision_at_capacity": 1.0
+      },
+      "2022-09-12": {
+        "events": 281,
+        "positives": 170,
+        "prevalence": 0.604982206405694,
+        "average_precision": 0.9627709448335372,
+        "brier": 0.18648342431314477,
+        "alert_fraction": 0.01,
+        "alerts": 2,
+        "expected_true_alerts": 2.0,
+        "true_alerts_min": 2,
+        "true_alerts_max": 2,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.011764705882352941,
+        "precision_at_capacity": 1.0
+      },
+      "2022-09-13": {
+        "events": 184,
+        "positives": 106,
+        "prevalence": 0.5760869565217391,
+        "average_precision": 0.9020738144824122,
+        "brier": 0.181360796014323,
+        "alert_fraction": 0.01,
+        "alerts": 1,
+        "expected_true_alerts": 1.0,
+        "true_alerts_min": 1,
+        "true_alerts_max": 1,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.009433962264150943,
+        "precision_at_capacity": 1.0
+      },
+      "2022-09-14": {
+        "events": 121,
+        "positives": 70,
+        "prevalence": 0.5785123966942148,
+        "average_precision": 0.9178967489526163,
+        "brier": 0.19785159400073282,
+        "alert_fraction": 0.01,
+        "alerts": 1,
+        "expected_true_alerts": 1.0,
+        "true_alerts_min": 1,
+        "true_alerts_max": 1,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.014285714285714285,
+        "precision_at_capacity": 1.0
+      },
+      "2022-09-15": {
+        "events": 46,
+        "positives": 28,
+        "prevalence": 0.6086956521739131,
+        "average_precision": 0.9460123643718906,
+        "brier": 0.15440676081859608,
+        "alert_fraction": 0.01,
+        "alerts": 0,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 0,
+        "boundary_slots": 0,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": null
+      },
+      "2022-09-16": {
+        "events": 46,
+        "positives": 26,
+        "prevalence": 0.5652173913043478,
+        "average_precision": 0.9999999999999998,
+        "brier": 0.13735996004626155,
+        "alert_fraction": 0.01,
+        "alerts": 0,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 0,
+        "boundary_slots": 0,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": null
+      },
+      "2022-09-17": {
+        "events": 23,
+        "positives": 15,
+        "prevalence": 0.6521739130434783,
+        "average_precision": 1.0,
+        "brier": 0.16920534450228658,
+        "alert_fraction": 0.01,
+        "alerts": 0,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 0,
+        "boundary_slots": 0,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": null
+      },
+      "2022-09-18": {
+        "events": 11,
+        "positives": 8,
+        "prevalence": 0.7272727272727273,
+        "average_precision": 1.0,
+        "brier": 0.1987535163414704,
+        "alert_fraction": 0.01,
+        "alerts": 0,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 0,
+        "boundary_slots": 0,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": null
+      }
+    },
+    "temporal_attention_32": {
+      "all": {
+        "events": 1346673,
+        "positives": 2150,
+        "prevalence": 0.001596527145045605,
+        "average_precision": 0.14362642977931656,
+        "brier": 0.006837455265032665,
+        "alert_fraction": 0.01,
+        "alerts": 13466,
+        "expected_true_alerts": 1209.0,
+        "true_alerts_min": 1209,
+        "true_alerts_max": 1209,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.5623255813953488,
+        "precision_at_capacity": 0.08978167236001783
+      },
+      "cold": {
+        "events": 288672,
+        "positives": 404,
+        "prevalence": 0.0013995122491963197,
+        "average_precision": 0.12779166748060575,
+        "brier": 0.003991650003501468,
+        "alert_fraction": 0.01,
+        "alerts": 2886,
+        "expected_true_alerts": 228.0,
+        "true_alerts_min": 228,
+        "true_alerts_max": 228,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.5643564356435643,
+        "precision_at_capacity": 0.079002079002079
+      },
+      "warm": {
+        "events": 1058001,
+        "positives": 1746,
+        "prevalence": 0.0016502819940623875,
+        "average_precision": 0.1505062792365959,
+        "brier": 0.007613923620409206,
+        "alert_fraction": 0.01,
+        "alerts": 10580,
+        "expected_true_alerts": 1000.0,
+        "true_alerts_min": 1000,
+        "true_alerts_max": 1000,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.572737686139748,
+        "precision_at_capacity": 0.0945179584120983
+      },
+      "2022-09-08": {
+        "events": 482773,
+        "positives": 539,
+        "prevalence": 0.0011164667452405169,
+        "average_precision": 0.09469510197481582,
+        "brier": 0.00456022463881026,
+        "alert_fraction": 0.01,
+        "alerts": 4827,
+        "expected_true_alerts": 311.0,
+        "true_alerts_min": 311,
+        "true_alerts_max": 311,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.5769944341372912,
+        "precision_at_capacity": 0.06442925212347214
+      },
+      "2022-09-09": {
+        "events": 654467,
+        "positives": 514,
+        "prevalence": 0.0007853719133279447,
+        "average_precision": 0.05211748878008514,
+        "brier": 0.007658293122467817,
+        "alert_fraction": 0.01,
+        "alerts": 6544,
+        "expected_true_alerts": 223.0,
+        "true_alerts_min": 223,
+        "true_alerts_max": 223,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.433852140077821,
+        "precision_at_capacity": 0.034077017114914426
+      },
+      "2022-09-10": {
+        "events": 208325,
+        "positives": 442,
+        "prevalence": 0.002121684867394696,
+        "average_precision": 0.11472660965744222,
+        "brier": 0.008782605013812254,
+        "alert_fraction": 0.01,
+        "alerts": 2083,
+        "expected_true_alerts": 218.0,
+        "true_alerts_min": 218,
+        "true_alerts_max": 218,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.49321266968325794,
+        "precision_at_capacity": 0.10465674507921267
+      },
+      "2022-09-11": {
+        "events": 396,
+        "positives": 232,
+        "prevalence": 0.5858585858585859,
+        "average_precision": 0.8791500040958407,
+        "brier": 0.16723757565940575,
+        "alert_fraction": 0.01,
+        "alerts": 3,
+        "expected_true_alerts": 3.0,
+        "true_alerts_min": 3,
+        "true_alerts_max": 3,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.01293103448275862,
+        "precision_at_capacity": 1.0
+      },
+      "2022-09-12": {
+        "events": 281,
+        "positives": 170,
+        "prevalence": 0.604982206405694,
+        "average_precision": 0.9399630117412637,
+        "brier": 0.14389068924320084,
+        "alert_fraction": 0.01,
+        "alerts": 2,
+        "expected_true_alerts": 2.0,
+        "true_alerts_min": 2,
+        "true_alerts_max": 2,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.011764705882352941,
+        "precision_at_capacity": 1.0
+      },
+      "2022-09-13": {
+        "events": 184,
+        "positives": 106,
+        "prevalence": 0.5760869565217391,
+        "average_precision": 0.9093285483155356,
+        "brier": 0.14844393656987398,
+        "alert_fraction": 0.01,
+        "alerts": 1,
+        "expected_true_alerts": 1.0,
+        "true_alerts_min": 1,
+        "true_alerts_max": 1,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.009433962264150943,
+        "precision_at_capacity": 1.0
+      },
+      "2022-09-14": {
+        "events": 121,
+        "positives": 70,
+        "prevalence": 0.5785123966942148,
+        "average_precision": 0.9019742163913296,
+        "brier": 0.155046270891383,
+        "alert_fraction": 0.01,
+        "alerts": 1,
+        "expected_true_alerts": 1.0,
+        "true_alerts_min": 1,
+        "true_alerts_max": 1,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.014285714285714285,
+        "precision_at_capacity": 1.0
+      },
+      "2022-09-15": {
+        "events": 46,
+        "positives": 28,
+        "prevalence": 0.6086956521739131,
+        "average_precision": 0.9400599834195097,
+        "brier": 0.10141585277628709,
+        "alert_fraction": 0.01,
+        "alerts": 0,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 0,
+        "boundary_slots": 0,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": null
+      },
+      "2022-09-16": {
+        "events": 46,
+        "positives": 26,
+        "prevalence": 0.5652173913043478,
+        "average_precision": 0.9999999999999998,
+        "brier": 0.08430515978916726,
+        "alert_fraction": 0.01,
+        "alerts": 0,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 0,
+        "boundary_slots": 0,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": null
+      },
+      "2022-09-17": {
+        "events": 23,
+        "positives": 15,
+        "prevalence": 0.6521739130434783,
+        "average_precision": 1.0,
+        "brier": 0.08760597278852723,
+        "alert_fraction": 0.01,
+        "alerts": 0,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 0,
+        "boundary_slots": 0,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": null
+      },
+      "2022-09-18": {
+        "events": 11,
+        "positives": 8,
+        "prevalence": 0.7272727272727273,
+        "average_precision": 1.0,
+        "brier": 0.1122726720983613,
+        "alert_fraction": 0.01,
+        "alerts": 0,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 0,
+        "boundary_slots": 0,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": null
+      }
+    },
+    "history_xgboost_calibrated": {
+      "all": {
+        "events": 1346673,
+        "positives": 2150,
+        "prevalence": 0.001596527145045605,
+        "average_precision": 0.17657254623104104,
+        "brier": 0.001437165131659277,
+        "alert_fraction": 0.01,
+        "alerts": 13466,
+        "expected_true_alerts": 1152.0,
+        "true_alerts_min": 1152,
+        "true_alerts_max": 1152,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.5358139534883721,
+        "precision_at_capacity": 0.08554878954403683
+      },
+      "cold": {
+        "events": 288672,
+        "positives": 404,
+        "prevalence": 0.0013995122491963197,
+        "average_precision": 0.16694366005798167,
+        "brier": 0.0012841695953023228,
+        "alert_fraction": 0.01,
+        "alerts": 2886,
+        "expected_true_alerts": 227.0,
+        "true_alerts_min": 227,
+        "true_alerts_max": 227,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.5618811881188119,
+        "precision_at_capacity": 0.07865557865557865
+      },
+      "warm": {
+        "events": 1058001,
+        "positives": 1746,
+        "prevalence": 0.0016502819940623875,
+        "average_precision": 0.18491700428524604,
+        "brier": 0.0014789094470911476,
+        "alert_fraction": 0.01,
+        "alerts": 10580,
+        "expected_true_alerts": 960.0,
+        "true_alerts_min": 960,
+        "true_alerts_max": 960,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.5498281786941581,
+        "precision_at_capacity": 0.09073724007561437
+      },
+      "2022-09-08": {
+        "events": 482773,
+        "positives": 539,
+        "prevalence": 0.0011164667452405169,
+        "average_precision": 0.1478458957168736,
+        "brier": 0.001019829326677687,
+        "alert_fraction": 0.01,
+        "alerts": 4827,
+        "expected_true_alerts": 330.0,
+        "true_alerts_min": 330,
+        "true_alerts_max": 330,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.6122448979591837,
+        "precision_at_capacity": 0.06836544437538844
+      },
+      "2022-09-09": {
+        "events": 654467,
+        "positives": 514,
+        "prevalence": 0.0007853719133279447,
+        "average_precision": 0.04314773195921483,
+        "brier": 0.0008597351771520593,
+        "alert_fraction": 0.01,
+        "alerts": 6544,
+        "expected_true_alerts": 194.0,
+        "true_alerts_min": 194,
+        "true_alerts_max": 194,
+        "boundary_tied_events": 4,
+        "boundary_slots": 4,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.377431906614786,
+        "precision_at_capacity": 0.029645476772616138
+      },
+      "2022-09-10": {
+        "events": 208325,
+        "positives": 442,
+        "prevalence": 0.002121684867394696,
+        "average_precision": 0.17611283217267004,
+        "brier": 0.0019090006440760613,
+        "alert_fraction": 0.01,
+        "alerts": 2083,
+        "expected_true_alerts": 246.0,
+        "true_alerts_min": 246,
+        "true_alerts_max": 246,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.5565610859728507,
+        "precision_at_capacity": 0.11809889582333173
+      },
+      "2022-09-11": {
+        "events": 396,
+        "positives": 232,
+        "prevalence": 0.5858585858585859,
+        "average_precision": 0.9333522884329843,
+        "brier": 0.46322743949522216,
+        "alert_fraction": 0.01,
+        "alerts": 3,
+        "expected_true_alerts": 3.0,
+        "true_alerts_min": 3,
+        "true_alerts_max": 3,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.01293103448275862,
+        "precision_at_capacity": 1.0
+      },
+      "2022-09-12": {
+        "events": 281,
+        "positives": 170,
+        "prevalence": 0.604982206405694,
+        "average_precision": 0.9779946475405409,
+        "brier": 0.4446502698996296,
+        "alert_fraction": 0.01,
+        "alerts": 2,
+        "expected_true_alerts": 2.0,
+        "true_alerts_min": 2,
+        "true_alerts_max": 2,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.011764705882352941,
+        "precision_at_capacity": 1.0
+      },
+      "2022-09-13": {
+        "events": 184,
+        "positives": 106,
+        "prevalence": 0.5760869565217391,
+        "average_precision": 0.9633382368584124,
+        "brier": 0.41665832290665294,
+        "alert_fraction": 0.01,
+        "alerts": 1,
+        "expected_true_alerts": 1.0,
+        "true_alerts_min": 1,
+        "true_alerts_max": 1,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.009433962264150943,
+        "precision_at_capacity": 1.0
+      },
+      "2022-09-14": {
+        "events": 121,
+        "positives": 70,
+        "prevalence": 0.5785123966942148,
+        "average_precision": 0.9499284838939681,
+        "brier": 0.3852679519312219,
+        "alert_fraction": 0.01,
+        "alerts": 1,
+        "expected_true_alerts": 1.0,
+        "true_alerts_min": 1,
+        "true_alerts_max": 1,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.014285714285714285,
+        "precision_at_capacity": 1.0
+      },
+      "2022-09-15": {
+        "events": 46,
+        "positives": 28,
+        "prevalence": 0.6086956521739131,
+        "average_precision": 0.9663651266889388,
+        "brier": 0.39056801444608596,
+        "alert_fraction": 0.01,
+        "alerts": 0,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 0,
+        "boundary_slots": 0,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": null
+      },
+      "2022-09-16": {
+        "events": 46,
+        "positives": 26,
+        "prevalence": 0.5652173913043478,
+        "average_precision": 0.9999999999999998,
+        "brier": 0.38222950192647565,
+        "alert_fraction": 0.01,
+        "alerts": 0,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 0,
+        "boundary_slots": 0,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": null
+      },
+      "2022-09-17": {
+        "events": 23,
+        "positives": 15,
+        "prevalence": 0.6521739130434783,
+        "average_precision": 1.0,
+        "brier": 0.41250083245198965,
+        "alert_fraction": 0.01,
+        "alerts": 0,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 0,
+        "boundary_slots": 0,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": null
+      },
+      "2022-09-18": {
+        "events": 11,
+        "positives": 8,
+        "prevalence": 0.7272727272727273,
+        "average_precision": 1.0,
+        "brier": 0.5437276433240704,
+        "alert_fraction": 0.01,
+        "alerts": 0,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 0,
+        "boundary_slots": 0,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": null
+      }
+    },
+    "temporal_attention_32_calibrated": {
+      "all": {
+        "events": 1346673,
+        "positives": 2150,
+        "prevalence": 0.001596527145045605,
+        "average_precision": 0.14362642977931656,
+        "brier": 0.0014929760840200266,
+        "alert_fraction": 0.01,
+        "alerts": 13466,
+        "expected_true_alerts": 1209.0,
+        "true_alerts_min": 1209,
+        "true_alerts_max": 1209,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.5623255813953488,
+        "precision_at_capacity": 0.08978167236001783
+      },
+      "cold": {
+        "events": 288672,
+        "positives": 404,
+        "prevalence": 0.0013995122491963197,
+        "average_precision": 0.12779166748060575,
+        "brier": 0.0013128392277031527,
+        "alert_fraction": 0.01,
+        "alerts": 2886,
+        "expected_true_alerts": 228.0,
+        "true_alerts_min": 228,
+        "true_alerts_max": 228,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.5643564356435643,
+        "precision_at_capacity": 0.079002079002079
+      },
+      "warm": {
+        "events": 1058001,
+        "positives": 1746,
+        "prevalence": 0.0016502819940623875,
+        "average_precision": 0.1505062792365959,
+        "brier": 0.0015421258169472207,
+        "alert_fraction": 0.01,
+        "alerts": 10580,
+        "expected_true_alerts": 1000.0,
+        "true_alerts_min": 1000,
+        "true_alerts_max": 1000,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.572737686139748,
+        "precision_at_capacity": 0.0945179584120983
+      },
+      "2022-09-08": {
+        "events": 482773,
+        "positives": 539,
+        "prevalence": 0.0011164667452405169,
+        "average_precision": 0.09469510197481582,
+        "brier": 0.0010615274269264907,
+        "alert_fraction": 0.01,
+        "alerts": 4827,
+        "expected_true_alerts": 311.0,
+        "true_alerts_min": 311,
+        "true_alerts_max": 311,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.5769944341372912,
+        "precision_at_capacity": 0.06442925212347214
+      },
+      "2022-09-09": {
+        "events": 654467,
+        "positives": 514,
+        "prevalence": 0.0007853719133279447,
+        "average_precision": 0.05211748878008514,
+        "brier": 0.000822465086378906,
+        "alert_fraction": 0.01,
+        "alerts": 6544,
+        "expected_true_alerts": 223.0,
+        "true_alerts_min": 223,
+        "true_alerts_max": 223,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.433852140077821,
+        "precision_at_capacity": 0.034077017114914426
+      },
+      "2022-09-10": {
+        "events": 208325,
+        "positives": 442,
+        "prevalence": 0.002121684867394696,
+        "average_precision": 0.11472660965744222,
+        "brier": 0.0019880637370328145,
+        "alert_fraction": 0.01,
+        "alerts": 2083,
+        "expected_true_alerts": 218.0,
+        "true_alerts_min": 218,
+        "true_alerts_max": 218,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.49321266968325794,
+        "precision_at_capacity": 0.10465674507921267
+      },
+      "2022-09-11": {
+        "events": 396,
+        "positives": 232,
+        "prevalence": 0.5858585858585859,
+        "average_precision": 0.8791500040958407,
+        "brier": 0.49476555243041265,
+        "alert_fraction": 0.01,
+        "alerts": 3,
+        "expected_true_alerts": 3.0,
+        "true_alerts_min": 3,
+        "true_alerts_max": 3,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.01293103448275862,
+        "precision_at_capacity": 1.0
+      },
+      "2022-09-12": {
+        "events": 281,
+        "positives": 170,
+        "prevalence": 0.604982206405694,
+        "average_precision": 0.9399630117412637,
+        "brier": 0.5027736879171545,
+        "alert_fraction": 0.01,
+        "alerts": 2,
+        "expected_true_alerts": 2.0,
+        "true_alerts_min": 2,
+        "true_alerts_max": 2,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.011764705882352941,
+        "precision_at_capacity": 1.0
+      },
+      "2022-09-13": {
+        "events": 184,
+        "positives": 106,
+        "prevalence": 0.5760869565217391,
+        "average_precision": 0.9093285483155356,
+        "brier": 0.4811010946373,
+        "alert_fraction": 0.01,
+        "alerts": 1,
+        "expected_true_alerts": 1.0,
+        "true_alerts_min": 1,
+        "true_alerts_max": 1,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.009433962264150943,
+        "precision_at_capacity": 1.0
+      },
+      "2022-09-14": {
+        "events": 121,
+        "positives": 70,
+        "prevalence": 0.5785123966942148,
+        "average_precision": 0.9019742163913296,
+        "brier": 0.4812647538249392,
+        "alert_fraction": 0.01,
+        "alerts": 1,
+        "expected_true_alerts": 1.0,
+        "true_alerts_min": 1,
+        "true_alerts_max": 1,
+        "boundary_tied_events": 1,
+        "boundary_slots": 1,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.014285714285714285,
+        "precision_at_capacity": 1.0
+      },
+      "2022-09-15": {
+        "events": 46,
+        "positives": 28,
+        "prevalence": 0.6086956521739131,
+        "average_precision": 0.9400599834195097,
+        "brier": 0.4893089449435296,
+        "alert_fraction": 0.01,
+        "alerts": 0,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 0,
+        "boundary_slots": 0,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": null
+      },
+      "2022-09-16": {
+        "events": 46,
+        "positives": 26,
+        "prevalence": 0.5652173913043478,
+        "average_precision": 0.9999999999999998,
+        "brier": 0.4539770521707371,
+        "alert_fraction": 0.01,
+        "alerts": 0,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 0,
+        "boundary_slots": 0,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": null
+      },
+      "2022-09-17": {
+        "events": 23,
+        "positives": 15,
+        "prevalence": 0.6521739130434783,
+        "average_precision": 1.0,
+        "brier": 0.5157460064803105,
+        "alert_fraction": 0.01,
+        "alerts": 0,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 0,
+        "boundary_slots": 0,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": null
+      },
+      "2022-09-18": {
+        "events": 11,
+        "positives": 8,
+        "prevalence": 0.7272727272727273,
+        "average_precision": 1.0,
+        "brier": 0.58351364562417,
+        "alert_fraction": 0.01,
+        "alerts": 0,
+        "expected_true_alerts": 0.0,
+        "true_alerts_min": 0,
+        "true_alerts_max": 0,
+        "boundary_tied_events": 0,
+        "boundary_slots": 0,
+        "tie_policy": "analytical expectation under uniform random selection within boundary score ties",
+        "recall_at_capacity": 0.0,
+        "precision_at_capacity": null
+      }
+    }
+  },
+  "policies": {
+    "history_xgboost": {
+      "threshold": 0.018857865409916578,
+      "alerts": 12784,
+      "true_alerts": 731,
+      "recall": 0.34,
+      "precision": 0.057180851063829786,
+      "hourly": [
+        {
+          "hour_start": "2022-09-08 00:00:00",
+          "decision_at": "2022-09-08 01:00:00",
+          "events": 33964,
+          "budget": 339,
+          "threshold_eligible": 132,
+          "alerts": 132
+        },
+        {
+          "hour_start": "2022-09-08 01:00:00",
+          "decision_at": "2022-09-08 02:00:00",
+          "events": 19358,
+          "budget": 193,
+          "threshold_eligible": 162,
+          "alerts": 162
+        },
+        {
+          "hour_start": "2022-09-08 02:00:00",
+          "decision_at": "2022-09-08 03:00:00",
+          "events": 19367,
+          "budget": 193,
+          "threshold_eligible": 144,
+          "alerts": 144
+        },
+        {
+          "hour_start": "2022-09-08 03:00:00",
+          "decision_at": "2022-09-08 04:00:00",
+          "events": 19600,
+          "budget": 196,
+          "threshold_eligible": 139,
+          "alerts": 139
+        },
+        {
+          "hour_start": "2022-09-08 04:00:00",
+          "decision_at": "2022-09-08 05:00:00",
+          "events": 19511,
+          "budget": 195,
+          "threshold_eligible": 186,
+          "alerts": 186
+        },
+        {
+          "hour_start": "2022-09-08 05:00:00",
+          "decision_at": "2022-09-08 06:00:00",
+          "events": 19403,
+          "budget": 194,
+          "threshold_eligible": 196,
+          "alerts": 194
+        },
+        {
+          "hour_start": "2022-09-08 06:00:00",
+          "decision_at": "2022-09-08 07:00:00",
+          "events": 19199,
+          "budget": 191,
+          "threshold_eligible": 222,
+          "alerts": 191
+        },
+        {
+          "hour_start": "2022-09-08 07:00:00",
+          "decision_at": "2022-09-08 08:00:00",
+          "events": 19394,
+          "budget": 193,
+          "threshold_eligible": 227,
+          "alerts": 193
+        },
+        {
+          "hour_start": "2022-09-08 08:00:00",
+          "decision_at": "2022-09-08 09:00:00",
+          "events": 19730,
+          "budget": 197,
+          "threshold_eligible": 228,
+          "alerts": 197
+        },
+        {
+          "hour_start": "2022-09-08 09:00:00",
+          "decision_at": "2022-09-08 10:00:00",
+          "events": 19728,
+          "budget": 197,
+          "threshold_eligible": 242,
+          "alerts": 197
+        },
+        {
+          "hour_start": "2022-09-08 10:00:00",
+          "decision_at": "2022-09-08 11:00:00",
+          "events": 19615,
+          "budget": 196,
+          "threshold_eligible": 256,
+          "alerts": 196
+        },
+        {
+          "hour_start": "2022-09-08 11:00:00",
+          "decision_at": "2022-09-08 12:00:00",
+          "events": 19332,
+          "budget": 193,
+          "threshold_eligible": 267,
+          "alerts": 193
+        },
+        {
+          "hour_start": "2022-09-08 12:00:00",
+          "decision_at": "2022-09-08 13:00:00",
+          "events": 19695,
+          "budget": 196,
+          "threshold_eligible": 278,
+          "alerts": 196
+        },
+        {
+          "hour_start": "2022-09-08 13:00:00",
+          "decision_at": "2022-09-08 14:00:00",
+          "events": 19650,
+          "budget": 196,
+          "threshold_eligible": 269,
+          "alerts": 196
+        },
+        {
+          "hour_start": "2022-09-08 14:00:00",
+          "decision_at": "2022-09-08 15:00:00",
+          "events": 19357,
+          "budget": 193,
+          "threshold_eligible": 257,
+          "alerts": 193
+        },
+        {
+          "hour_start": "2022-09-08 15:00:00",
+          "decision_at": "2022-09-08 16:00:00",
+          "events": 19976,
+          "budget": 199,
+          "threshold_eligible": 221,
+          "alerts": 199
+        },
+        {
+          "hour_start": "2022-09-08 16:00:00",
+          "decision_at": "2022-09-08 17:00:00",
+          "events": 19494,
+          "budget": 194,
+          "threshold_eligible": 218,
+          "alerts": 194
+        },
+        {
+          "hour_start": "2022-09-08 17:00:00",
+          "decision_at": "2022-09-08 18:00:00",
+          "events": 19703,
+          "budget": 197,
+          "threshold_eligible": 266,
+          "alerts": 197
+        },
+        {
+          "hour_start": "2022-09-08 18:00:00",
+          "decision_at": "2022-09-08 19:00:00",
+          "events": 19450,
+          "budget": 194,
+          "threshold_eligible": 219,
+          "alerts": 194
+        },
+        {
+          "hour_start": "2022-09-08 19:00:00",
+          "decision_at": "2022-09-08 20:00:00",
+          "events": 19710,
+          "budget": 197,
+          "threshold_eligible": 232,
+          "alerts": 197
+        },
+        {
+          "hour_start": "2022-09-08 20:00:00",
+          "decision_at": "2022-09-08 21:00:00",
+          "events": 19523,
+          "budget": 195,
+          "threshold_eligible": 149,
+          "alerts": 149
+        },
+        {
+          "hour_start": "2022-09-08 21:00:00",
+          "decision_at": "2022-09-08 22:00:00",
+          "events": 19229,
+          "budget": 192,
+          "threshold_eligible": 154,
+          "alerts": 154
+        },
+        {
+          "hour_start": "2022-09-08 22:00:00",
+          "decision_at": "2022-09-08 23:00:00",
+          "events": 19344,
+          "budget": 193,
+          "threshold_eligible": 170,
+          "alerts": 170
+        },
+        {
+          "hour_start": "2022-09-08 23:00:00",
+          "decision_at": "2022-09-09 00:00:00",
+          "events": 19441,
+          "budget": 194,
+          "threshold_eligible": 135,
+          "alerts": 135
+        },
+        {
+          "hour_start": "2022-09-09 00:00:00",
+          "decision_at": "2022-09-09 01:00:00",
+          "events": 41280,
+          "budget": 412,
+          "threshold_eligible": 682,
+          "alerts": 412
+        },
+        {
+          "hour_start": "2022-09-09 01:00:00",
+          "decision_at": "2022-09-09 02:00:00",
+          "events": 26859,
+          "budget": 268,
+          "threshold_eligible": 723,
+          "alerts": 268
+        },
+        {
+          "hour_start": "2022-09-09 02:00:00",
+          "decision_at": "2022-09-09 03:00:00",
+          "events": 26621,
+          "budget": 266,
+          "threshold_eligible": 727,
+          "alerts": 266
+        },
+        {
+          "hour_start": "2022-09-09 03:00:00",
+          "decision_at": "2022-09-09 04:00:00",
+          "events": 26351,
+          "budget": 263,
+          "threshold_eligible": 669,
+          "alerts": 263
+        },
+        {
+          "hour_start": "2022-09-09 04:00:00",
+          "decision_at": "2022-09-09 05:00:00",
+          "events": 26582,
+          "budget": 265,
+          "threshold_eligible": 818,
+          "alerts": 265
+        },
+        {
+          "hour_start": "2022-09-09 05:00:00",
+          "decision_at": "2022-09-09 06:00:00",
+          "events": 26893,
+          "budget": 268,
+          "threshold_eligible": 903,
+          "alerts": 268
+        },
+        {
+          "hour_start": "2022-09-09 06:00:00",
+          "decision_at": "2022-09-09 07:00:00",
+          "events": 26878,
+          "budget": 268,
+          "threshold_eligible": 880,
+          "alerts": 268
+        },
+        {
+          "hour_start": "2022-09-09 07:00:00",
+          "decision_at": "2022-09-09 08:00:00",
+          "events": 26514,
+          "budget": 265,
+          "threshold_eligible": 862,
+          "alerts": 265
+        },
+        {
+          "hour_start": "2022-09-09 08:00:00",
+          "decision_at": "2022-09-09 09:00:00",
+          "events": 26996,
+          "budget": 269,
+          "threshold_eligible": 881,
+          "alerts": 269
+        },
+        {
+          "hour_start": "2022-09-09 09:00:00",
+          "decision_at": "2022-09-09 10:00:00",
+          "events": 27258,
+          "budget": 272,
+          "threshold_eligible": 910,
+          "alerts": 272
+        },
+        {
+          "hour_start": "2022-09-09 10:00:00",
+          "decision_at": "2022-09-09 11:00:00",
+          "events": 26360,
+          "budget": 263,
+          "threshold_eligible": 862,
+          "alerts": 263
+        },
+        {
+          "hour_start": "2022-09-09 11:00:00",
+          "decision_at": "2022-09-09 12:00:00",
+          "events": 26454,
+          "budget": 264,
+          "threshold_eligible": 969,
+          "alerts": 264
+        },
+        {
+          "hour_start": "2022-09-09 12:00:00",
+          "decision_at": "2022-09-09 13:00:00",
+          "events": 26704,
+          "budget": 267,
+          "threshold_eligible": 957,
+          "alerts": 267
+        },
+        {
+          "hour_start": "2022-09-09 13:00:00",
+          "decision_at": "2022-09-09 14:00:00",
+          "events": 26325,
+          "budget": 263,
+          "threshold_eligible": 908,
+          "alerts": 263
+        },
+        {
+          "hour_start": "2022-09-09 14:00:00",
+          "decision_at": "2022-09-09 15:00:00",
+          "events": 26784,
+          "budget": 267,
+          "threshold_eligible": 937,
+          "alerts": 267
+        },
+        {
+          "hour_start": "2022-09-09 15:00:00",
+          "decision_at": "2022-09-09 16:00:00",
+          "events": 26560,
+          "budget": 265,
+          "threshold_eligible": 957,
+          "alerts": 265
+        },
+        {
+          "hour_start": "2022-09-09 16:00:00",
+          "decision_at": "2022-09-09 17:00:00",
+          "events": 26672,
+          "budget": 266,
+          "threshold_eligible": 887,
+          "alerts": 266
+        },
+        {
+          "hour_start": "2022-09-09 17:00:00",
+          "decision_at": "2022-09-09 18:00:00",
+          "events": 27209,
+          "budget": 272,
+          "threshold_eligible": 900,
+          "alerts": 272
+        },
+        {
+          "hour_start": "2022-09-09 18:00:00",
+          "decision_at": "2022-09-09 19:00:00",
+          "events": 27015,
+          "budget": 270,
+          "threshold_eligible": 873,
+          "alerts": 270
+        },
+        {
+          "hour_start": "2022-09-09 19:00:00",
+          "decision_at": "2022-09-09 20:00:00",
+          "events": 26657,
+          "budget": 266,
+          "threshold_eligible": 832,
+          "alerts": 266
+        },
+        {
+          "hour_start": "2022-09-09 20:00:00",
+          "decision_at": "2022-09-09 21:00:00",
+          "events": 26109,
+          "budget": 261,
+          "threshold_eligible": 713,
+          "alerts": 261
+        },
+        {
+          "hour_start": "2022-09-09 21:00:00",
+          "decision_at": "2022-09-09 22:00:00",
+          "events": 26195,
+          "budget": 261,
+          "threshold_eligible": 690,
+          "alerts": 261
+        },
+        {
+          "hour_start": "2022-09-09 22:00:00",
+          "decision_at": "2022-09-09 23:00:00",
+          "events": 26444,
+          "budget": 264,
+          "threshold_eligible": 682,
+          "alerts": 264
+        },
+        {
+          "hour_start": "2022-09-09 23:00:00",
+          "decision_at": "2022-09-10 00:00:00",
+          "events": 26747,
+          "budget": 267,
+          "threshold_eligible": 696,
+          "alerts": 267
+        },
+        {
+          "hour_start": "2022-09-10 00:00:00",
+          "decision_at": "2022-09-10 01:00:00",
+          "events": 22591,
+          "budget": 225,
+          "threshold_eligible": 108,
+          "alerts": 108
+        },
+        {
+          "hour_start": "2022-09-10 01:00:00",
+          "decision_at": "2022-09-10 02:00:00",
+          "events": 8277,
+          "budget": 82,
+          "threshold_eligible": 117,
+          "alerts": 82
+        },
+        {
+          "hour_start": "2022-09-10 02:00:00",
+          "decision_at": "2022-09-10 03:00:00",
+          "events": 8193,
+          "budget": 81,
+          "threshold_eligible": 115,
+          "alerts": 81
+        },
+        {
+          "hour_start": "2022-09-10 03:00:00",
+          "decision_at": "2022-09-10 04:00:00",
+          "events": 8068,
+          "budget": 80,
+          "threshold_eligible": 103,
+          "alerts": 80
+        },
+        {
+          "hour_start": "2022-09-10 04:00:00",
+          "decision_at": "2022-09-10 05:00:00",
+          "events": 8440,
+          "budget": 84,
+          "threshold_eligible": 132,
+          "alerts": 84
+        },
+        {
+          "hour_start": "2022-09-10 05:00:00",
+          "decision_at": "2022-09-10 06:00:00",
+          "events": 8135,
+          "budget": 81,
+          "threshold_eligible": 155,
+          "alerts": 81
+        },
+        {
+          "hour_start": "2022-09-10 06:00:00",
+          "decision_at": "2022-09-10 07:00:00",
+          "events": 8100,
+          "budget": 81,
+          "threshold_eligible": 170,
+          "alerts": 81
+        },
+        {
+          "hour_start": "2022-09-10 07:00:00",
+          "decision_at": "2022-09-10 08:00:00",
+          "events": 8209,
+          "budget": 82,
+          "threshold_eligible": 158,
+          "alerts": 82
+        },
+        {
+          "hour_start": "2022-09-10 08:00:00",
+          "decision_at": "2022-09-10 09:00:00",
+          "events": 8254,
+          "budget": 82,
+          "threshold_eligible": 156,
+          "alerts": 82
+        },
+        {
+          "hour_start": "2022-09-10 09:00:00",
+          "decision_at": "2022-09-10 10:00:00",
+          "events": 7999,
+          "budget": 79,
+          "threshold_eligible": 119,
+          "alerts": 79
+        },
+        {
+          "hour_start": "2022-09-10 10:00:00",
+          "decision_at": "2022-09-10 11:00:00",
+          "events": 8213,
+          "budget": 82,
+          "threshold_eligible": 163,
+          "alerts": 82
+        },
+        {
+          "hour_start": "2022-09-10 11:00:00",
+          "decision_at": "2022-09-10 12:00:00",
+          "events": 8071,
+          "budget": 80,
+          "threshold_eligible": 178,
+          "alerts": 80
+        },
+        {
+          "hour_start": "2022-09-10 12:00:00",
+          "decision_at": "2022-09-10 13:00:00",
+          "events": 8027,
+          "budget": 80,
+          "threshold_eligible": 174,
+          "alerts": 80
+        },
+        {
+          "hour_start": "2022-09-10 13:00:00",
+          "decision_at": "2022-09-10 14:00:00",
+          "events": 7800,
+          "budget": 78,
+          "threshold_eligible": 156,
+          "alerts": 78
+        },
+        {
+          "hour_start": "2022-09-10 14:00:00",
+          "decision_at": "2022-09-10 15:00:00",
+          "events": 7776,
+          "budget": 77,
+          "threshold_eligible": 146,
+          "alerts": 77
+        },
+        {
+          "hour_start": "2022-09-10 15:00:00",
+          "decision_at": "2022-09-10 16:00:00",
+          "events": 8133,
+          "budget": 81,
+          "threshold_eligible": 175,
+          "alerts": 81
+        },
+        {
+          "hour_start": "2022-09-10 16:00:00",
+          "decision_at": "2022-09-10 17:00:00",
+          "events": 8051,
+          "budget": 80,
+          "threshold_eligible": 168,
+          "alerts": 80
+        },
+        {
+          "hour_start": "2022-09-10 17:00:00",
+          "decision_at": "2022-09-10 18:00:00",
+          "events": 7825,
+          "budget": 78,
+          "threshold_eligible": 142,
+          "alerts": 78
+        },
+        {
+          "hour_start": "2022-09-10 18:00:00",
+          "decision_at": "2022-09-10 19:00:00",
+          "events": 8073,
+          "budget": 80,
+          "threshold_eligible": 132,
+          "alerts": 80
+        },
+        {
+          "hour_start": "2022-09-10 19:00:00",
+          "decision_at": "2022-09-10 20:00:00",
+          "events": 7885,
+          "budget": 78,
+          "threshold_eligible": 125,
+          "alerts": 78
+        },
+        {
+          "hour_start": "2022-09-10 20:00:00",
+          "decision_at": "2022-09-10 21:00:00",
+          "events": 8170,
+          "budget": 81,
+          "threshold_eligible": 118,
+          "alerts": 81
+        },
+        {
+          "hour_start": "2022-09-10 21:00:00",
+          "decision_at": "2022-09-10 22:00:00",
+          "events": 8301,
+          "budget": 83,
+          "threshold_eligible": 111,
+          "alerts": 83
+        },
+        {
+          "hour_start": "2022-09-10 22:00:00",
+          "decision_at": "2022-09-10 23:00:00",
+          "events": 8042,
+          "budget": 80,
+          "threshold_eligible": 98,
+          "alerts": 80
+        },
+        {
+          "hour_start": "2022-09-10 23:00:00",
+          "decision_at": "2022-09-11 00:00:00",
+          "events": 7692,
+          "budget": 76,
+          "threshold_eligible": 107,
+          "alerts": 76
+        },
+        {
+          "hour_start": "2022-09-11 00:00:00",
+          "decision_at": "2022-09-11 01:00:00",
+          "events": 5,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 01:00:00",
+          "decision_at": "2022-09-11 02:00:00",
+          "events": 7,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 02:00:00",
+          "decision_at": "2022-09-11 03:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 03:00:00",
+          "decision_at": "2022-09-11 04:00:00",
+          "events": 6,
+          "budget": 0,
+          "threshold_eligible": 3,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 04:00:00",
+          "decision_at": "2022-09-11 05:00:00",
+          "events": 15,
+          "budget": 0,
+          "threshold_eligible": 7,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 05:00:00",
+          "decision_at": "2022-09-11 06:00:00",
+          "events": 23,
+          "budget": 0,
+          "threshold_eligible": 11,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 06:00:00",
+          "decision_at": "2022-09-11 07:00:00",
+          "events": 11,
+          "budget": 0,
+          "threshold_eligible": 8,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 07:00:00",
+          "decision_at": "2022-09-11 08:00:00",
+          "events": 11,
+          "budget": 0,
+          "threshold_eligible": 4,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 08:00:00",
+          "decision_at": "2022-09-11 09:00:00",
+          "events": 18,
+          "budget": 0,
+          "threshold_eligible": 9,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 09:00:00",
+          "decision_at": "2022-09-11 10:00:00",
+          "events": 23,
+          "budget": 0,
+          "threshold_eligible": 14,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 10:00:00",
+          "decision_at": "2022-09-11 11:00:00",
+          "events": 14,
+          "budget": 0,
+          "threshold_eligible": 8,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 11:00:00",
+          "decision_at": "2022-09-11 12:00:00",
+          "events": 31,
+          "budget": 0,
+          "threshold_eligible": 20,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 12:00:00",
+          "decision_at": "2022-09-11 13:00:00",
+          "events": 21,
+          "budget": 0,
+          "threshold_eligible": 13,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 13:00:00",
+          "decision_at": "2022-09-11 14:00:00",
+          "events": 38,
+          "budget": 0,
+          "threshold_eligible": 25,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 14:00:00",
+          "decision_at": "2022-09-11 15:00:00",
+          "events": 35,
+          "budget": 0,
+          "threshold_eligible": 20,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 15:00:00",
+          "decision_at": "2022-09-11 16:00:00",
+          "events": 22,
+          "budget": 0,
+          "threshold_eligible": 10,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 16:00:00",
+          "decision_at": "2022-09-11 17:00:00",
+          "events": 21,
+          "budget": 0,
+          "threshold_eligible": 12,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 17:00:00",
+          "decision_at": "2022-09-11 18:00:00",
+          "events": 21,
+          "budget": 0,
+          "threshold_eligible": 13,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 18:00:00",
+          "decision_at": "2022-09-11 19:00:00",
+          "events": 24,
+          "budget": 0,
+          "threshold_eligible": 15,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 19:00:00",
+          "decision_at": "2022-09-11 20:00:00",
+          "events": 24,
+          "budget": 0,
+          "threshold_eligible": 17,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 20:00:00",
+          "decision_at": "2022-09-11 21:00:00",
+          "events": 6,
+          "budget": 0,
+          "threshold_eligible": 5,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 21:00:00",
+          "decision_at": "2022-09-11 22:00:00",
+          "events": 4,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 22:00:00",
+          "decision_at": "2022-09-11 23:00:00",
+          "events": 10,
+          "budget": 0,
+          "threshold_eligible": 5,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 23:00:00",
+          "decision_at": "2022-09-12 00:00:00",
+          "events": 4,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 00:00:00",
+          "decision_at": "2022-09-12 01:00:00",
+          "events": 6,
+          "budget": 0,
+          "threshold_eligible": 3,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 01:00:00",
+          "decision_at": "2022-09-12 02:00:00",
+          "events": 4,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 02:00:00",
+          "decision_at": "2022-09-12 03:00:00",
+          "events": 11,
+          "budget": 0,
+          "threshold_eligible": 4,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 03:00:00",
+          "decision_at": "2022-09-12 04:00:00",
+          "events": 8,
+          "budget": 0,
+          "threshold_eligible": 3,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 04:00:00",
+          "decision_at": "2022-09-12 05:00:00",
+          "events": 4,
+          "budget": 0,
+          "threshold_eligible": 3,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 05:00:00",
+          "decision_at": "2022-09-12 06:00:00",
+          "events": 10,
+          "budget": 0,
+          "threshold_eligible": 6,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 06:00:00",
+          "decision_at": "2022-09-12 07:00:00",
+          "events": 4,
+          "budget": 0,
+          "threshold_eligible": 3,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 07:00:00",
+          "decision_at": "2022-09-12 08:00:00",
+          "events": 15,
+          "budget": 0,
+          "threshold_eligible": 8,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 08:00:00",
+          "decision_at": "2022-09-12 09:00:00",
+          "events": 10,
+          "budget": 0,
+          "threshold_eligible": 7,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 09:00:00",
+          "decision_at": "2022-09-12 10:00:00",
+          "events": 17,
+          "budget": 0,
+          "threshold_eligible": 10,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 10:00:00",
+          "decision_at": "2022-09-12 11:00:00",
+          "events": 20,
+          "budget": 0,
+          "threshold_eligible": 12,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 11:00:00",
+          "decision_at": "2022-09-12 12:00:00",
+          "events": 16,
+          "budget": 0,
+          "threshold_eligible": 10,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 12:00:00",
+          "decision_at": "2022-09-12 13:00:00",
+          "events": 19,
+          "budget": 0,
+          "threshold_eligible": 13,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 13:00:00",
+          "decision_at": "2022-09-12 14:00:00",
+          "events": 15,
+          "budget": 0,
+          "threshold_eligible": 10,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 14:00:00",
+          "decision_at": "2022-09-12 15:00:00",
+          "events": 20,
+          "budget": 0,
+          "threshold_eligible": 14,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 15:00:00",
+          "decision_at": "2022-09-12 16:00:00",
+          "events": 16,
+          "budget": 0,
+          "threshold_eligible": 10,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 16:00:00",
+          "decision_at": "2022-09-12 17:00:00",
+          "events": 23,
+          "budget": 0,
+          "threshold_eligible": 15,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 17:00:00",
+          "decision_at": "2022-09-12 18:00:00",
+          "events": 15,
+          "budget": 0,
+          "threshold_eligible": 10,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 18:00:00",
+          "decision_at": "2022-09-12 19:00:00",
+          "events": 20,
+          "budget": 0,
+          "threshold_eligible": 12,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 19:00:00",
+          "decision_at": "2022-09-12 20:00:00",
+          "events": 11,
+          "budget": 0,
+          "threshold_eligible": 6,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 20:00:00",
+          "decision_at": "2022-09-12 21:00:00",
+          "events": 7,
+          "budget": 0,
+          "threshold_eligible": 4,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 21:00:00",
+          "decision_at": "2022-09-12 22:00:00",
+          "events": 4,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 22:00:00",
+          "decision_at": "2022-09-12 23:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 23:00:00",
+          "decision_at": "2022-09-13 00:00:00",
+          "events": 4,
+          "budget": 0,
+          "threshold_eligible": 3,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 01:00:00",
+          "decision_at": "2022-09-13 02:00:00",
+          "events": 3,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 02:00:00",
+          "decision_at": "2022-09-13 03:00:00",
+          "events": 5,
+          "budget": 0,
+          "threshold_eligible": 3,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 03:00:00",
+          "decision_at": "2022-09-13 04:00:00",
+          "events": 10,
+          "budget": 0,
+          "threshold_eligible": 6,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 04:00:00",
+          "decision_at": "2022-09-13 05:00:00",
+          "events": 4,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 05:00:00",
+          "decision_at": "2022-09-13 06:00:00",
+          "events": 12,
+          "budget": 0,
+          "threshold_eligible": 7,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 06:00:00",
+          "decision_at": "2022-09-13 07:00:00",
+          "events": 12,
+          "budget": 0,
+          "threshold_eligible": 6,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 07:00:00",
+          "decision_at": "2022-09-13 08:00:00",
+          "events": 3,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 08:00:00",
+          "decision_at": "2022-09-13 09:00:00",
+          "events": 8,
+          "budget": 0,
+          "threshold_eligible": 5,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 09:00:00",
+          "decision_at": "2022-09-13 10:00:00",
+          "events": 5,
+          "budget": 0,
+          "threshold_eligible": 3,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 10:00:00",
+          "decision_at": "2022-09-13 11:00:00",
+          "events": 15,
+          "budget": 0,
+          "threshold_eligible": 9,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 11:00:00",
+          "decision_at": "2022-09-13 12:00:00",
+          "events": 16,
+          "budget": 0,
+          "threshold_eligible": 7,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 12:00:00",
+          "decision_at": "2022-09-13 13:00:00",
+          "events": 17,
+          "budget": 0,
+          "threshold_eligible": 10,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 13:00:00",
+          "decision_at": "2022-09-13 14:00:00",
+          "events": 14,
+          "budget": 0,
+          "threshold_eligible": 8,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 14:00:00",
+          "decision_at": "2022-09-13 15:00:00",
+          "events": 9,
+          "budget": 0,
+          "threshold_eligible": 6,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 15:00:00",
+          "decision_at": "2022-09-13 16:00:00",
+          "events": 13,
+          "budget": 0,
+          "threshold_eligible": 7,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 16:00:00",
+          "decision_at": "2022-09-13 17:00:00",
+          "events": 8,
+          "budget": 0,
+          "threshold_eligible": 5,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 17:00:00",
+          "decision_at": "2022-09-13 18:00:00",
+          "events": 5,
+          "budget": 0,
+          "threshold_eligible": 3,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 18:00:00",
+          "decision_at": "2022-09-13 19:00:00",
+          "events": 10,
+          "budget": 0,
+          "threshold_eligible": 5,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 19:00:00",
+          "decision_at": "2022-09-13 20:00:00",
+          "events": 5,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 21:00:00",
+          "decision_at": "2022-09-13 22:00:00",
+          "events": 5,
+          "budget": 0,
+          "threshold_eligible": 4,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 22:00:00",
+          "decision_at": "2022-09-13 23:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 23:00:00",
+          "decision_at": "2022-09-14 00:00:00",
+          "events": 4,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 00:00:00",
+          "decision_at": "2022-09-14 01:00:00",
+          "events": 4,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 01:00:00",
+          "decision_at": "2022-09-14 02:00:00",
+          "events": 3,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 02:00:00",
+          "decision_at": "2022-09-14 03:00:00",
+          "events": 6,
+          "budget": 0,
+          "threshold_eligible": 4,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 03:00:00",
+          "decision_at": "2022-09-14 04:00:00",
+          "events": 3,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 04:00:00",
+          "decision_at": "2022-09-14 05:00:00",
+          "events": 3,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 05:00:00",
+          "decision_at": "2022-09-14 06:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 06:00:00",
+          "decision_at": "2022-09-14 07:00:00",
+          "events": 9,
+          "budget": 0,
+          "threshold_eligible": 6,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 07:00:00",
+          "decision_at": "2022-09-14 08:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 0,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 08:00:00",
+          "decision_at": "2022-09-14 09:00:00",
+          "events": 17,
+          "budget": 0,
+          "threshold_eligible": 9,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 09:00:00",
+          "decision_at": "2022-09-14 10:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 10:00:00",
+          "decision_at": "2022-09-14 11:00:00",
+          "events": 4,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 11:00:00",
+          "decision_at": "2022-09-14 12:00:00",
+          "events": 11,
+          "budget": 0,
+          "threshold_eligible": 6,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 12:00:00",
+          "decision_at": "2022-09-14 13:00:00",
+          "events": 6,
+          "budget": 0,
+          "threshold_eligible": 4,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 13:00:00",
+          "decision_at": "2022-09-14 14:00:00",
+          "events": 8,
+          "budget": 0,
+          "threshold_eligible": 6,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 14:00:00",
+          "decision_at": "2022-09-14 15:00:00",
+          "events": 8,
+          "budget": 0,
+          "threshold_eligible": 6,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 15:00:00",
+          "decision_at": "2022-09-14 16:00:00",
+          "events": 13,
+          "budget": 0,
+          "threshold_eligible": 6,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 17:00:00",
+          "decision_at": "2022-09-14 18:00:00",
+          "events": 4,
+          "budget": 0,
+          "threshold_eligible": 3,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 18:00:00",
+          "decision_at": "2022-09-14 19:00:00",
+          "events": 9,
+          "budget": 0,
+          "threshold_eligible": 6,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 19:00:00",
+          "decision_at": "2022-09-14 20:00:00",
+          "events": 7,
+          "budget": 0,
+          "threshold_eligible": 4,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 20:00:00",
+          "decision_at": "2022-09-14 21:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-15 01:00:00",
+          "decision_at": "2022-09-15 02:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-15 02:00:00",
+          "decision_at": "2022-09-15 03:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-15 04:00:00",
+          "decision_at": "2022-09-15 05:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-15 05:00:00",
+          "decision_at": "2022-09-15 06:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-15 06:00:00",
+          "decision_at": "2022-09-15 07:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-15 07:00:00",
+          "decision_at": "2022-09-15 08:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-15 08:00:00",
+          "decision_at": "2022-09-15 09:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-15 10:00:00",
+          "decision_at": "2022-09-15 11:00:00",
+          "events": 5,
+          "budget": 0,
+          "threshold_eligible": 4,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-15 12:00:00",
+          "decision_at": "2022-09-15 13:00:00",
+          "events": 4,
+          "budget": 0,
+          "threshold_eligible": 3,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-15 13:00:00",
+          "decision_at": "2022-09-15 14:00:00",
+          "events": 9,
+          "budget": 0,
+          "threshold_eligible": 5,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-15 14:00:00",
+          "decision_at": "2022-09-15 15:00:00",
+          "events": 4,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-15 15:00:00",
+          "decision_at": "2022-09-15 16:00:00",
+          "events": 5,
+          "budget": 0,
+          "threshold_eligible": 3,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-15 16:00:00",
+          "decision_at": "2022-09-15 17:00:00",
+          "events": 4,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-15 18:00:00",
+          "decision_at": "2022-09-15 19:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-15 19:00:00",
+          "decision_at": "2022-09-15 20:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-15 23:00:00",
+          "decision_at": "2022-09-16 00:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 0,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 00:00:00",
+          "decision_at": "2022-09-16 01:00:00",
+          "events": 6,
+          "budget": 0,
+          "threshold_eligible": 3,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 01:00:00",
+          "decision_at": "2022-09-16 02:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 02:00:00",
+          "decision_at": "2022-09-16 03:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 0,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 03:00:00",
+          "decision_at": "2022-09-16 04:00:00",
+          "events": 3,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 04:00:00",
+          "decision_at": "2022-09-16 05:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 05:00:00",
+          "decision_at": "2022-09-16 06:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 06:00:00",
+          "decision_at": "2022-09-16 07:00:00",
+          "events": 3,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 08:00:00",
+          "decision_at": "2022-09-16 09:00:00",
+          "events": 4,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 09:00:00",
+          "decision_at": "2022-09-16 10:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 10:00:00",
+          "decision_at": "2022-09-16 11:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 11:00:00",
+          "decision_at": "2022-09-16 12:00:00",
+          "events": 3,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 12:00:00",
+          "decision_at": "2022-09-16 13:00:00",
+          "events": 5,
+          "budget": 0,
+          "threshold_eligible": 3,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 13:00:00",
+          "decision_at": "2022-09-16 14:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 14:00:00",
+          "decision_at": "2022-09-16 15:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 15:00:00",
+          "decision_at": "2022-09-16 16:00:00",
+          "events": 3,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 18:00:00",
+          "decision_at": "2022-09-16 19:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 23:00:00",
+          "decision_at": "2022-09-17 00:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-17 00:00:00",
+          "decision_at": "2022-09-17 01:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-17 02:00:00",
+          "decision_at": "2022-09-17 03:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-17 03:00:00",
+          "decision_at": "2022-09-17 04:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-17 05:00:00",
+          "decision_at": "2022-09-17 06:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-17 06:00:00",
+          "decision_at": "2022-09-17 07:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-17 07:00:00",
+          "decision_at": "2022-09-17 08:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-17 08:00:00",
+          "decision_at": "2022-09-17 09:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-17 09:00:00",
+          "decision_at": "2022-09-17 10:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-17 12:00:00",
+          "decision_at": "2022-09-17 13:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-17 13:00:00",
+          "decision_at": "2022-09-17 14:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-17 14:00:00",
+          "decision_at": "2022-09-17 15:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-17 16:00:00",
+          "decision_at": "2022-09-17 17:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-17 17:00:00",
+          "decision_at": "2022-09-17 18:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 0,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-17 18:00:00",
+          "decision_at": "2022-09-17 19:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-17 19:00:00",
+          "decision_at": "2022-09-17 20:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-18 01:00:00",
+          "decision_at": "2022-09-18 02:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-18 06:00:00",
+          "decision_at": "2022-09-18 07:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 0,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-18 09:00:00",
+          "decision_at": "2022-09-18 10:00:00",
+          "events": 3,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-18 10:00:00",
+          "decision_at": "2022-09-18 11:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-18 11:00:00",
+          "decision_at": "2022-09-18 12:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-18 12:00:00",
+          "decision_at": "2022-09-18 13:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-18 16:00:00",
+          "decision_at": "2022-09-18 17:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        }
+      ],
+      "capacity_fraction": 0.01,
+      "policy_refitted": false
+    },
+    "temporal_attention_32": {
+      "threshold": 0.022301017918209567,
+      "alerts": 13024,
+      "true_alerts": 727,
+      "recall": 0.33813953488372095,
+      "precision": 0.05582002457002457,
+      "hourly": [
+        {
+          "hour_start": "2022-09-08 00:00:00",
+          "decision_at": "2022-09-08 01:00:00",
+          "events": 33964,
+          "budget": 339,
+          "threshold_eligible": 143,
+          "alerts": 143
+        },
+        {
+          "hour_start": "2022-09-08 01:00:00",
+          "decision_at": "2022-09-08 02:00:00",
+          "events": 19358,
+          "budget": 193,
+          "threshold_eligible": 174,
+          "alerts": 174
+        },
+        {
+          "hour_start": "2022-09-08 02:00:00",
+          "decision_at": "2022-09-08 03:00:00",
+          "events": 19367,
+          "budget": 193,
+          "threshold_eligible": 157,
+          "alerts": 157
+        },
+        {
+          "hour_start": "2022-09-08 03:00:00",
+          "decision_at": "2022-09-08 04:00:00",
+          "events": 19600,
+          "budget": 196,
+          "threshold_eligible": 180,
+          "alerts": 180
+        },
+        {
+          "hour_start": "2022-09-08 04:00:00",
+          "decision_at": "2022-09-08 05:00:00",
+          "events": 19511,
+          "budget": 195,
+          "threshold_eligible": 171,
+          "alerts": 171
+        },
+        {
+          "hour_start": "2022-09-08 05:00:00",
+          "decision_at": "2022-09-08 06:00:00",
+          "events": 19403,
+          "budget": 194,
+          "threshold_eligible": 163,
+          "alerts": 163
+        },
+        {
+          "hour_start": "2022-09-08 06:00:00",
+          "decision_at": "2022-09-08 07:00:00",
+          "events": 19199,
+          "budget": 191,
+          "threshold_eligible": 223,
+          "alerts": 191
+        },
+        {
+          "hour_start": "2022-09-08 07:00:00",
+          "decision_at": "2022-09-08 08:00:00",
+          "events": 19394,
+          "budget": 193,
+          "threshold_eligible": 251,
+          "alerts": 193
+        },
+        {
+          "hour_start": "2022-09-08 08:00:00",
+          "decision_at": "2022-09-08 09:00:00",
+          "events": 19730,
+          "budget": 197,
+          "threshold_eligible": 258,
+          "alerts": 197
+        },
+        {
+          "hour_start": "2022-09-08 09:00:00",
+          "decision_at": "2022-09-08 10:00:00",
+          "events": 19728,
+          "budget": 197,
+          "threshold_eligible": 293,
+          "alerts": 197
+        },
+        {
+          "hour_start": "2022-09-08 10:00:00",
+          "decision_at": "2022-09-08 11:00:00",
+          "events": 19615,
+          "budget": 196,
+          "threshold_eligible": 381,
+          "alerts": 196
+        },
+        {
+          "hour_start": "2022-09-08 11:00:00",
+          "decision_at": "2022-09-08 12:00:00",
+          "events": 19332,
+          "budget": 193,
+          "threshold_eligible": 338,
+          "alerts": 193
+        },
+        {
+          "hour_start": "2022-09-08 12:00:00",
+          "decision_at": "2022-09-08 13:00:00",
+          "events": 19695,
+          "budget": 196,
+          "threshold_eligible": 451,
+          "alerts": 196
+        },
+        {
+          "hour_start": "2022-09-08 13:00:00",
+          "decision_at": "2022-09-08 14:00:00",
+          "events": 19650,
+          "budget": 196,
+          "threshold_eligible": 370,
+          "alerts": 196
+        },
+        {
+          "hour_start": "2022-09-08 14:00:00",
+          "decision_at": "2022-09-08 15:00:00",
+          "events": 19357,
+          "budget": 193,
+          "threshold_eligible": 350,
+          "alerts": 193
+        },
+        {
+          "hour_start": "2022-09-08 15:00:00",
+          "decision_at": "2022-09-08 16:00:00",
+          "events": 19976,
+          "budget": 199,
+          "threshold_eligible": 372,
+          "alerts": 199
+        },
+        {
+          "hour_start": "2022-09-08 16:00:00",
+          "decision_at": "2022-09-08 17:00:00",
+          "events": 19494,
+          "budget": 194,
+          "threshold_eligible": 319,
+          "alerts": 194
+        },
+        {
+          "hour_start": "2022-09-08 17:00:00",
+          "decision_at": "2022-09-08 18:00:00",
+          "events": 19703,
+          "budget": 197,
+          "threshold_eligible": 337,
+          "alerts": 197
+        },
+        {
+          "hour_start": "2022-09-08 18:00:00",
+          "decision_at": "2022-09-08 19:00:00",
+          "events": 19450,
+          "budget": 194,
+          "threshold_eligible": 339,
+          "alerts": 194
+        },
+        {
+          "hour_start": "2022-09-08 19:00:00",
+          "decision_at": "2022-09-08 20:00:00",
+          "events": 19710,
+          "budget": 197,
+          "threshold_eligible": 347,
+          "alerts": 197
+        },
+        {
+          "hour_start": "2022-09-08 20:00:00",
+          "decision_at": "2022-09-08 21:00:00",
+          "events": 19523,
+          "budget": 195,
+          "threshold_eligible": 273,
+          "alerts": 195
+        },
+        {
+          "hour_start": "2022-09-08 21:00:00",
+          "decision_at": "2022-09-08 22:00:00",
+          "events": 19229,
+          "budget": 192,
+          "threshold_eligible": 251,
+          "alerts": 192
+        },
+        {
+          "hour_start": "2022-09-08 22:00:00",
+          "decision_at": "2022-09-08 23:00:00",
+          "events": 19344,
+          "budget": 193,
+          "threshold_eligible": 222,
+          "alerts": 193
+        },
+        {
+          "hour_start": "2022-09-08 23:00:00",
+          "decision_at": "2022-09-09 00:00:00",
+          "events": 19441,
+          "budget": 194,
+          "threshold_eligible": 240,
+          "alerts": 194
+        },
+        {
+          "hour_start": "2022-09-09 00:00:00",
+          "decision_at": "2022-09-09 01:00:00",
+          "events": 41280,
+          "budget": 412,
+          "threshold_eligible": 568,
+          "alerts": 412
+        },
+        {
+          "hour_start": "2022-09-09 01:00:00",
+          "decision_at": "2022-09-09 02:00:00",
+          "events": 26859,
+          "budget": 268,
+          "threshold_eligible": 547,
+          "alerts": 268
+        },
+        {
+          "hour_start": "2022-09-09 02:00:00",
+          "decision_at": "2022-09-09 03:00:00",
+          "events": 26621,
+          "budget": 266,
+          "threshold_eligible": 497,
+          "alerts": 266
+        },
+        {
+          "hour_start": "2022-09-09 03:00:00",
+          "decision_at": "2022-09-09 04:00:00",
+          "events": 26351,
+          "budget": 263,
+          "threshold_eligible": 531,
+          "alerts": 263
+        },
+        {
+          "hour_start": "2022-09-09 04:00:00",
+          "decision_at": "2022-09-09 05:00:00",
+          "events": 26582,
+          "budget": 265,
+          "threshold_eligible": 540,
+          "alerts": 265
+        },
+        {
+          "hour_start": "2022-09-09 05:00:00",
+          "decision_at": "2022-09-09 06:00:00",
+          "events": 26893,
+          "budget": 268,
+          "threshold_eligible": 598,
+          "alerts": 268
+        },
+        {
+          "hour_start": "2022-09-09 06:00:00",
+          "decision_at": "2022-09-09 07:00:00",
+          "events": 26878,
+          "budget": 268,
+          "threshold_eligible": 565,
+          "alerts": 268
+        },
+        {
+          "hour_start": "2022-09-09 07:00:00",
+          "decision_at": "2022-09-09 08:00:00",
+          "events": 26514,
+          "budget": 265,
+          "threshold_eligible": 685,
+          "alerts": 265
+        },
+        {
+          "hour_start": "2022-09-09 08:00:00",
+          "decision_at": "2022-09-09 09:00:00",
+          "events": 26996,
+          "budget": 269,
+          "threshold_eligible": 694,
+          "alerts": 269
+        },
+        {
+          "hour_start": "2022-09-09 09:00:00",
+          "decision_at": "2022-09-09 10:00:00",
+          "events": 27258,
+          "budget": 272,
+          "threshold_eligible": 765,
+          "alerts": 272
+        },
+        {
+          "hour_start": "2022-09-09 10:00:00",
+          "decision_at": "2022-09-09 11:00:00",
+          "events": 26360,
+          "budget": 263,
+          "threshold_eligible": 841,
+          "alerts": 263
+        },
+        {
+          "hour_start": "2022-09-09 11:00:00",
+          "decision_at": "2022-09-09 12:00:00",
+          "events": 26454,
+          "budget": 264,
+          "threshold_eligible": 895,
+          "alerts": 264
+        },
+        {
+          "hour_start": "2022-09-09 12:00:00",
+          "decision_at": "2022-09-09 13:00:00",
+          "events": 26704,
+          "budget": 267,
+          "threshold_eligible": 875,
+          "alerts": 267
+        },
+        {
+          "hour_start": "2022-09-09 13:00:00",
+          "decision_at": "2022-09-09 14:00:00",
+          "events": 26325,
+          "budget": 263,
+          "threshold_eligible": 867,
+          "alerts": 263
+        },
+        {
+          "hour_start": "2022-09-09 14:00:00",
+          "decision_at": "2022-09-09 15:00:00",
+          "events": 26784,
+          "budget": 267,
+          "threshold_eligible": 853,
+          "alerts": 267
+        },
+        {
+          "hour_start": "2022-09-09 15:00:00",
+          "decision_at": "2022-09-09 16:00:00",
+          "events": 26560,
+          "budget": 265,
+          "threshold_eligible": 922,
+          "alerts": 265
+        },
+        {
+          "hour_start": "2022-09-09 16:00:00",
+          "decision_at": "2022-09-09 17:00:00",
+          "events": 26672,
+          "budget": 266,
+          "threshold_eligible": 803,
+          "alerts": 266
+        },
+        {
+          "hour_start": "2022-09-09 17:00:00",
+          "decision_at": "2022-09-09 18:00:00",
+          "events": 27209,
+          "budget": 272,
+          "threshold_eligible": 874,
+          "alerts": 272
+        },
+        {
+          "hour_start": "2022-09-09 18:00:00",
+          "decision_at": "2022-09-09 19:00:00",
+          "events": 27015,
+          "budget": 270,
+          "threshold_eligible": 906,
+          "alerts": 270
+        },
+        {
+          "hour_start": "2022-09-09 19:00:00",
+          "decision_at": "2022-09-09 20:00:00",
+          "events": 26657,
+          "budget": 266,
+          "threshold_eligible": 757,
+          "alerts": 266
+        },
+        {
+          "hour_start": "2022-09-09 20:00:00",
+          "decision_at": "2022-09-09 21:00:00",
+          "events": 26109,
+          "budget": 261,
+          "threshold_eligible": 715,
+          "alerts": 261
+        },
+        {
+          "hour_start": "2022-09-09 21:00:00",
+          "decision_at": "2022-09-09 22:00:00",
+          "events": 26195,
+          "budget": 261,
+          "threshold_eligible": 667,
+          "alerts": 261
+        },
+        {
+          "hour_start": "2022-09-09 22:00:00",
+          "decision_at": "2022-09-09 23:00:00",
+          "events": 26444,
+          "budget": 264,
+          "threshold_eligible": 650,
+          "alerts": 264
+        },
+        {
+          "hour_start": "2022-09-09 23:00:00",
+          "decision_at": "2022-09-10 00:00:00",
+          "events": 26747,
+          "budget": 267,
+          "threshold_eligible": 650,
+          "alerts": 267
+        },
+        {
+          "hour_start": "2022-09-10 00:00:00",
+          "decision_at": "2022-09-10 01:00:00",
+          "events": 22591,
+          "budget": 225,
+          "threshold_eligible": 151,
+          "alerts": 151
+        },
+        {
+          "hour_start": "2022-09-10 01:00:00",
+          "decision_at": "2022-09-10 02:00:00",
+          "events": 8277,
+          "budget": 82,
+          "threshold_eligible": 172,
+          "alerts": 82
+        },
+        {
+          "hour_start": "2022-09-10 02:00:00",
+          "decision_at": "2022-09-10 03:00:00",
+          "events": 8193,
+          "budget": 81,
+          "threshold_eligible": 152,
+          "alerts": 81
+        },
+        {
+          "hour_start": "2022-09-10 03:00:00",
+          "decision_at": "2022-09-10 04:00:00",
+          "events": 8068,
+          "budget": 80,
+          "threshold_eligible": 173,
+          "alerts": 80
+        },
+        {
+          "hour_start": "2022-09-10 04:00:00",
+          "decision_at": "2022-09-10 05:00:00",
+          "events": 8440,
+          "budget": 84,
+          "threshold_eligible": 199,
+          "alerts": 84
+        },
+        {
+          "hour_start": "2022-09-10 05:00:00",
+          "decision_at": "2022-09-10 06:00:00",
+          "events": 8135,
+          "budget": 81,
+          "threshold_eligible": 251,
+          "alerts": 81
+        },
+        {
+          "hour_start": "2022-09-10 06:00:00",
+          "decision_at": "2022-09-10 07:00:00",
+          "events": 8100,
+          "budget": 81,
+          "threshold_eligible": 195,
+          "alerts": 81
+        },
+        {
+          "hour_start": "2022-09-10 07:00:00",
+          "decision_at": "2022-09-10 08:00:00",
+          "events": 8209,
+          "budget": 82,
+          "threshold_eligible": 265,
+          "alerts": 82
+        },
+        {
+          "hour_start": "2022-09-10 08:00:00",
+          "decision_at": "2022-09-10 09:00:00",
+          "events": 8254,
+          "budget": 82,
+          "threshold_eligible": 324,
+          "alerts": 82
+        },
+        {
+          "hour_start": "2022-09-10 09:00:00",
+          "decision_at": "2022-09-10 10:00:00",
+          "events": 7999,
+          "budget": 79,
+          "threshold_eligible": 200,
+          "alerts": 79
+        },
+        {
+          "hour_start": "2022-09-10 10:00:00",
+          "decision_at": "2022-09-10 11:00:00",
+          "events": 8213,
+          "budget": 82,
+          "threshold_eligible": 313,
+          "alerts": 82
+        },
+        {
+          "hour_start": "2022-09-10 11:00:00",
+          "decision_at": "2022-09-10 12:00:00",
+          "events": 8071,
+          "budget": 80,
+          "threshold_eligible": 362,
+          "alerts": 80
+        },
+        {
+          "hour_start": "2022-09-10 12:00:00",
+          "decision_at": "2022-09-10 13:00:00",
+          "events": 8027,
+          "budget": 80,
+          "threshold_eligible": 279,
+          "alerts": 80
+        },
+        {
+          "hour_start": "2022-09-10 13:00:00",
+          "decision_at": "2022-09-10 14:00:00",
+          "events": 7800,
+          "budget": 78,
+          "threshold_eligible": 280,
+          "alerts": 78
+        },
+        {
+          "hour_start": "2022-09-10 14:00:00",
+          "decision_at": "2022-09-10 15:00:00",
+          "events": 7776,
+          "budget": 77,
+          "threshold_eligible": 239,
+          "alerts": 77
+        },
+        {
+          "hour_start": "2022-09-10 15:00:00",
+          "decision_at": "2022-09-10 16:00:00",
+          "events": 8133,
+          "budget": 81,
+          "threshold_eligible": 307,
+          "alerts": 81
+        },
+        {
+          "hour_start": "2022-09-10 16:00:00",
+          "decision_at": "2022-09-10 17:00:00",
+          "events": 8051,
+          "budget": 80,
+          "threshold_eligible": 300,
+          "alerts": 80
+        },
+        {
+          "hour_start": "2022-09-10 17:00:00",
+          "decision_at": "2022-09-10 18:00:00",
+          "events": 7825,
+          "budget": 78,
+          "threshold_eligible": 243,
+          "alerts": 78
+        },
+        {
+          "hour_start": "2022-09-10 18:00:00",
+          "decision_at": "2022-09-10 19:00:00",
+          "events": 8073,
+          "budget": 80,
+          "threshold_eligible": 243,
+          "alerts": 80
+        },
+        {
+          "hour_start": "2022-09-10 19:00:00",
+          "decision_at": "2022-09-10 20:00:00",
+          "events": 7885,
+          "budget": 78,
+          "threshold_eligible": 243,
+          "alerts": 78
+        },
+        {
+          "hour_start": "2022-09-10 20:00:00",
+          "decision_at": "2022-09-10 21:00:00",
+          "events": 8170,
+          "budget": 81,
+          "threshold_eligible": 261,
+          "alerts": 81
+        },
+        {
+          "hour_start": "2022-09-10 21:00:00",
+          "decision_at": "2022-09-10 22:00:00",
+          "events": 8301,
+          "budget": 83,
+          "threshold_eligible": 251,
+          "alerts": 83
+        },
+        {
+          "hour_start": "2022-09-10 22:00:00",
+          "decision_at": "2022-09-10 23:00:00",
+          "events": 8042,
+          "budget": 80,
+          "threshold_eligible": 223,
+          "alerts": 80
+        },
+        {
+          "hour_start": "2022-09-10 23:00:00",
+          "decision_at": "2022-09-11 00:00:00",
+          "events": 7692,
+          "budget": 76,
+          "threshold_eligible": 213,
+          "alerts": 76
+        },
+        {
+          "hour_start": "2022-09-11 00:00:00",
+          "decision_at": "2022-09-11 01:00:00",
+          "events": 5,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 01:00:00",
+          "decision_at": "2022-09-11 02:00:00",
+          "events": 7,
+          "budget": 0,
+          "threshold_eligible": 3,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 02:00:00",
+          "decision_at": "2022-09-11 03:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 03:00:00",
+          "decision_at": "2022-09-11 04:00:00",
+          "events": 6,
+          "budget": 0,
+          "threshold_eligible": 3,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 04:00:00",
+          "decision_at": "2022-09-11 05:00:00",
+          "events": 15,
+          "budget": 0,
+          "threshold_eligible": 7,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 05:00:00",
+          "decision_at": "2022-09-11 06:00:00",
+          "events": 23,
+          "budget": 0,
+          "threshold_eligible": 14,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 06:00:00",
+          "decision_at": "2022-09-11 07:00:00",
+          "events": 11,
+          "budget": 0,
+          "threshold_eligible": 8,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 07:00:00",
+          "decision_at": "2022-09-11 08:00:00",
+          "events": 11,
+          "budget": 0,
+          "threshold_eligible": 4,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 08:00:00",
+          "decision_at": "2022-09-11 09:00:00",
+          "events": 18,
+          "budget": 0,
+          "threshold_eligible": 10,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 09:00:00",
+          "decision_at": "2022-09-11 10:00:00",
+          "events": 23,
+          "budget": 0,
+          "threshold_eligible": 14,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 10:00:00",
+          "decision_at": "2022-09-11 11:00:00",
+          "events": 14,
+          "budget": 0,
+          "threshold_eligible": 8,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 11:00:00",
+          "decision_at": "2022-09-11 12:00:00",
+          "events": 31,
+          "budget": 0,
+          "threshold_eligible": 21,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 12:00:00",
+          "decision_at": "2022-09-11 13:00:00",
+          "events": 21,
+          "budget": 0,
+          "threshold_eligible": 15,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 13:00:00",
+          "decision_at": "2022-09-11 14:00:00",
+          "events": 38,
+          "budget": 0,
+          "threshold_eligible": 25,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 14:00:00",
+          "decision_at": "2022-09-11 15:00:00",
+          "events": 35,
+          "budget": 0,
+          "threshold_eligible": 20,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 15:00:00",
+          "decision_at": "2022-09-11 16:00:00",
+          "events": 22,
+          "budget": 0,
+          "threshold_eligible": 12,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 16:00:00",
+          "decision_at": "2022-09-11 17:00:00",
+          "events": 21,
+          "budget": 0,
+          "threshold_eligible": 12,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 17:00:00",
+          "decision_at": "2022-09-11 18:00:00",
+          "events": 21,
+          "budget": 0,
+          "threshold_eligible": 14,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 18:00:00",
+          "decision_at": "2022-09-11 19:00:00",
+          "events": 24,
+          "budget": 0,
+          "threshold_eligible": 15,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 19:00:00",
+          "decision_at": "2022-09-11 20:00:00",
+          "events": 24,
+          "budget": 0,
+          "threshold_eligible": 14,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 20:00:00",
+          "decision_at": "2022-09-11 21:00:00",
+          "events": 6,
+          "budget": 0,
+          "threshold_eligible": 4,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 21:00:00",
+          "decision_at": "2022-09-11 22:00:00",
+          "events": 4,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 22:00:00",
+          "decision_at": "2022-09-11 23:00:00",
+          "events": 10,
+          "budget": 0,
+          "threshold_eligible": 6,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-11 23:00:00",
+          "decision_at": "2022-09-12 00:00:00",
+          "events": 4,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 00:00:00",
+          "decision_at": "2022-09-12 01:00:00",
+          "events": 6,
+          "budget": 0,
+          "threshold_eligible": 4,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 01:00:00",
+          "decision_at": "2022-09-12 02:00:00",
+          "events": 4,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 02:00:00",
+          "decision_at": "2022-09-12 03:00:00",
+          "events": 11,
+          "budget": 0,
+          "threshold_eligible": 5,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 03:00:00",
+          "decision_at": "2022-09-12 04:00:00",
+          "events": 8,
+          "budget": 0,
+          "threshold_eligible": 5,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 04:00:00",
+          "decision_at": "2022-09-12 05:00:00",
+          "events": 4,
+          "budget": 0,
+          "threshold_eligible": 3,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 05:00:00",
+          "decision_at": "2022-09-12 06:00:00",
+          "events": 10,
+          "budget": 0,
+          "threshold_eligible": 5,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 06:00:00",
+          "decision_at": "2022-09-12 07:00:00",
+          "events": 4,
+          "budget": 0,
+          "threshold_eligible": 3,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 07:00:00",
+          "decision_at": "2022-09-12 08:00:00",
+          "events": 15,
+          "budget": 0,
+          "threshold_eligible": 9,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 08:00:00",
+          "decision_at": "2022-09-12 09:00:00",
+          "events": 10,
+          "budget": 0,
+          "threshold_eligible": 6,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 09:00:00",
+          "decision_at": "2022-09-12 10:00:00",
+          "events": 17,
+          "budget": 0,
+          "threshold_eligible": 8,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 10:00:00",
+          "decision_at": "2022-09-12 11:00:00",
+          "events": 20,
+          "budget": 0,
+          "threshold_eligible": 12,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 11:00:00",
+          "decision_at": "2022-09-12 12:00:00",
+          "events": 16,
+          "budget": 0,
+          "threshold_eligible": 10,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 12:00:00",
+          "decision_at": "2022-09-12 13:00:00",
+          "events": 19,
+          "budget": 0,
+          "threshold_eligible": 13,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 13:00:00",
+          "decision_at": "2022-09-12 14:00:00",
+          "events": 15,
+          "budget": 0,
+          "threshold_eligible": 10,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 14:00:00",
+          "decision_at": "2022-09-12 15:00:00",
+          "events": 20,
+          "budget": 0,
+          "threshold_eligible": 14,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 15:00:00",
+          "decision_at": "2022-09-12 16:00:00",
+          "events": 16,
+          "budget": 0,
+          "threshold_eligible": 11,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 16:00:00",
+          "decision_at": "2022-09-12 17:00:00",
+          "events": 23,
+          "budget": 0,
+          "threshold_eligible": 13,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 17:00:00",
+          "decision_at": "2022-09-12 18:00:00",
+          "events": 15,
+          "budget": 0,
+          "threshold_eligible": 9,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 18:00:00",
+          "decision_at": "2022-09-12 19:00:00",
+          "events": 20,
+          "budget": 0,
+          "threshold_eligible": 12,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 19:00:00",
+          "decision_at": "2022-09-12 20:00:00",
+          "events": 11,
+          "budget": 0,
+          "threshold_eligible": 4,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 20:00:00",
+          "decision_at": "2022-09-12 21:00:00",
+          "events": 7,
+          "budget": 0,
+          "threshold_eligible": 4,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 21:00:00",
+          "decision_at": "2022-09-12 22:00:00",
+          "events": 4,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 22:00:00",
+          "decision_at": "2022-09-12 23:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-12 23:00:00",
+          "decision_at": "2022-09-13 00:00:00",
+          "events": 4,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 01:00:00",
+          "decision_at": "2022-09-13 02:00:00",
+          "events": 3,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 02:00:00",
+          "decision_at": "2022-09-13 03:00:00",
+          "events": 5,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 03:00:00",
+          "decision_at": "2022-09-13 04:00:00",
+          "events": 10,
+          "budget": 0,
+          "threshold_eligible": 6,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 04:00:00",
+          "decision_at": "2022-09-13 05:00:00",
+          "events": 4,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 05:00:00",
+          "decision_at": "2022-09-13 06:00:00",
+          "events": 12,
+          "budget": 0,
+          "threshold_eligible": 6,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 06:00:00",
+          "decision_at": "2022-09-13 07:00:00",
+          "events": 12,
+          "budget": 0,
+          "threshold_eligible": 5,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 07:00:00",
+          "decision_at": "2022-09-13 08:00:00",
+          "events": 3,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 08:00:00",
+          "decision_at": "2022-09-13 09:00:00",
+          "events": 8,
+          "budget": 0,
+          "threshold_eligible": 5,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 09:00:00",
+          "decision_at": "2022-09-13 10:00:00",
+          "events": 5,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 10:00:00",
+          "decision_at": "2022-09-13 11:00:00",
+          "events": 15,
+          "budget": 0,
+          "threshold_eligible": 8,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 11:00:00",
+          "decision_at": "2022-09-13 12:00:00",
+          "events": 16,
+          "budget": 0,
+          "threshold_eligible": 10,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 12:00:00",
+          "decision_at": "2022-09-13 13:00:00",
+          "events": 17,
+          "budget": 0,
+          "threshold_eligible": 10,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 13:00:00",
+          "decision_at": "2022-09-13 14:00:00",
+          "events": 14,
+          "budget": 0,
+          "threshold_eligible": 7,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 14:00:00",
+          "decision_at": "2022-09-13 15:00:00",
+          "events": 9,
+          "budget": 0,
+          "threshold_eligible": 5,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 15:00:00",
+          "decision_at": "2022-09-13 16:00:00",
+          "events": 13,
+          "budget": 0,
+          "threshold_eligible": 6,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 16:00:00",
+          "decision_at": "2022-09-13 17:00:00",
+          "events": 8,
+          "budget": 0,
+          "threshold_eligible": 6,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 17:00:00",
+          "decision_at": "2022-09-13 18:00:00",
+          "events": 5,
+          "budget": 0,
+          "threshold_eligible": 3,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 18:00:00",
+          "decision_at": "2022-09-13 19:00:00",
+          "events": 10,
+          "budget": 0,
+          "threshold_eligible": 5,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 19:00:00",
+          "decision_at": "2022-09-13 20:00:00",
+          "events": 5,
+          "budget": 0,
+          "threshold_eligible": 3,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 21:00:00",
+          "decision_at": "2022-09-13 22:00:00",
+          "events": 5,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 22:00:00",
+          "decision_at": "2022-09-13 23:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-13 23:00:00",
+          "decision_at": "2022-09-14 00:00:00",
+          "events": 4,
+          "budget": 0,
+          "threshold_eligible": 3,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 00:00:00",
+          "decision_at": "2022-09-14 01:00:00",
+          "events": 4,
+          "budget": 0,
+          "threshold_eligible": 3,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 01:00:00",
+          "decision_at": "2022-09-14 02:00:00",
+          "events": 3,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 02:00:00",
+          "decision_at": "2022-09-14 03:00:00",
+          "events": 6,
+          "budget": 0,
+          "threshold_eligible": 3,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 03:00:00",
+          "decision_at": "2022-09-14 04:00:00",
+          "events": 3,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 04:00:00",
+          "decision_at": "2022-09-14 05:00:00",
+          "events": 3,
+          "budget": 0,
+          "threshold_eligible": 0,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 05:00:00",
+          "decision_at": "2022-09-14 06:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 06:00:00",
+          "decision_at": "2022-09-14 07:00:00",
+          "events": 9,
+          "budget": 0,
+          "threshold_eligible": 5,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 07:00:00",
+          "decision_at": "2022-09-14 08:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 0,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 08:00:00",
+          "decision_at": "2022-09-14 09:00:00",
+          "events": 17,
+          "budget": 0,
+          "threshold_eligible": 8,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 09:00:00",
+          "decision_at": "2022-09-14 10:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 10:00:00",
+          "decision_at": "2022-09-14 11:00:00",
+          "events": 4,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 11:00:00",
+          "decision_at": "2022-09-14 12:00:00",
+          "events": 11,
+          "budget": 0,
+          "threshold_eligible": 7,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 12:00:00",
+          "decision_at": "2022-09-14 13:00:00",
+          "events": 6,
+          "budget": 0,
+          "threshold_eligible": 4,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 13:00:00",
+          "decision_at": "2022-09-14 14:00:00",
+          "events": 8,
+          "budget": 0,
+          "threshold_eligible": 6,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 14:00:00",
+          "decision_at": "2022-09-14 15:00:00",
+          "events": 8,
+          "budget": 0,
+          "threshold_eligible": 4,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 15:00:00",
+          "decision_at": "2022-09-14 16:00:00",
+          "events": 13,
+          "budget": 0,
+          "threshold_eligible": 7,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 17:00:00",
+          "decision_at": "2022-09-14 18:00:00",
+          "events": 4,
+          "budget": 0,
+          "threshold_eligible": 3,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 18:00:00",
+          "decision_at": "2022-09-14 19:00:00",
+          "events": 9,
+          "budget": 0,
+          "threshold_eligible": 6,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 19:00:00",
+          "decision_at": "2022-09-14 20:00:00",
+          "events": 7,
+          "budget": 0,
+          "threshold_eligible": 3,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-14 20:00:00",
+          "decision_at": "2022-09-14 21:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-15 01:00:00",
+          "decision_at": "2022-09-15 02:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-15 02:00:00",
+          "decision_at": "2022-09-15 03:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-15 04:00:00",
+          "decision_at": "2022-09-15 05:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-15 05:00:00",
+          "decision_at": "2022-09-15 06:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-15 06:00:00",
+          "decision_at": "2022-09-15 07:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-15 07:00:00",
+          "decision_at": "2022-09-15 08:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-15 08:00:00",
+          "decision_at": "2022-09-15 09:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-15 10:00:00",
+          "decision_at": "2022-09-15 11:00:00",
+          "events": 5,
+          "budget": 0,
+          "threshold_eligible": 4,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-15 12:00:00",
+          "decision_at": "2022-09-15 13:00:00",
+          "events": 4,
+          "budget": 0,
+          "threshold_eligible": 3,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-15 13:00:00",
+          "decision_at": "2022-09-15 14:00:00",
+          "events": 9,
+          "budget": 0,
+          "threshold_eligible": 5,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-15 14:00:00",
+          "decision_at": "2022-09-15 15:00:00",
+          "events": 4,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-15 15:00:00",
+          "decision_at": "2022-09-15 16:00:00",
+          "events": 5,
+          "budget": 0,
+          "threshold_eligible": 3,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-15 16:00:00",
+          "decision_at": "2022-09-15 17:00:00",
+          "events": 4,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-15 18:00:00",
+          "decision_at": "2022-09-15 19:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-15 19:00:00",
+          "decision_at": "2022-09-15 20:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-15 23:00:00",
+          "decision_at": "2022-09-16 00:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 00:00:00",
+          "decision_at": "2022-09-16 01:00:00",
+          "events": 6,
+          "budget": 0,
+          "threshold_eligible": 3,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 01:00:00",
+          "decision_at": "2022-09-16 02:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 02:00:00",
+          "decision_at": "2022-09-16 03:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 03:00:00",
+          "decision_at": "2022-09-16 04:00:00",
+          "events": 3,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 04:00:00",
+          "decision_at": "2022-09-16 05:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 05:00:00",
+          "decision_at": "2022-09-16 06:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 06:00:00",
+          "decision_at": "2022-09-16 07:00:00",
+          "events": 3,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 08:00:00",
+          "decision_at": "2022-09-16 09:00:00",
+          "events": 4,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 09:00:00",
+          "decision_at": "2022-09-16 10:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 10:00:00",
+          "decision_at": "2022-09-16 11:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 11:00:00",
+          "decision_at": "2022-09-16 12:00:00",
+          "events": 3,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 12:00:00",
+          "decision_at": "2022-09-16 13:00:00",
+          "events": 5,
+          "budget": 0,
+          "threshold_eligible": 3,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 13:00:00",
+          "decision_at": "2022-09-16 14:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 14:00:00",
+          "decision_at": "2022-09-16 15:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 15:00:00",
+          "decision_at": "2022-09-16 16:00:00",
+          "events": 3,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 18:00:00",
+          "decision_at": "2022-09-16 19:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-16 23:00:00",
+          "decision_at": "2022-09-17 00:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-17 00:00:00",
+          "decision_at": "2022-09-17 01:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-17 02:00:00",
+          "decision_at": "2022-09-17 03:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-17 03:00:00",
+          "decision_at": "2022-09-17 04:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-17 05:00:00",
+          "decision_at": "2022-09-17 06:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-17 06:00:00",
+          "decision_at": "2022-09-17 07:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-17 07:00:00",
+          "decision_at": "2022-09-17 08:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-17 08:00:00",
+          "decision_at": "2022-09-17 09:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-17 09:00:00",
+          "decision_at": "2022-09-17 10:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-17 12:00:00",
+          "decision_at": "2022-09-17 13:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-17 13:00:00",
+          "decision_at": "2022-09-17 14:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-17 14:00:00",
+          "decision_at": "2022-09-17 15:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-17 16:00:00",
+          "decision_at": "2022-09-17 17:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-17 17:00:00",
+          "decision_at": "2022-09-17 18:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-17 18:00:00",
+          "decision_at": "2022-09-17 19:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-17 19:00:00",
+          "decision_at": "2022-09-17 20:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-18 01:00:00",
+          "decision_at": "2022-09-18 02:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-18 06:00:00",
+          "decision_at": "2022-09-18 07:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-18 09:00:00",
+          "decision_at": "2022-09-18 10:00:00",
+          "events": 3,
+          "budget": 0,
+          "threshold_eligible": 2,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-18 10:00:00",
+          "decision_at": "2022-09-18 11:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-18 11:00:00",
+          "decision_at": "2022-09-18 12:00:00",
+          "events": 2,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-18 12:00:00",
+          "decision_at": "2022-09-18 13:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        },
+        {
+          "hour_start": "2022-09-18 16:00:00",
+          "decision_at": "2022-09-18 17:00:00",
+          "events": 1,
+          "budget": 0,
+          "threshold_eligible": 1,
+          "alerts": 0
+        }
+      ],
+      "capacity_fraction": 0.01,
+      "policy_refitted": false
+    }
+  },
+  "limitations": [
+    "Single temporal test on independent synthetic AML data; no claim of real financial validity.",
+    "Later test events may use earlier unlabeled test interactions, but never same-minute or future interactions.",
+    "Cold is a fixed account holdout at original fit; those accounts may develop history later.",
+    "All sparse tail days retained; per-day estimates may have few or zero positives.",
+    "No model, hyperparameter, calibrator or threshold changed using final outcomes.",
+    "Hourly decisions can wait up to one hour; most alerts may be false positives.",
+    "One neural training seed; no confidence interval or bitwise CUDA retraining guarantee."
+  ],
+  "artifact_sha256": {
+    "features.npy": "1db9d5dcd7c3b6795878abba21d720baf034778bd00297ac707d2e7275b48ef5",
+    "history_xgboost-alerts.parquet": "0ca47fb72c5be743ab4207b9e91b1072848bb45134939de8c4d0e8d768ba7c53",
+    "labels.parquet": "3b8d7aa5bb3d3e099bebfc15b1336ca0d17e716980297915002fac939b3544aa",
+    "membership.parquet": "c3ce80f703c1700c55bf200c0da802506218366205fc2b0974cb846da97ec8c9",
+    "neighborhood.joblib": "140dce5057a73aa579ac448ad2ee31262416eb97c489cd609b7f01e07cdabc09",
+    "predictions-frozen.json": "18e69b96fc65e0399decefa263012089a2ea59ce3a056f0d4a357049c1af94eb",
+    "predictions.parquet": "80430307d3b54ddde5df17bf3970fb5d4b2add4a7cbd25af808fa94c25577796",
+    "protocol.json": "bee97fd6e8209fa69c261d365ab766e24bcfe6d0df79ac33e8e7a798aa5187a2",
+    "temporal_attention_32-alerts.parquet": "d57f3765ce39565867307ad08ddb0ba4031ffaa64a54c0c18db0aa2856e2146d"
+  }
+}

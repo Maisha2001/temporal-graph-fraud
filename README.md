@@ -1,88 +1,90 @@
 # Temporal Graph Fraud Detection
 
-Chronological transaction classification on IBM's independently generated,
-synthetic anti-money-laundering data. The working experiments compare transaction and history XGBoost baselines,
-a history MLP, and a temporal graph attention model with two neighborhood budgets.
-They include a verified download, account holdouts, delayed-label training,
-checkpoint recovery, saved predictions and leakage regression tests.
+A reproducible study and local investigation application for IBM's independently
+generated synthetic AML transactions. It combines causal transaction histories,
+one-hop temporal graph attention, delayed labels, calibration, hourly alert
+budgets, PostgreSQL state and Kafka replay.
 
-This is an experimental implementation. Streaming service integration and the
-analyst application are not implemented yet. Results concern
-simulated laundering labels; they do not establish real-world fraud detection.
+**Version 1.0.0:** [release and exact model weights](https://github.com/Maisha2001/temporal-graph-fraud/releases/tag/v1.0.0).
+[Transaction Atlas setup](docs/workbench.md) opens the investigation demo locally.
+[Reproduction](docs/reproduction.md) covers training, frozen evaluation, model
+loading, local MLflow and the installed wheel.
 
-## Run
+## Final temporal evaluation
 
-Use Python 3.13 and a separate environment:
+All 1,346,673 September 8-18 transactions were retained, including 2,150 positive
+simulator labels and the sparse final days. Models and policies were frozen
+before final labels were opened. AP is average precision; capacity recall below
+is a global ranking diagnostic with an analytical expectation inside tied scores.
 
-```sh
+| Model | AP | Recall at 1% capacity |
+|---|---:|---:|
+| Transaction XGBoost | 0.09098 | 44.74% |
+| History XGBoost | **0.17657** | 53.58% |
+| History MLP | 0.09489 | 44.65% |
+| Temporal graph, 8 neighbors | 0.10340 | 55.49% |
+| Temporal graph, 32 neighbors | 0.14363 | **56.23%** |
+
+The history tree has higher AP; graph32 has higher global capacity recall.
+The separate frozen **closed-hour operational policies** recover 34.00% / 33.81%
+of positives for tree / graph, with only 5.72% / 5.58% precision.
+Most alerts are false positives. Calibration improves Brier scores, but does not
+make these probabilities reliable for another population.
+
+See [complete final results](results/heldout-v1/README.md),
+[model limitations](docs/model-card.md), and the
+[frozen protocol](results/heldout-v1/protocol.json).
+The sparse tail has very different prevalence. These are synthetic laundering
+labels, not evidence of effectiveness on real financial transactions.
+
+## Try the workbench
+
+Use Python 3.13 in a separate environment:
+
+~~~sh
 python -m venv .venv
 # Windows: .venv\Scripts\activate
 # Linux/macOS: source .venv/bin/activate
-python -m pip install -r requirements/locked.txt
+python -m pip install -r requirements/locked.txt -r requirements/service.txt
 python -m pip install --no-deps -e .
-python -m pytest -q
-fraud-baseline --download --output artifacts/baseline
-python scripts/verify_evidence.py
-```
+~~~
 
-The public download is about 476 MB. Its SHA-256 is checked before use. If the
-download endpoint is unavailable, obtain `HI-Small_Trans.csv` from the
-[original Kaggle dataset](https://www.kaggle.com/datasets/ealtman2019/ibm-transactions-for-anti-money-laundering-aml),
-then pass `--data /path/to/HI-Small_Trans.csv`. Different bytes are rejected.
-Allow several GB of RAM and local disk for data and generated artifacts. The
-recorded run uses four CPU threads; it requires no GPU or paid API.
+Set FRAUD_CASES=examples/investigation in your shell, then:
 
-The command writes a report, split membership, validation predictions, XGBoost
-models and fitted preprocessors into the output directory. Treat joblib files as
-trusted local artifacts only; do not load unknown files. Data and generated
-artifacts are excluded from Git.
+~~~sh
+python -m uvicorn temporal_fraud.investigation:create_app --factory --host 127.0.0.1 --port 8035
+~~~
 
-## Temporal graph experiments
+Open http://127.0.0.1:8035. The included three-case example is authored UI data,
+clearly labeled as such. The verified IBM development replay contains 93 ranked
+cases from 9,567 scored events, with 1,067 strictly earlier context interactions.
+[Workbench instructions](docs/workbench.md) explain reproducing that export.
+Case replay reads saved scores; it does not run inference again.
 
-After the baseline setup, install the graph dependencies in the same separate environment:
+## Train, serve and verify
 
-```sh
-python -m pip install torch==2.11.0 --index-url https://download.pytorch.org/whl/cpu
-python -m pip install -r requirements/graph.txt
-python -m pip install --no-deps -e .
-python -m pytest -q
-fraud-graph --data data/HI-Small_Trans.csv --output artifacts/temporal-v1
-```
+- [Data provenance and licensing](docs/data.md): 5,078,345 IBM HI-Small transactions,
+  pinned download bytes, chronology and independent source.
+- [Temporal models](docs/temporal-model.md): full eligible training, fixed three
+  epochs, 8/32 recent interactions per endpoint, checkpointed comparisons.
+- [Delay, calibration and drift](docs/risk-policy.md): 0/24/48-hour sensitivity,
+  matured calibration labels, graph interventions and descriptive shift.
+- [PostgreSQL / HTTP / Kafka setup](docs/serving.md): bounded complete-minute
+  ingestion, atomic graph state and scores, idempotent retries and recovery.
+- [Service measurements](results/service-v1/README.md): 582 ms serial batch p95;
+  two concurrent local streams achieved 652 events/s. This excludes aggregation
+  and later alert decisions, and does not establish distributed capacity.
+- [End-to-end reproduction and tests](docs/reproduction.md): fresh environment,
+  exact model loading, browser, live service, MLflow and evidence verification.
 
-For the measured NVIDIA run, install the same Torch version using
-`https://download.pytorch.org/whl/cu128` instead of the CPU index, then add
-`--device cuda`. No compiled PyG extensions are required. The command refuses an
-existing output directory unless `--resume` is supplied. Resume verifies cached
-inputs and restores model/optimizer state from the last completed epoch.
-See [the model and reproduction notes](docs/temporal-model.md) and
-[graph comparison results](results/temporal-v1/README.md).
+The original [baseline tie audit](results/capacity-tie-audit-v1/README.md),
+[graph comparison](results/temporal-v1/README.md) and
+[robustness study](results/robustness-v1/README.md) remain unchanged development
+evidence. Their historical unscored-holdout flags describe those earlier stages.
+CI checks authored examples, real local service integration and committed
+evidence; it does not retrain the full dataset.
 
-## Delayed feedback and alert policy
-
-The [risk study](docs/risk-policy.md) compares label delays, fits calibration only
-from matured out-of-training feedback, and evaluates a frozen threshold with a
-hard hourly capacity cap on later development events. It also measures graph
-interventions and daily feature/score shift. Reproduce it with `fraud-risk-study`
-after the baseline and graph runs. [Measured results](results/robustness-v1/README.md)
-include limitations and both uncapped threshold volume and actual capped decisions.
-
-## Evaluation
-
-See [the frozen protocol](docs/evaluation.md), [data provenance](docs/data.md)
-and [measured results and tie audit](results/capacity-tie-audit-v1/README.md). September 8 onward is
-reserved and has not been scored. The tie audit supersedes source-row ordering for capacity metrics in the original
-protocol; original results are retained for comparison. The committed evidence is a development
-validation result, not a final held-out benchmark. CI tests the pipeline with
-small authored examples and verifies the recorded evidence hashes; it does not
-download or retrain on the full dataset.
-
-Code is MIT licensed. IBM data remains under CDLA-Sharing-1.0; no raw transactions
-or derived transaction tables are included in this repository.
-
-## Stateful local serving
-
-[HTTP/Kafka setup](docs/serving.md) replays complete transaction minutes through
-frozen tree and graph models with PostgreSQL state and retry-safe receipts.
-[Service measurements](results/service-v1/README.md) cover prediction parity,
-process restart, redelivery, concurrent replay and latency. This remains a
-bounded synthetic development application; the final holdout is unscored.
+Code is MIT licensed. IBM data remains CDLA-Sharing-1.0. This repository contains
+aggregate results and authored example cases, not IBM transaction tables.
+Model release files are computational outputs; the code license does not
+relicense IBM data. Load only trusted, checksum-verified model artifacts.

@@ -1,0 +1,9 @@
+{
+  "run_id": "e13ff3acb5f04b38bd95382e7a7ebdb3",
+  "status": "FINISHED",
+  "metrics_verified": 32,
+  "model_artifacts_verified": 14,
+  "report_sha256": "8cc9a470baaf246449ecb585258eaa40199d8882fbdbf3c7538360b94a02f1f2",
+  "tracking_mode": "local file store; no cloud or remote API",
+  "model_training_performed": false
+}
